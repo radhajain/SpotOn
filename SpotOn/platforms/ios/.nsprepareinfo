@@ -1,5 +1,5 @@
 {
-	"time": "Sun Jun 10 2018 13:46:49 GMT-0700 (Pacific Daylight Time)",
+	"time": "Sun Jun 10 2018 13:50:13 GMT-0700 (Pacific Daylight Time)",
 	"nativePlatformStatus": "3",
 	"bundle": false,
 	"release": false,
@@ -19,9 +19,9 @@
 		"/Users/radhajain/SpotOn/SpotOn/app/references.d.ts": "c83a3304d98c2586359871f5d8ac10c8aa8af848",
 		"/Users/radhajain/SpotOn/SpotOn/app/util/InfoUtil.js": "534dbcc4c07914a65b90d12c26d166638a5bbe03",
 		"/Users/radhajain/SpotOn/SpotOn/app/util/StorageUtil.js": "707caa8a9e1fbd2028af5729d9094398b06640fe",
-		"/Users/radhajain/SpotOn/SpotOn/app/views/extendedView/extendedView.css": "865445c5ab17517c740be849ee354cfebbbe0bc6",
-		"/Users/radhajain/SpotOn/SpotOn/app/views/extendedView/extendedView.js": "36b9b92e876ca67f6a7ef0cc06fdf62b899000e0",
+		"/Users/radhajain/SpotOn/SpotOn/app/views/extendedView/extendedView.css": "5b483e047cba96689f5a13018b95374ee616ec1e",
 		"/Users/radhajain/SpotOn/SpotOn/app/views/extendedView/extendedView.xml": "44800a5ac08dfbe964097a5dfee3b5e5570b407f",
+		"/Users/radhajain/SpotOn/SpotOn/app/views/extendedView/extendedView.js": "36b9b92e876ca67f6a7ef0cc06fdf62b899000e0",
 		"/Users/radhajain/SpotOn/SpotOn/app/views/homeView/homeView.css": "e524de399fad47b8dcab6c78c2158d244398cb51",
 		"/Users/radhajain/SpotOn/SpotOn/app/views/homeView/homeView.js": "138fd39741711097729b8820d3d464656c4b18ed",
 		"/Users/radhajain/SpotOn/SpotOn/app/views/homeView/homeView.xml": "913e4bf3d3950c98f1f5db71c10c5d2f973a38d2",

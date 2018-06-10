@@ -34,10 +34,7 @@ Label {
 	width: 70%;
 	font-size: 10%;
 	text-align: left;
-	list-style-type: circle;
-	list-style-position: outside;
 	line-height: 2;
-
 }
 
 .message-two {
@@ -77,5 +74,5 @@ Label {
 	width: 30%;
 	padding: 10%;
 	border-radius: 30%;
-	margin-bottom: 5%;
+	margin-bottom: 3%;
 }
