@@ -5,17 +5,25 @@
 
 		<Label text="Name" class="prompt"/>
 
-		<TextField hint="Enter your name" text="{{ name }}" autocorrect="false" autocapitalization="none" style="color:white" id="name" class="textField" returnPress="addName" focus="onFocus" blur="onBlur"/>
+		<TextField hint="Enter your name" text="{{ name }}" autocorrect="false" autocapitalization="none" style="color:white" id="name" class="textField" returnPress="addName" focus="onFocus"/>
 
 		<Label text="My last period started on" class="prompt"/>
 
-		<TextField text="{{ periodStartDay }}" keyboardType="dateTime" style="color:white" id="periodStart" class="textField" returnPress="addPeriodStartDay" focus="onFocus" blur="onBlur"/>
+		<TextField text="{{ periodStartDay }}" keyboardType="dateTime" style="color:white" id="periodStart" class="textField" focus="onFocus"/>
 
-		<Label text="My period usually lasts" class="prompt"/>
+		<!-- Date Picker -->
 
-		<TextField text="{{ periodLength }}" keyboardType="phone" style="color:white" id="periodLength" class="textField" focus="onFocus" blur="onBlur"/>
+		<DatePicker visibility="{{ showDatePicker ? 'visible' : 'collapse'}}" date="{{ date }}" style="color:white" maxDate="{{ maxDate }}" id="datePicker" ></DatePicker>
 
-		<Button text="Get Started" tap="goToContraceptionView" class="nextButton"/>
+		<Button visibility="{{ showDatePicker ? 'visible' : 'collapse'}}" text="Done" tap="setDate" class="doneBtn"/>
+
+		<!-- End Date Picker -->
+
+		<Label text="# Days my period usually lasts" class="prompt"/>
+
+		<TextField text="{{ periodLength }}" keyboardType="phone" style="color:white" id="periodLength" class="textField" focus="onFocus"/>
+
+		<Button text="Next" tap="goToContraceptionView" class="nextButton"/>
 
 	</StackLayout>
 	 

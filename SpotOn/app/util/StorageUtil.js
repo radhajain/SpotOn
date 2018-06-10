@@ -26,6 +26,13 @@ exports.setFirstCycleDay = function(date) {
 	appSettings.setString('firstDay', JSON.stringify(date));
 };
 
+/* export: getCycleDay
+ * ----------------
+ * Returns the user's first day in their cycle
+ */
+exports.getFirstCycleDay = function(date) {
+	return JSON.parse(appSettings.getString('firstDay'));
+};
 
 /* export: setPeriodLength
  * ----------------
@@ -35,6 +42,13 @@ exports.setPeriodLength = function(numDays) {
 	appSettings.setString('periodLength', JSON.stringify(numDays));
 };
 
+/* export: getPeriodLength
+ * ----------------
+ * Returns the length of a users period (number)
+ */
+exports.getPeriodLength = function(numDays) {
+	return JSON.parse(appSettings.getString('periodLength'));
+};
 
 
 

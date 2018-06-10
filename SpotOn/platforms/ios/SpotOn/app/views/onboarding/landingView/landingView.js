@@ -5,13 +5,42 @@ var pageData = new observable.Observable();
 const DatePicker = require("tns-core-modules/ui/date-picker").DatePicker;
 var StorageUtil = require("~/util/StorageUtil");
 var gestures = require("ui/gestures");
+var dialogs = require("ui/dialogs");
 
 var page;
 
 exports.pageNavigating = function(args) {
+	//-----TEMP-----
+	StorageUtil.setName("");
+	StorageUtil.setPeriodLength("");
+	StorageUtil.setFirstCycleDay("");
+	//-----TEMP-----
+
 	page = args.object;
+	page.bindingContext = pageData;
+
+	// Date picker:
+	initDatePicker();
 
 }
+
+
+//----- TEXT FIELD INPUT -----
+
+exports.onFocus = function(args) {
+	var textField = args.object;
+	if (args.object === page.getViewById("periodStart")) {
+		pageData.set('showDatePicker', true);
+		textField.dismissSoftInput();
+	}
+	var observer = page.observe(gestures.GestureTypes.tap, function (args) {
+        pageData.set('showDatePicker', false);
+        textField.dismissSoftInput();
+    });
+}
+
+
+//------ STORAGE UTIL SETTING FUNCTIONS -----
 
 exports.addName = function() {
 	var nameField = page.getViewById("name");
@@ -21,29 +50,48 @@ exports.addName = function() {
 	}
 }
 
-exports.addPeriodStartDay = function() {
-	var nameField = page.getViewById("periodStart");
-	var date = nameField.text;
-	if (date !== "") {
-		StorageUtil.setFirstCycleDay(date);
-	}
-}
-
-exports.onFocus = function(args) {
-	console.log("focusing");
-	var textField = args.object;
-	var observer = page.observe(gestures.GestureTypes.tap, function (args) {
-        textField.dismissSoftInput();
-    });
-}
-
-function onBlur(args) {
-	var textField = args.object;
+exports.setDate = function() {
+	var datePicker = page.getViewById("datePicker");
+	pageData.set('showDatePicker', false);
+	var textField = page.getViewById("periodStart");
+	textField.text = datePicker.date.toDateString();
+	StorageUtil.setFirstCycleDay(datePicker.date);
 	textField.dismissSoftInput();
-	console.log("blurring");
 }
 
+function setPeriodLength() {
+	var periodLengthField = page.getViewById("periodLength");
+	var numDays = periodLengthField.text;
+	StorageUtil.setPeriodLength(numDays);
+}
+
+
+// ---- NAVIGATION -----
 
 exports.goToContraceptionView = function() {
-	frameModule.topmost().navigate('views/onboarding/contraceptionView/contraceptionView');
+	setPeriodLength();
+	if (!StorageUtil.getName()) {
+		exports.addName();
+	}
+	
+	if (!StorageUtil.getName() || !StorageUtil.getFirstCycleDay() || !StorageUtil.getPeriodLength()) {
+		dialogs.alert({
+			title: "Not so fast!",
+			message: "Please fill out all fields to continue",
+			okButtonText: "Ok"
+		}).then(function() {
+			console.log("Dialog closed");
+		});
+	} else {
+		frameModule.topmost().navigate('views/onboarding/contraceptionView/contraceptionView');
+	}
+	
+}
+
+//---- INITIALIZATION ------
+
+function initDatePicker() {
+	pageData.set('showDatePicker', false);
+	var TODAY = new Date();
+	pageData.set("maxDate", TODAY);
 }

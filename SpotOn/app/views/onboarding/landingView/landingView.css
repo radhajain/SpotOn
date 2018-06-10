@@ -34,3 +34,15 @@ Label {
 	margin: 5%;
 	color: #EA9D97;
 }
+
+#datePicker {
+	height: 30%;
+}
+
+.doneBtn {
+	height: 7%;
+	background-color: #EA9D97;
+	color: white;
+	font-size: 17%;
+	border-radius: 2pt;
+}

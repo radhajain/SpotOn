@@ -5,6 +5,8 @@
 
 		<Label text="Form of contraception" class="prompt"/>
 
+		<Button text="Get Started" tap="goToHomeView" class="nextButton"/>
+
 	</StackLayout>
 	 
 </Page>
