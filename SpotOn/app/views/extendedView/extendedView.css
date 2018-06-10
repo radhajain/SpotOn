@@ -29,6 +29,7 @@ Label {
 
 .outBox {
 	margin: 5%;
+	margin-bottom: 2%;
 }
 
 
@@ -38,23 +39,30 @@ Label {
 	text-align: left;
 	list-style-type: circle;
 	list-style-position: outside;
+	line-height: 2;
+
 }
 
 .message-two {
-	font-size: 10%;
+	font-size: 12%;
 	width: 60%;
 	color: lightblue;
+	line-height: 2;
 }
 
 .countdown {
 	font-size: 40%;
 	width: 80%;
 	font-family: serif;
+	color: white;
+	padding: 15%;
 }
 
 .quote {
 	font-weight: bold;
 	font-style: italic;
+	padding: 8%;
+	width: 80%;
 }
 
 .author {
@@ -68,7 +76,9 @@ Label {
 	border-width: 3px;
 	color: white;
 	border-color: white;
-	width: 40%;
+	font-size: 11%;
+	width: 30%;
 	padding: 10%;
 	border-radius: 30%;
+	margin-bottom: 5%;
 }

@@ -174,7 +174,7 @@ exports.isOnboardingComplete = function() {
  * onboarding anymore.
  */
 exports.setOnboardingComplete = function() {
-	if (exports.getName() && exports.getPeriodLength() && exports.getFirstCycleDay()) {
+	if (exports.getName() && exports.getPeriodLength() && exports.getFirstCycleDay() && exports.getBirthControlType()) {
 		appSettings.setBoolean('onboardingComplete', true);
 	}
 };

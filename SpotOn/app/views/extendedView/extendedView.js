@@ -41,7 +41,7 @@ function initCalendar(cycleDay) {
 
 function initBirthControl() {
 	var type = StorageUtil.getBirthControlType();
-	var msg = "You are currently using the " + type;
+	var msg = "You are currently using the " + type + ".";
 
 	// Countdown element
 	if (type == "Pill") {
