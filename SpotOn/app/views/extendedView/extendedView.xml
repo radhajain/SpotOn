@@ -4,23 +4,23 @@
 		<StackLayout class="infoBox">
 
 			<Label text="Things to expect" class="subtitle inBox"/>
-			<Label text="{{ expectations }}" class="message" wordWrap="true"/>
+			<Label text="{{ expectations }}" class="message" textWrap="true"/>
 
 			<Label text="Time to..." class="subtitle inBox"/>
-			<Label text="{{ recommendations }}" class="message" wordWrap="true"/>
+			<Label text="{{ recommendations }}" class="message" textWrap="true"/>
 
 		</StackLayout>
 
 		<Label text="Your Rhythm" class="subtitle outBox"/>
-		<!-- <calendar:RadCalendar id="rhythm" eventSource="{{ events }}"/> -->
+		<!-- Create calendar widget -->
 
 		<Label text="Your Birth Control" class="subtitle outBox"/>
-		<Label text="{{ bcText }}" class="message-two" wordWrap="true"/>
-		<Label text="{{ bcTime }}" class="countdown" wordWrap="true"/>
+		<Label text="{{ bcText }}" class="message-two" textWrap="true"/>
+		<Label text="{{ bcTime }}" class="countdown" textWrap="true"/>
 		<Button text="Update Settings" tap="goToSettings" class="settingsBtn"/>
 
-		<Label text="{{ quote }}" class="quote" id="quote" wordWrap="true"/>
-		<Label text="{{ quoteAuthor }}" class="author" id="author" wordWrap="true"/>
+		<Label text="{{ quote }}" class="quote" id="quote" textWrap="true"/>
+		<Label text="{{ quoteAuthor }}" class="author" id="author" textWrap="true"/>
 
 
 	</StackLayout>

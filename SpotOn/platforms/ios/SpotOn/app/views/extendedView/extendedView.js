@@ -28,6 +28,7 @@ function initExpectations(cycleDay) {
 
 function initRecommendations(cycleDay) {
 	var recommendations = InfoUtil.getRecommendations(cycleDay);
+	console.log(recommendations);
 	pageData.set("recommendations", recommendations);
 }
 
@@ -35,4 +36,8 @@ function initRecommendations(cycleDay) {
 function initCalendar(cycleDay) {
 	var periodLength = StorageUtil.getPeriodLength();
 
+}
+
+exports.goToSettingsView = function() {
+	frameModule.topmost().navigate('views/settingsView/settingsView');
 }

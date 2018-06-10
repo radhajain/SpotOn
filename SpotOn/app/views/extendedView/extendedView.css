@@ -24,6 +24,7 @@ Label {
 
 .inBox {
 	margin: 10%;
+	margin-bottom: 5%;
 }
 
 .outBox {
@@ -37,4 +38,11 @@ Label {
 	width: 40%;
 	padding: 10%;
 	border-radius: 30%;
+}
+
+.message {
+	/*padding: 10%;*/
+	height: 20%;
+	font-size: 10%;
+	text-align: left;
 }
