@@ -4,9 +4,11 @@ var pageData = new observable.Observable();
 var StorageUtil = require("~/util/StorageUtil");
 var InfoUtil = require("~/util/InfoUtil");
 var frameModule = require("ui/frame");
+var platform = require("platform")
 
 var pageData;
 var page;
+var pageHeight = platform.screen.mainScreen.heightDIPs;
 
 exports.pageLoaded = function(args) {
   
@@ -15,13 +17,27 @@ exports.pageLoaded = function(args) {
 
 	var cycleDay = StorageUtil.getCycleDay();
 
+
 	initExpectations(cycleDay);
 	initRecommendations(cycleDay);
 	initCalendar(cycleDay);
 	initBirthControl();
 	initQuote();
+	initFormatting();
 
 };
+
+
+//Since page is a scroll view, cannot dynamically set height in CSS
+function initFormatting() {
+	var infoBox = page.getViewById("infoBox");
+	infoBox.height = 0.4 * pageHeight;
+	infoBox.marginTop = 0.1 * pageHeight;
+
+	var stackPage = page.getViewById("stackPage");
+	stackPage.height = 1.5 * pageHeight;
+}
+
 
 function initExpectations(cycleDay) {
 	var expectations = InfoUtil.getExpectations(cycleDay);
@@ -40,7 +56,8 @@ function initCalendar(cycleDay) {
 }
 
 function initBirthControl() {
-	var type = StorageUtil.getBirthControlType();
+	// var type = StorageUtil.getBirthControlType();
+	var type = "Pill";
 	var msg = "You are currently using the " + type + ".";
 
 	// Countdown element
