@@ -1,0 +1,36 @@
+.page {
+	background-color: #081A40;
+}
+
+Label {
+	text-align: center;
+}
+
+.labelStack {
+	margin-top: 35%;
+}
+
+.title {
+	font-size: 35%;
+	color: white;
+	padding-bottom: 10%;
+}
+
+.prompt {
+	margin: 7%;
+	color: lightblue;
+	font-size: 15%;
+	text-transform: uppercase;
+}
+
+.textField {
+	width: 60%;
+	text-align: center;
+	border-bottom-width: 1;
+	border-color: lightblue;
+}
+
+.nextButton {
+	margin: 5%;
+	color: #EA9D97;
+}

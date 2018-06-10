@@ -1,0 +1,24 @@
+.page {
+	background-color: #081A40;
+}
+
+Label {
+	text-align: center;
+}
+
+.labelStack {
+	margin-top: 35%;
+}
+
+.title {
+	font-size: 35%;
+	color: white;
+	padding-bottom: 10%;
+}
+
+.prompt {
+	margin: 7%;
+	color: lightblue;
+	font-size: 15%;
+}
+	
