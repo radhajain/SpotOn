@@ -73,9 +73,6 @@ var layout;
         else if (mode === layout.AT_MOST) {
             text += "AT_MOST ";
         }
-        else {
-            text += mode + " ";
-        }
         text += size;
         return text;
     }
@@ -108,8 +105,8 @@ function isDataURI(uri) {
     if (!types.isString(uri)) {
         return false;
     }
-    var firstSegment = uri.trim().split(',')[0];
-    return firstSegment && firstSegment.indexOf("data:") === 0 && firstSegment.indexOf('base64') >= 0;
+    var firstSegment = uri.trim().split(",")[0];
+    return firstSegment && firstSegment.indexOf("data:") === 0 && firstSegment.indexOf("base64") >= 0;
 }
 exports.isDataURI = isDataURI;
 function mergeSort(arr, compareFunc) {

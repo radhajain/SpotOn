@@ -1,0 +1,49 @@
+.page {
+	background-color: #081A40;
+}
+
+Label {
+	text-align: center;
+}
+
+.labelStack {
+	margin-top: 35%;
+}
+
+.title {
+	font-size: 35%;
+	color: white;
+	padding-bottom: 10%;
+	font-family: serif;
+}
+
+.prompt {
+	margin: 7%;
+	color: lightblue;
+	font-size: 15%;
+	text-transform: uppercase;
+}
+
+.textField {
+	width: 60%;
+	text-align: center;
+	border-bottom-width: 1;
+	border-color: lightblue;
+}
+
+.nextButton {
+	margin: 5%;
+	color: #EA9D97;
+}
+
+#datePicker {
+	height: 30%;
+}
+
+.doneBtn {
+	height: 7%;
+	background-color: #EA9D97;
+	color: white;
+	font-size: 17%;
+	border-radius: 2pt;
+}

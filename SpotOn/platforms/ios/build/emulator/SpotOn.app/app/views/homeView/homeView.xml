@@ -1,8 +1,9 @@
 <Page loaded="pageLoaded" xmlns="http://schemas.nativescript.org/tns.xsd"  navigatingTo="pageNavigating" id="home" class="page" actionBarHidden="true">
-	<StackLayout class="center">
+	<StackLayout class="labelStack">
 		<!-- <Image src="res://logo_login" class="title"/>  -->
-		<Label text="{{ greeting }}" id="greeting"/>
-		<!-- <Button text="Get Started" tap="goToInterestsView" class="signinButton"/> -->
+		<Label text="{{ greeting }}" id="greeting" class="title" textWrap="true"/>
+		<Label text="{{ message }}" id="message" class="info" textWrap="true"/>
+		<Button text="More Info" tap="goToExtendedView" class="moreInfoBtn"/>
 	</StackLayout>
 	 
 </Page>

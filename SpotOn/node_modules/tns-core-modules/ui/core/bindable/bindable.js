@@ -14,7 +14,7 @@ exports.traceNotifyEvent = trace_1.notifyEvent;
 exports.isCategorySet = trace_1.isCategorySet;
 exports.traceMessageType = trace_1.messageType;
 var types = require("../../../utils/types");
-var application = require("../../../application");
+var applicationCommon = require("../../../application/application-common");
 var polymerExpressions = require("../../../js-libs/polymer-expressions");
 var contextKey = "context";
 var paramsRegex = /\[\s*(['"])*(\w*)\1\s*\]/;
@@ -102,7 +102,6 @@ var Binding = (function () {
             weak_event_listener_1.removeWeakEventListener(observable, observable_1.Observable.propertyChangeEvent, _this.onSourcePropertyChanged, _this);
         });
         this.propertyChangeListeners.clear();
-        this.sourcesAndProperties = null;
         if (this.source) {
             this.source.clear();
         }
@@ -233,7 +232,7 @@ var Binding = (function () {
     };
     Binding.prototype.prepareExpressionForUpdate = function () {
         var escapedSourceProperty = utils_1.escapeRegexSymbols(this.options.sourceProperty);
-        var expRegex = new RegExp(escapedSourceProperty, 'g');
+        var expRegex = new RegExp(escapedSourceProperty, "g");
         var resultExp = this.options.expression.replace(expRegex, bc.newPropertyValueKey);
         return resultExp;
     };
@@ -273,7 +272,7 @@ var Binding = (function () {
                 var context_1 = this.source && this.source.get && this.source.get() || global;
                 var model = {};
                 var addedProps = [];
-                var resources = application.getResources();
+                var resources = applicationCommon.getResources();
                 for (var prop in resources) {
                     if (resources.hasOwnProperty(prop) && !context_1.hasOwnProperty(prop)) {
                         context_1[prop] = resources[prop];
@@ -347,7 +346,7 @@ var Binding = (function () {
                 }
                 var newProps = sourceProps.slice(changedPropertyIndex + 1);
                 var newObject = data.object[sourceProps[changedPropertyIndex]];
-                if (!types.isNullOrUndefined(newObject) && typeof newObject === 'object') {
+                if (!types.isNullOrUndefined(newObject) && typeof newObject === "object") {
                     this.addPropertyChangeListeners(new WeakRef(newObject), newProps, parentProps);
                 }
             }

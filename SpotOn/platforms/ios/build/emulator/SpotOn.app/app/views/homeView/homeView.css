@@ -1,0 +1,32 @@
+.page {
+	background-color: #081A40;
+}
+
+Label {
+	text-align: center;
+}
+
+.labelStack {
+	margin-top: 45%;
+}
+
+.title {
+	font-size: 35%;
+	color: white;
+	height: 30%;
+	width: 70%;
+	font-family: serif;
+}
+
+.info {
+	color: lightblue;
+	size: 10%;
+	width: 65%;
+	height: 30%;
+	margin: 10%;
+	margin-bottom: 15%;
+}
+
+.moreInfoBtn {
+	color: #EA9D97;
+}

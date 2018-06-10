@@ -3,6 +3,7 @@ function __export(m) {
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 var trace_1 = require("../trace");
+var utils_common_1 = require("./utils-common");
 __export(require("./utils-common"));
 var mainScreenScale;
 function isOrientationLandscape(orientation) {
@@ -34,8 +35,8 @@ var layout;
             width: widthMode === 0 ? Number.POSITIVE_INFINITY : toDeviceIndependentPixels(width),
             height: heightMode === 0 ? Number.POSITIVE_INFINITY : toDeviceIndependentPixels(height)
         });
-        nativeSize.width = toDevicePixels(nativeSize.width);
-        nativeSize.height = toDevicePixels(nativeSize.height);
+        nativeSize.width = utils_common_1.layout.round(toDevicePixels(nativeSize.width));
+        nativeSize.height = utils_common_1.layout.round(toDevicePixels(nativeSize.height));
         return nativeSize;
     }
     layout.measureNativeView = measureNativeView;
@@ -79,8 +80,8 @@ var ios;
     ios.MajorVersion = NSString.stringWithString(getter(UIDevice, UIDevice.currentDevice).systemVersion).intValue;
     function openFile(filePath) {
         try {
-            var fs = require("file-system");
-            var path = filePath.replace("~", fs.knownFolders.currentApp().path);
+            var appPath = getCurrentAppPath();
+            var path = filePath.replace("~", appPath);
             var controller = UIDocumentInteractionController.interactionControllerWithURL(NSURL.fileURLWithPath(path));
             controller.delegate = new UIDocumentInteractionControllerDelegateImpl();
             return controller.presentPreviewAnimated(true);
@@ -91,6 +92,27 @@ var ios;
         return false;
     }
     ios.openFile = openFile;
+    function getCurrentAppPath() {
+        var currentDir = __dirname;
+        var tnsModulesIndex = currentDir.indexOf("/tns_modules");
+        var appPath = currentDir;
+        if (tnsModulesIndex !== -1) {
+            appPath = currentDir.substring(0, tnsModulesIndex);
+        }
+        return appPath;
+    }
+    ios.getCurrentAppPath = getCurrentAppPath;
+    function joinPaths() {
+        var paths = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            paths[_i] = arguments[_i];
+        }
+        if (!paths || paths.length === 0) {
+            return "";
+        }
+        return NSString.stringWithString(NSString.pathWithComponents(paths)).stringByStandardizingPath;
+    }
+    ios.joinPaths = joinPaths;
 })(ios = exports.ios || (exports.ios = {}));
 function GC() {
     __collect();
@@ -115,8 +137,8 @@ var UIDocumentInteractionControllerDelegateImpl = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     UIDocumentInteractionControllerDelegateImpl.prototype.getViewController = function () {
-        var frame = require("ui/frame");
-        return frame.topmost().currentPage.ios;
+        var app = ios.getter(UIApplication, UIApplication.sharedApplication);
+        return app.keyWindow.rootViewController;
     };
     UIDocumentInteractionControllerDelegateImpl.prototype.documentInteractionControllerViewControllerForPreview = function (controller) {
         return this.getViewController();

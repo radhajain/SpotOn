@@ -309,7 +309,7 @@ function parseAngle(value, start) {
     var angleResult = parseUnit(value, start);
     if (angleResult) {
         var start_2 = angleResult.start, end = angleResult.end, value_3 = angleResult.value;
-        return (angleUnitsToRadMap[value_3.unit] || (function () { return null; }))(start_2, end, value_3.value);
+        return (angleUnitsToRadMap[value_3.unit] || (function (_, __, ___) { return null; }))(start_2, end, value_3.value);
     }
     return null;
 }
@@ -591,6 +591,7 @@ function parseBackground(text, start) {
         }
         var position = parseBackgroundPosition(text, end, keyword);
         if (position) {
+            position.value.text = text.substring(position.start, position.end);
             value.position = position.value;
             end = position.end;
             var slash = parseSlash(text, end);
@@ -713,6 +714,7 @@ function parseSelector(text, start) {
     var value = [];
     var combinator;
     var expectSimpleSelector = true;
+    var pair = [];
     do {
         var simpleSelectorSequence = parseSimpleSelectorSequence(text, end);
         if (!simpleSelectorSequence) {
@@ -725,16 +727,16 @@ function parseSelector(text, start) {
         }
         end = simpleSelectorSequence.end;
         if (combinator) {
-            value.push(combinator.value);
+            pair[1] = combinator.value;
         }
-        value.push(simpleSelectorSequence.value);
+        pair = [simpleSelectorSequence.value, undefined];
+        value.push(pair);
         combinator = parseCombinator(text, end);
         if (combinator) {
             end = combinator.end;
         }
         expectSimpleSelector = combinator && combinator.value !== " ";
     } while (combinator);
-    value.push(undefined);
     return { start: start, end: end, value: value };
 }
 exports.parseSelector = parseSelector;
@@ -744,7 +746,6 @@ var doubleQuoteStringRegEx = /"((?:[^\n\r\f\"]|\\(?:\$|\n|[0-9a-fA-F]{1,6}\s?))*
 var commentRegEx = /(\/\*(?:[^\*]|\*[^\/])*\*\/)/gym;
 var numberRegEx = /[\+\-]?(?:\d+\.\d+|\d+|\.\d+)(?:[eE][\+\-]?\d+)?/gym;
 var nameRegEx = /-?(?:(?:[a-zA-Z_]|[^\x00-\x7F]|\\(?:\$|\n|[0-9a-fA-F]{1,6}\s?))(?:[a-zA-Z_0-9\-]*|\\(?:\$|\n|[0-9a-fA-F]{1,6}\s?))*)/gym;
-var nonQuoteURLRegEx = /(:?[^\)\s\t\n\r\f\'\"\(]|\\(?:\$|\n|[0-9a-fA-F]{1,6}\s?))*/gym;
 var CSS3Parser = (function () {
     function CSS3Parser(text) {
         this.text = text;
@@ -804,7 +805,7 @@ var CSS3Parser = (function () {
             case "U":
                 if (this.text[this.nextInputCodePointIndex + 1] === "+") {
                     var thirdChar = this.text[this.nextInputCodePointIndex + 2];
-                    if (thirdChar >= '0' && thirdChar <= '9' || thirdChar === "?") {
+                    if (thirdChar >= "0" && thirdChar <= "9" || thirdChar === "?") {
                         throw new Error("Unicode tokens not supported!");
                     }
                 }
@@ -830,7 +831,7 @@ var CSS3Parser = (function () {
     };
     CSS3Parser.prototype.consumeAWhitespace = function () {
         whitespaceRegEx.lastIndex = this.nextInputCodePointIndex;
-        var result = whitespaceRegEx.exec(this.text);
+        whitespaceRegEx.exec(this.text);
         this.nextInputCodePointIndex = whitespaceRegEx.lastIndex;
         return " ";
     };

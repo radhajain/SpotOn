@@ -188,7 +188,7 @@ var AttributeSelector = (function (_super) {
             return _this;
         }
     }
-    AttributeSelector.prototype.toString = function () { return "[" + this.attribute + wrap(this.test) + ((this.test && this.value) || '') + "]" + wrap(this.combinator); };
+    AttributeSelector.prototype.toString = function () { return "[" + this.attribute + wrap(this.test) + ((this.test && this.value) || "") + "]" + wrap(this.combinator); };
     AttributeSelector.prototype.match = function (node) { return false; };
     AttributeSelector.prototype.mayMatch = function (node) { return true; };
     AttributeSelector.prototype.trackChanges = function (node, map) { map.addAttribute(node, this.attribute); };
@@ -405,7 +405,7 @@ function createSimpleSelectorFromAst(ast) {
     switch (ast.type) {
         case "*": return new UniversalSelector();
         case "#": return new IdSelector(ast.identifier);
-        case "": return new TypeSelector(ast.identifier.replace(/-/, '').toLowerCase());
+        case "": return new TypeSelector(ast.identifier.replace(/-/, "").toLowerCase());
         case ".": return new ClassSelector(ast.identifier);
         case ":": return new PseudoClassSelector(ast.identifier);
         case "[]": return ast.test ? new AttributeSelector(ast.property, ast.test, ast.value) : new AttributeSelector(ast.property);
@@ -426,14 +426,14 @@ function createSelectorFromAst(ast) {
     if (ast.length === 0) {
         return new InvalidSelector(new Error("Empty selector."));
     }
-    else if (ast.length <= 2) {
-        return createSimpleSelectorSequenceFromAst(ast[0]);
+    else if (ast.length === 1) {
+        return createSimpleSelectorSequenceFromAst(ast[0][0]);
     }
     else {
         var simpleSelectorSequences = [];
-        for (var i = 0; i < ast.length; i += 2) {
-            var simpleSelectorSequence = createSimpleSelectorSequenceFromAst(ast[i]);
-            var combinator = ast[i + 1];
+        for (var i = 0; i < ast.length; i++) {
+            var simpleSelectorSequence = createSimpleSelectorSequenceFromAst(ast[i][0]);
+            var combinator = ast[i][1];
             if (combinator) {
                 simpleSelectorSequence.combinator = combinator;
             }

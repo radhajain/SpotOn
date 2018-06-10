@@ -5,7 +5,7 @@ var parser_1 = require("../../css/parser");
 var css_selector_1 = require("./css-selector");
 var trace_1 = require("../../trace");
 var file_system_1 = require("../../file-system");
-var application = require("../../application");
+var applicationCommon = require("../../application/application-common");
 var profiling_1 = require("../../profiling");
 var keyframeAnimationModule;
 function ensureKeyframeAnimationModule() {
@@ -52,25 +52,39 @@ var CSSSource = (function () {
         this.parse();
     }
     CSSSource.fromURI = function (uri, keyframes) {
+        var appRelativeUri = uri;
+        if (appRelativeUri.startsWith("/")) {
+            var app = file_system_1.knownFolders.currentApp().path + "/";
+            if (appRelativeUri.startsWith(app)) {
+                appRelativeUri = "./" + appRelativeUri.substr(app.length);
+            }
+        }
         try {
-            var cssOrAst = global.loadModule(uri);
+            var cssOrAst = global.loadModule(appRelativeUri);
             if (cssOrAst) {
                 if (typeof cssOrAst === "string") {
-                    return CSSSource.fromSource(cssOrAst, keyframes, uri);
+                    return CSSSource.fromSource(cssOrAst, keyframes, appRelativeUri);
                 }
                 else if (typeof cssOrAst === "object" && cssOrAst.type === "stylesheet" && cssOrAst.stylesheet && cssOrAst.stylesheet.rules) {
-                    return CSSSource.fromAST(cssOrAst, keyframes, uri);
+                    return CSSSource.fromAST(cssOrAst, keyframes, appRelativeUri);
                 }
                 else {
-                    return CSSSource.fromSource(cssOrAst.toString(), keyframes, uri);
+                    return CSSSource.fromSource(cssOrAst.toString(), keyframes, appRelativeUri);
                 }
             }
         }
         catch (e) {
         }
-        return CSSSource.fromFile(uri, keyframes);
+        return CSSSource.fromFile(appRelativeUri, keyframes);
     };
     CSSSource.fromFile = function (url, keyframes) {
+        var cssFileUrl = url.replace(/\..\w+$/, ".css");
+        if (cssFileUrl !== url) {
+            var cssFile = CSSSource.resolveCSSPathFromURL(cssFileUrl);
+            if (cssFile) {
+                return new CSSSource(undefined, url, cssFile, keyframes, undefined);
+            }
+        }
         var file = CSSSource.resolveCSSPathFromURL(url);
         return new CSSSource(undefined, url, file, keyframes, undefined);
     };
@@ -172,7 +186,6 @@ var CSSSource = (function () {
     CSSSource.prototype.toString = function () {
         return this._file || this._url || "(in-memory)";
     };
-    CSSSource.cssFilesCache = {};
     __decorate([
         profiling_1.profile
     ], CSSSource.prototype, "load", null);
@@ -190,7 +203,7 @@ var CSSSource = (function () {
     ], CSSSource, "resolveCSSPathFromURL", null);
     return CSSSource;
 }());
-var onCssChanged = profiling_1.profile('"style-scope".onCssChanged', function (args) {
+var onCssChanged = profiling_1.profile("\"style-scope\".onCssChanged", function (args) {
     if (args.cssText) {
         var parsed = CSSSource.fromSource(args.cssText, applicationKeyframes, args.cssFile).selectors;
         if (parsed) {
@@ -203,7 +216,7 @@ var onCssChanged = profiling_1.profile('"style-scope".onCssChanged', function (a
     }
 });
 function onLiveSync(args) {
-    loadCss(application.getCssFileName());
+    loadCss(applicationCommon.getCssFileName());
 }
 var loadCss = profiling_1.profile("\"style-scope\".loadCss", function (cssFile) {
     if (!cssFile) {
@@ -215,17 +228,17 @@ var loadCss = profiling_1.profile("\"style-scope\".loadCss", function (cssFile) 
         mergeCssSelectors();
     }
 });
-application.on("cssChanged", onCssChanged);
-application.on("livesync", onLiveSync);
-exports.loadAppCSS = profiling_1.profile('"style-scope".loadAppCSS', function (args) {
+applicationCommon.on("cssChanged", onCssChanged);
+applicationCommon.on("livesync", onLiveSync);
+exports.loadAppCSS = profiling_1.profile("\"style-scope\".loadAppCSS", function (args) {
     loadCss(args.cssFile);
-    application.off("loadAppCss", exports.loadAppCSS);
+    applicationCommon.off("loadAppCss", exports.loadAppCSS);
 });
-if (application.hasLaunched()) {
-    exports.loadAppCSS({ eventName: "loadAppCss", object: application, cssFile: application.getCssFileName() });
+if (applicationCommon.hasLaunched()) {
+    exports.loadAppCSS({ eventName: "loadAppCss", object: applicationCommon, cssFile: applicationCommon.getCssFileName() });
 }
 else {
-    application.on("loadAppCss", exports.loadAppCSS);
+    applicationCommon.on("loadAppCss", exports.loadAppCSS);
 }
 var CssState = (function () {
     function CssState(view) {
@@ -406,8 +419,6 @@ CssState.prototype._appliedAnimations = CssState.emptyAnimationArray;
 CssState.prototype._matchInvalid = true;
 var StyleScope = (function () {
     function StyleScope() {
-        this._statesByKey = {};
-        this._viewIdToKey = {};
         this._css = "";
         this._localCssSelectors = [];
         this._localCssSelectorVersion = 0;
@@ -420,7 +431,6 @@ var StyleScope = (function () {
             return this._css;
         },
         set: function (value) {
-            this._cssFileName = undefined;
             this.setCss(value);
         },
         enumerable: true,
@@ -434,7 +444,6 @@ var StyleScope = (function () {
     };
     StyleScope.prototype.setCss = function (cssString, cssFileName) {
         this._css = cssString;
-        this._reset();
         var cssFile = CSSSource.fromSource(cssString, this._keyframes, cssFileName);
         this._localCssSelectors = cssFile.selectors;
         this._localCssSelectorVersion++;
@@ -444,8 +453,7 @@ var StyleScope = (function () {
         if (!cssString && !cssFileName) {
             return;
         }
-        this._reset();
-        var parsedCssSelectors = cssString ? CSSSource.fromSource(cssString, this._keyframes, cssFileName) : CSSSource.fromFile(cssFileName, this._keyframes);
+        var parsedCssSelectors = cssString ? CSSSource.fromSource(cssString, this._keyframes, cssFileName) : CSSSource.fromURI(cssFileName, this._keyframes);
         this._css = this._css + parsedCssSelectors.source;
         this._localCssSelectors.push.apply(this._localCssSelectors, parsedCssSelectors.selectors);
         this._localCssSelectorVersion++;
@@ -493,10 +501,6 @@ var StyleScope = (function () {
     StyleScope.prototype.query = function (node) {
         this.ensureSelectors();
         return this._selectors.query(node).selectors;
-    };
-    StyleScope.prototype._reset = function () {
-        this._statesByKey = {};
-        this._viewIdToKey = {};
     };
     StyleScope.prototype._getSelectorsVersion = function () {
         return 100000 * this._applicationCssSelectorsAppliedVersion + this._localCssSelectorsAppliedVersion;
@@ -547,6 +551,9 @@ function resolveFileNameFromUrl(url, appDirectory, fileExists) {
         return absolutePath;
     }
     if (!isAbsolutePath) {
+        if (fileName[0] === "~" && fileName[1] !== "/" && fileName[1] !== "\"") {
+            fileName = fileName.substr(1);
+        }
         var external_1 = file_system_1.path.join(appDirectory, "tns_modules", fileName);
         if (fileExists(external_1)) {
             return external_1;
@@ -577,14 +584,4 @@ exports.applyInlineStyle = profiling_1.profile(function applyInlineStyle(view, s
 function isKeyframe(node) {
     return node.type === "keyframes";
 }
-var InlineSelector = (function () {
-    function InlineSelector(ruleSet) {
-        this.specificity = 0x01000000;
-        this.rarity = 0;
-        this.dynamic = false;
-        this.ruleset = ruleSet;
-    }
-    InlineSelector.prototype.match = function (node) { return true; };
-    return InlineSelector;
-}());
 //# sourceMappingURL=style-scope.js.map
