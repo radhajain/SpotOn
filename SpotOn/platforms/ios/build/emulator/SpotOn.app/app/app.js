@@ -9,7 +9,13 @@ var application = require("application");
 var StorageUtil = require('~/util/StorageUtil');
 
 
-application.start({ moduleName: "views/homeView/homeView" });
+// application.start({ moduleName: "views/homeView/homeView" });
+
+if (StorageUtil.isOnboardingComplete()) {
+	application.start({ moduleName: "views/homeView/homeView" });
+} else {
+	application.start({ moduleName: "views/onboarding/landingView/landingView" });
+}
 
 /*
 Do not place any code after the application has been started as it will not
