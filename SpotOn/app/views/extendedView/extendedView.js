@@ -44,7 +44,7 @@ function initBirthControl() {
 	var msg = "You are currently using the " + type;
 
 	// Countdown element
-	if (type == "pill") {
+	if (type == "Pill") {
 		msg += "\n Scheduled to be taken in: ";
 		var countdownMins = StorageUtil.minsTillBirthControl();
 		var bcTime;

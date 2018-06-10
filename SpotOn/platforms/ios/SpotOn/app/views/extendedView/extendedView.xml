@@ -19,8 +19,8 @@
 		<Label text="{{ bcTime }}" class="countdown" textWrap="true"/>
 		<Button text="Update Settings" tap="goToSettings" class="settingsBtn"/>
 
-		<Label text="{{ quote }}" class="quote" id="quote" textWrap="true"/>
-		<Label text="{{ quoteAuthor }}" class="author" id="author" textWrap="true"/>
+		<Label text="{{ quote }}" class="message-two quote" id="quote" textWrap="true"/>
+		<Label text="{{ author }}" class="author" id="author" textWrap="true"/>
 
 
 	</StackLayout>

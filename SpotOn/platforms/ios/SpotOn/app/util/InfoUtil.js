@@ -23,3 +23,8 @@ exports.getRecommendations = function(day) {
 	return recommendations;
 	//-----TEMP----
 }
+
+
+exports.getQuote = function() {
+	return {quote: "Girls should never be afraid to be smart", author: "Emma Watson"};
+}
