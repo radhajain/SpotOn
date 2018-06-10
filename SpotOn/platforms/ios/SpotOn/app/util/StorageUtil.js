@@ -6,6 +6,13 @@ var DAY_IN_MS = 86400000;
 
 
 
+exports.clearData = function() {
+	StorageUtil.setName("");
+	StorageUtil.setPeriodLength("");
+	StorageUtil.setFirstCycleDay("");
+}
+
+
 /* export: getCycleDay
  * ----------------
  * Returns a greeting for the user based on the current time
@@ -22,9 +29,6 @@ exports.getGreeting = function() {
 	  return('Good evening, ')
 	}
 }
-
-
-
 
 
 /* export: getCycleDay
