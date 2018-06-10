@@ -17,7 +17,7 @@ Label {
 
 
 .subtitle {
-	color: #EA9D97;
+	color: #EA9D97; /*pink*/
 	font-weight: bold;
 	font-family: serif;
 }
@@ -31,6 +31,39 @@ Label {
 	margin: 5%;
 }
 
+
+.message {
+	width: 70%;
+	font-size: 10%;
+	text-align: left;
+	list-style-type: circle;
+	list-style-position: outside;
+}
+
+.message-two {
+	font-size: 10%;
+	width: 60%;
+	color: lightblue;
+}
+
+.countdown {
+	font-size: 40%;
+	width: 80%;
+	font-family: serif;
+}
+
+.quote {
+	font-weight: bold;
+	font-style: italic;
+}
+
+.author {
+	font-family: serif;
+	color: #EA9D97;
+	text-transform: uppercase;
+}
+
+
 .settingsBtn {
 	border-width: 3px;
 	color: white;
@@ -38,10 +71,4 @@ Label {
 	width: 40%;
 	padding: 10%;
 	border-radius: 30%;
-}
-
-.message {
-	width: 70%;
-	font-size: 10%;
-	text-align: left;
 }

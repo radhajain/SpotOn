@@ -6,10 +6,12 @@ var page;
 
 exports.pageNavigating = function(args) {
 	page = args.object;
+	//___TEMP____
+	StorageUtil.setBirthControlType("Pill");
+	//___TEMP___
 
 }
 
 exports.goToHomeView = function() {
-	console.log(StorageUtil.getCycleDay());
 	frameModule.topmost().navigate('views/homeView/homeView');
 }

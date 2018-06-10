@@ -14,11 +14,12 @@ exports.pageLoaded = function(args) {
 	page.bindingContext = pageData;
 
 	var cycleDay = StorageUtil.getCycleDay();
-	// var table = page.createElement("container");
 
 	initExpectations(cycleDay);
 	initRecommendations(cycleDay);
 	initCalendar(cycleDay);
+	initBirthControl();
+	initQuote();
 
 };
 
@@ -29,7 +30,6 @@ function initExpectations(cycleDay) {
 
 function initRecommendations(cycleDay) {
 	var recommendations = InfoUtil.getRecommendations(cycleDay);
-	console.log(recommendations);
 	pageData.set("recommendations", recommendations);
 }
 
@@ -38,6 +38,37 @@ function initCalendar(cycleDay) {
 	var periodLength = StorageUtil.getPeriodLength();
 
 }
+
+function initBirthControl() {
+	var type = StorageUtil.getBirthControlType();
+	var msg = "You are currently using the " + type;
+
+	// Countdown element
+	if (type == "pill") {
+		msg += "\n Scheduled to be taken in: ";
+		var countdownMins = StorageUtil.minsTillBirthControl();
+		var bcTime;
+		if (countdownMins <= 60) {
+			bcTime = countdownMins + " mins"
+		} else {
+			var numHours = Math.floor(countdownMins/60);
+			var numMins = countdownMins % 60;
+			bcTime = numHours + " hrs " + numMins + " mins"
+		}
+		pageData.set("bcTime", bcTime);
+
+	}
+
+	pageData.set("bcText", msg);
+}
+
+function initQuote() {
+	var fullquote = InfoUtil.getQuote();
+	var author = "-" + fullquote.author + "-";
+	pageData.set("quote", fullquote.quote);
+	pageData.set("author", author);
+}
+
 
 exports.goToSettingsView = function() {
 	frameModule.topmost().navigate('views/settingsView/settingsView');
