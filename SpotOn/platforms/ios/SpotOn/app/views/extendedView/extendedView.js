@@ -14,6 +14,7 @@ exports.pageLoaded = function(args) {
 	page.bindingContext = pageData;
 
 	var cycleDay = StorageUtil.getCycleDay();
+	// var table = page.createElement("container");
 
 	initExpectations(cycleDay);
 	initRecommendations(cycleDay);

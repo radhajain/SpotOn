@@ -12,7 +12,7 @@
 		</StackLayout>
 
 		<Label text="Your Rhythm" class="subtitle outBox"/>
-		<!-- <calendar:RadCalendar id="rhythm" eventSource="{{ events }}"/> -->
+		<!-- Create calendar widget -->
 
 		<Label text="Your Birth Control" class="subtitle outBox"/>
 		<Label text="{{ bcText }}" class="message-two" textWrap="true"/>
