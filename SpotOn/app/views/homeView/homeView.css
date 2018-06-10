@@ -7,17 +7,26 @@ Label {
 }
 
 .labelStack {
-	margin-top: 35%;
+	margin-top: 45%;
 }
 
 .title {
 	font-size: 35%;
 	color: white;
 	padding-bottom: 10%;
+	height: 30%;
+	width: 70%;
 }
 
-.prompt {
-	margin: 7%;
+.info {
 	color: lightblue;
-	font-size: 15%;
+	size: 10%;
+	width: 65%;
+	height: 30%;
+	margin: 10%;
+	margin-bottom: 15%;
+}
+
+.moreInfoBtn {
+	color: #EA9D97;
 }

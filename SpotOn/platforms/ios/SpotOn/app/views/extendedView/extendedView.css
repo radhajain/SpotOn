@@ -1,0 +1,39 @@
+.page {
+	background-color: #081A40;
+}
+
+Label {
+	text-align: center;
+}
+
+.infoBox {
+	width: 80%;
+	height: 40%;
+	background-color: white;
+	margin: 10%;
+	margin-bottom: 0;
+	border-radius: 10%;
+}
+
+
+.subtitle {
+	color: #EA9D97;
+	font-weight: bold;
+}
+
+.inBox {
+	margin: 10%;
+}
+
+.outBox {
+	margin: 5%;
+}
+
+.settingsBtn {
+	border-width: 3px;
+	color: white;
+	border-color: white;
+	width: 40%;
+	padding: 10%;
+	border-radius: 30%;
+}

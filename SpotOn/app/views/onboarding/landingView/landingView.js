@@ -8,6 +8,7 @@ var gestures = require("ui/gestures");
 var dialogs = require("ui/dialogs");
 
 var page;
+var pageData;
 
 exports.pageNavigating = function(args) {
 	//-----TEMP-----
