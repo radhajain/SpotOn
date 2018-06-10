@@ -9,7 +9,8 @@ exports.pageLoaded = function(args) {
   
 	page = args.object;
 	page.bindingContext = pageData;
+	var intro = StorageUtil.getGreeting();
 	var name = StorageUtil.getName();
-	var greeting = "Good Morning, " + name + ".";
+	var greeting = intro + name + ".";
 	pageData.set("greeting", greeting);
 };

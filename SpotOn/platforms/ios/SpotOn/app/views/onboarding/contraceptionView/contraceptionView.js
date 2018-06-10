@@ -10,5 +10,6 @@ exports.pageNavigating = function(args) {
 }
 
 exports.goToHomeView = function() {
+	console.log(StorageUtil.getCycleDay());
 	frameModule.topmost().navigate('views/homeView/homeView');
 }

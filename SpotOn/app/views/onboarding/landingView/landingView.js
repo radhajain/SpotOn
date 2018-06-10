@@ -11,9 +11,9 @@ var page;
 
 exports.pageNavigating = function(args) {
 	//-----TEMP-----
-	StorageUtil.setName("");
-	StorageUtil.setPeriodLength("");
-	StorageUtil.setFirstCycleDay("");
+	// StorageUtil.setName("");
+	// StorageUtil.setPeriodLength("");
+	// StorageUtil.setFirstCycleDay("");
 	//-----TEMP-----
 
 	page = args.object;
@@ -69,11 +69,13 @@ function setPeriodLength() {
 // ---- NAVIGATION -----
 
 exports.goToContraceptionView = function() {
+	// Add user inputs to StorageUtil if its not in there already
 	setPeriodLength();
 	if (!StorageUtil.getName()) {
 		exports.addName();
 	}
 	
+	//Ensure that the user has filled out all fields
 	if (!StorageUtil.getName() || !StorageUtil.getFirstCycleDay() || !StorageUtil.getPeriodLength()) {
 		dialogs.alert({
 			title: "Not so fast!",
@@ -83,6 +85,7 @@ exports.goToContraceptionView = function() {
 			console.log("Dialog closed");
 		});
 	} else {
+		StorageUtil.setOnboardingComplete();
 		frameModule.topmost().navigate('views/onboarding/contraceptionView/contraceptionView');
 	}
 	

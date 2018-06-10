@@ -5,17 +5,38 @@ var DAY_IN_MS = 86400000;
 
 
 
+
+/* export: getCycleDay
+ * ----------------
+ * Returns a greeting for the user based on the current time
+ */
+
+exports.getGreeting = function() {
+	var today = new Date();
+	var curHr = today.getHours();
+	if (curHr < 12) {
+	  return ('Good morning, ')
+	} else if (curHr < 18) {
+	  return('Good afternoon, ')
+	} else {
+	  return('Good evening, ')
+	}
+}
+
+
+
+
+
 /* export: getCycleDay
  * ----------------
  * Gets the user's day in their cycle
  */
 exports.getCycleDay = function() {
-	var today = Date.now();
-	var firstDay = JSON.parse(appSettings.getString('firstDay'));
+	var today = new Date();
+	var firstDay = new Date(JSON.parse(appSettings.getString('firstDay')));
 	var sinceFirstDay = Math.round(Math.abs((today.getTime() - firstDay.getTime())/DAY_IN_MS));
-	return sinceFirstDay % 28;
+	return (sinceFirstDay % 28);
 }
-
 
 
 /* export: getCycleDay
@@ -31,7 +52,7 @@ exports.setFirstCycleDay = function(date) {
  * Returns the user's first day in their cycle
  */
 exports.getFirstCycleDay = function(date) {
-	return JSON.parse(appSettings.getString('firstDay'));
+	return new Date(JSON.parse(appSettings.getString('firstDay')));
 };
 
 /* export: setPeriodLength
@@ -49,6 +70,19 @@ exports.setPeriodLength = function(numDays) {
 exports.getPeriodLength = function(numDays) {
 	return JSON.parse(appSettings.getString('periodLength'));
 };
+
+
+/* export: isOnPeriod
+ * ----------------
+ * Returns whether or not the user is on their period
+ */
+exports.isOnPeriod = function() {
+	if (exports.getCycleDay() > exports.getPeriodLength()) {
+		return false;
+	} else {
+		return true;
+	}
+}
 
 
 
@@ -83,7 +117,9 @@ exports.isOnboardingComplete = function() {
  * onboarding anymore.
  */
 exports.setOnboardingComplete = function() {
-  appSettings.setBoolean('onboardingComplete', true);
+	if (exports.getName() && exports.getPeriodLength() && exports.getFirstCycleDay()) {
+		appSettings.setBoolean('onboardingComplete', true);
+	}
 };
 
 
