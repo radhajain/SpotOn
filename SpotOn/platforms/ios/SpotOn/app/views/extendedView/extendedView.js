@@ -8,6 +8,7 @@ var platform = require("platform");
 var Label = require("ui/label").Label;
 var layout = require("ui/layouts/grid-layout");
 var [GridLayout, GridUnitType, ItemSpec] = [layout.GridLayout, layout.GridUnitType, layout.ItemSpec];
+var gestures = require("ui/gestures");
 
 var pageData;
 var page;
@@ -17,6 +18,7 @@ var DAYS = ["M", "Tu", "W", "Th", "F", "S", "S"];
 var MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 var currDate;
 var cycleDay;
+var ovulationOffset = 12;
 
 exports.pageLoaded = function(args) {
 	page = args.object;
@@ -24,6 +26,20 @@ exports.pageLoaded = function(args) {
 	pageHeight = platform.screen.mainScreen.heightDIPs;
 	cycleDay = StorageUtil.getCycleDay();
 	calendar = page.getViewById("calendar");
+	var observer = page.observe(gestures.GestureTypes.swipe, function (args) {
+        //If swipe up on the screen, go to home page
+        if (args.direction == 8) {
+        	frameModule.topmost().navigate({
+        		moduleName: 'views/homeView/homeView',
+        		animated: true,
+        		transition: {
+        			name: "slideBottom",
+        			duration: 450,
+        			curve: "easeIn"
+        		}
+        	});
+        }
+    });
 	initExpectations();
 	initRecommendations();
 	initCalendar();
@@ -104,6 +120,8 @@ function initDates(monthIndex, year) {
 	var periodStartDate = new Date();
 	periodStartDate.setDate(periodStartDate.getDate() - (cycleDay - 1));
 	var periodEndDate = addDays(periodStartDate, periodLength);
+	var ovulationDate = addDays(periodStartDate, ovulationOffset);
+
 	// ---*****Need to log period dates for every month (28-day cycle)***-----
 
 	var monthDay = new Date(year, monthIndex, 1); //The first of the month
@@ -133,15 +151,13 @@ function initDates(monthIndex, year) {
 	 		} else {
 	 			dayCell.class = "cell active";
 	 			if (dateBetween(periodStartDate, periodEndDate, monthDay)) {
-	 				dayCell.class = "cell active period"; //period
+	 				dayCell.class += " period"; //period
+	 			} else if (dateEquals(monthDay, ovulationDate)) {
+	 				dayCell.class += " ovulation";
 	 			}
 	 			if (dateEquals(monthDay, today)) {
-	 				if (dateBetween(periodStartDate, periodEndDate, monthDay)) {
-	 					dayCell.class = "cell active circle period"; //today and period
-	 				} else {
-	 					dayCell.class = "cell active circle"; //today
-	 				}
-	 			}
+	 				dayCell.class += " circle";
+	 			}	 			
 	 		}
 	 		monthDay.setDate(monthDay.getDate() + 1);
 	 	}
@@ -222,10 +238,6 @@ function clearCalendar() {
 
 
 
-
-
-
-
 function initBirthControl() {
 	// var type = StorageUtil.getBirthControlType();
 	var type = "Pill";
@@ -258,6 +270,6 @@ function initQuote() {
 }
 
 
-exports.goToSettingsView = function() {
+exports.goToSettings = function() {
 	frameModule.topmost().navigate('views/settingsView/settingsView');
 }

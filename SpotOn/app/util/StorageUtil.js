@@ -58,7 +58,7 @@ exports.isOnPeriod = function() {
  */
 exports.minsTillBirthControl = function() {
 	// ------TEMP-----
-	return 194;
+	return 32;
 	// ------TEMP-----
 }
 

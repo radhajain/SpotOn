@@ -35,6 +35,7 @@ Label {
 	width: 70%;
 	font-size: 10%;
 	text-align: left;
+	line-height: 2;
 }
 
 /***********************/
@@ -97,12 +98,16 @@ Label {
 	background-color: #EA9D97;
 }
 
+
 .label {
 	color: gray;
 	font-size: 10%; 
 	margin-left: 20%;
 }
 
+.ovulation {
+	background-color: lightblue;
+}
 
 
 
@@ -127,7 +132,7 @@ Label {
 	width: 80%;
 	font-family: serif;
 	color: white;
-	padding: 15%;
+	padding: 25%;
 }
 
 .settingsBtn {

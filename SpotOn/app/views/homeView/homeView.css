@@ -18,6 +18,47 @@ Label {
 	font-family: serif;
 }
 
+.warningBox {
+	margin: 10%;
+	width: 70%;
+	background-color: white;
+	border-radius: 10%;
+	text-align: center;
+	height: 30%;
+}
+
+.pillReminderText {
+	color: #EA9D97;
+	padding: 15%;
+	font-size: 14%;
+	font-weight: bold;
+	text-align: center;
+	height: 70%;
+	line-height: 2;
+}
+
+.buttons {
+	height: 30%;
+
+}
+
+.responseBtn {
+	width: 49.76%;
+	text-align: center;
+	font-weight: bold;
+	font-size: 13%;
+	background-color: #EA9D97;
+	color: white;
+}
+
+.left {
+	margin-right: 0.25%;
+}
+
+.right {
+	margin-left: 0.25%;
+}
+
 .info {
 	color: lightblue;
 	size: 10%;

@@ -14,17 +14,49 @@ exports.pageLoaded = function(args) {
   
 	page = args.object;
 	page.bindingContext = pageData;
+	pageData.set("showWarning", true);
 	initGreeting();
 	var cycleDay = StorageUtil.getCycleDay();
 	initMessage(cycleDay);
+	exports.showWarning();
 	var observer = page.observe(gestures.GestureTypes.swipe, function (args) {
-        //If swipe up on the screen, go to extended page
+        //If swipe down on the screen, go to extended page
         if (args.direction == 4) {
-        	frameModule.topmost().navigate('views/extendedView/extendedView');
+        	frameModule.topmost().navigate({
+        		moduleName: 'views/extendedView/extendedView',
+        		animated: true,
+        		transition: {
+        			name: "slideTop",
+        			duration: 450,
+        			curve: "easeIn"
+        		}
+        	});
         }
     });
 
 };
+
+exports.showWarning = function() {
+	var minsTillPill = StorageUtil.minsTillBirthControl();
+	if (minsTillPill < 60) {
+		pageData.set("showWarning", true);
+		var time = "3PM"; //TEMP
+		var msg = "Your pill is scheduled for " + time + ". \n Did you take your pill?";
+
+		pageData.set("pillReminder", msg);
+	}
+}
+
+exports.dismiss = function() {
+	//record pill taken
+	pageData.set("showWarning", false);
+}
+
+exports.continueAlert = function() {
+	pageData.set("pillReminder", "You should take your pill as soon as possible");
+
+}
+
 
 // E.g. Good Morning, Genivieve, where intro = "Good Morning, "
 function initGreeting() {
@@ -42,5 +74,13 @@ function initMessage(cycleDay) {
 
 //If tap on the arrow, go to extended page
 exports.goToExtendedView = function() {
-	frameModule.topmost().navigate('views/extendedView/extendedView');
+	frameModule.topmost().navigate({
+		moduleName: 'views/extendedView/extendedView',
+		animated: true,
+		transition: {
+			name: "slideTop",
+			duration: 450,
+			curve: "easeIn"
+		}
+	});
 }
