@@ -14,7 +14,7 @@ exports.pageLoaded = function(args) {
   
 	page = args.object;
 	page.bindingContext = pageData;
-	pageData.set("showWarning", true);
+	pageData.set("showWarning", false);
 	pageData.set("secondWarning", false);
 	initGreeting();
 	var cycleDay = StorageUtil.getCycleDay();

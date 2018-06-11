@@ -1,5 +1,5 @@
 {
-	"time": "Sun Jun 10 2018 23:59:52 GMT-0700 (Pacific Daylight Time)",
+	"time": "Mon Jun 11 2018 15:25:05 GMT-0700 (Pacific Daylight Time)",
 	"nativePlatformStatus": "3",
 	"bundle": false,
 	"release": false,
@@ -7,8 +7,6 @@
 	"projectFileHash": "dd24aefe498edaa833445a7312b4bd1c11ed30c31e571fb7c044633f99f6f304",
 	"changesRequireBuildTime": "Sun Jun 10 2018 14:09:34 GMT-0700 (Pacific Daylight Time)",
 	"appFilesHashes": {
-		"/Users/radhajain/SpotOn/SpotOn/app/views/settingsView/settingsView.css": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
-		"/Users/radhajain/SpotOn/SpotOn/app/views/settingsView/settingsView.js": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
 		"/Users/radhajain/SpotOn/SpotOn/app/app.css": "ea85eb60cdfe057b9d33fa1831a1a19e1313a79c",
 		"/Users/radhajain/SpotOn/SpotOn/app/app.js": "941559f55dce11ce5e55ca1011fd101ab6dcd820",
 		"/Users/radhajain/SpotOn/SpotOn/app/bundle-config.js": "0598c4562f7845b269d5dba7398f267fa8a0a538",
@@ -17,13 +15,13 @@
 		"/Users/radhajain/SpotOn/SpotOn/app/main-view-model.js": "f977a52b4fb31fe984415623f7597e914c24750d",
 		"/Users/radhajain/SpotOn/SpotOn/app/package.json": "27bce9e9cc013b9326df25cd5ecebc24b92dfcf3",
 		"/Users/radhajain/SpotOn/SpotOn/app/references.d.ts": "c83a3304d98c2586359871f5d8ac10c8aa8af848",
+		"/Users/radhajain/SpotOn/SpotOn/app/util/StorageUtil.js": "3fd54e99c4e482b3092334a2f199c33af3fcf3da",
 		"/Users/radhajain/SpotOn/SpotOn/app/util/InfoUtil.js": "534dbcc4c07914a65b90d12c26d166638a5bbe03",
-		"/Users/radhajain/SpotOn/SpotOn/app/util/StorageUtil.js": "ee02067f5e15eeda47c97656da14672d43e4bf3e",
-		"/Users/radhajain/SpotOn/SpotOn/app/views/extendedView/extendedView.css": "7e3fa93a50df5f9cee5c4b60c65b3c48c5a16096",
-		"/Users/radhajain/SpotOn/SpotOn/app/views/extendedView/extendedView.js": "3eb76297ec333e5be7eee626d148f4b5c4113179",
-		"/Users/radhajain/SpotOn/SpotOn/app/views/extendedView/extendedView.xml": "323c24333d6ade697c0ca1081c59a40130063297",
+		"/Users/radhajain/SpotOn/SpotOn/app/views/extendedView/extendedView.css": "2fffa15f7cf64022cfdbcec2ce9172e23830eadf",
+		"/Users/radhajain/SpotOn/SpotOn/app/views/extendedView/extendedView.js": "d2b2bb87f14ab4b19b6a209d8124ec149a447f0d",
+		"/Users/radhajain/SpotOn/SpotOn/app/views/extendedView/extendedView.xml": "6845881e4af2a939a46221bcb8c75682e928f8c6",
 		"/Users/radhajain/SpotOn/SpotOn/app/views/homeView/homeView.css": "e88d97cd93d0e328fe2d7f39752bf9d906f8d22c",
-		"/Users/radhajain/SpotOn/SpotOn/app/views/homeView/homeView.js": "9ff4a548e6cb4be879b3ff54d69655ea588687e4",
+		"/Users/radhajain/SpotOn/SpotOn/app/views/homeView/homeView.js": "ad3f9e79a18235a700c524cd29ad3c36caa07169",
 		"/Users/radhajain/SpotOn/SpotOn/app/views/homeView/homeView.xml": "1207d768eb88d5d0115c1655a90900d515866c16",
 		"/Users/radhajain/SpotOn/SpotOn/app/views/onboarding/contraceptionView/contraceptionView.css": "9adb0ab58a1fe0a9e47db290df53ae1c44a276a6",
 		"/Users/radhajain/SpotOn/SpotOn/app/views/onboarding/contraceptionView/contraceptionView.js": "1d618acfbba029141086b39e0586d959fe573601",
@@ -31,6 +29,8 @@
 		"/Users/radhajain/SpotOn/SpotOn/app/views/onboarding/landingView/landingView.css": "495e899c9064267bb983ae9aabfddff988e25214",
 		"/Users/radhajain/SpotOn/SpotOn/app/views/onboarding/landingView/landingView.js": "7823fbdfbfa036967a62622aab05aeb9d84ba322",
 		"/Users/radhajain/SpotOn/SpotOn/app/views/onboarding/landingView/landingView.xml": "7b321b35e45d53f5325d82d26e10d6423757f4a3",
-		"/Users/radhajain/SpotOn/SpotOn/app/views/settingsView/settingsView.xml": "86c9b7f4a93aaceb2af58642c201f4efc953b401"
+		"/Users/radhajain/SpotOn/SpotOn/app/views/settingsView/settingsView.css": "e61f7d64fb228021d78116f0203df426a2c86c4d",
+		"/Users/radhajain/SpotOn/SpotOn/app/views/settingsView/settingsView.js": "219964c481975166c883f16ef70f4e0ade5b9362",
+		"/Users/radhajain/SpotOn/SpotOn/app/views/settingsView/settingsView.xml": "4253ec3051397808c874cd3bbba2a65155393ba3"
 	}
 }

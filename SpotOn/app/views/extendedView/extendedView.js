@@ -105,7 +105,7 @@ function renderCalendar(date) {
 //Month label
 function initMonthTitle(monthIndex, year) {
 	var monthTitle = new Label();
-	monthTitle.text = MONTHS[monthIndex] + ", '" + year.toString().substr(-2);
+	monthTitle.text = MONTHS[monthIndex] + " " + year.toString().substr(-2);
 	monthTitle.class = "monthTitle";
 	calendar.addChild(monthTitle);
 	GridLayout.setRow(monthTitle, 0);

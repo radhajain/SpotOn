@@ -58,7 +58,7 @@ exports.isOnPeriod = function() {
  */
 exports.minsTillBirthControl = function() {
 	// ------TEMP-----
-	return 32;
+	return 192;
 	// ------TEMP-----
 }
 
@@ -115,7 +115,16 @@ exports.setBirthControlTime = function(time) {
  * Gets the user's chosen birth control time
  */
 exports.getBirthControlTime = function() {
-	return new Date(JSON.parse(appSettings.getString('bctime')));
+	var BCtime = appSettings.getString('bctime');
+	if (BCtime) {
+		return new Date(JSON.parse(BCtime)); 
+	} else {
+		var defaultTime = new Date();
+		defaultTime.setHours(9);
+		defaultTime.setMinutes(30);
+		exports.setBirthControlTime(defaultTime);
+		return defaultTime;
+	}
 };
 
 /* export: setBirthControlType

@@ -51,6 +51,7 @@ Label {
 	font-family: serif;
 	font-size: 20%;
 	padding: 15%;
+	text-transform: uppercase;
 }
 
 .dayHeaders {
@@ -107,6 +108,10 @@ Label {
 
 .ovulation {
 	background-color: lightblue;
+}
+
+#key {
+	margin-top: 2%;
 }
 
 

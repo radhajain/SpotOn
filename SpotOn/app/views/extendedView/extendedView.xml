@@ -15,12 +15,12 @@
 
 		<Label text="Your Rhythm" class="subtitle outBox"/>
 		<!-- Create calendar widget -->
-			<GridLayout columns="*,*,*,*,*,*,*" rows="*,*,*,*,*,*,*,*" id="calendar">
+			<GridLayout columns="*,*,*,*,*,*,*" rows="2*,*,*,*,*,*,*,*" id="calendar">
 				<Button text="<" row="0" col="0" tap="renderPrevMonth" class="arrows"/>
 			<!-- 	<Label text="{{ month }}" row="0" col="1" colSpan="5"/> -->
 				<Button text=">" row="0" col="6" tap="renderNextMonth" class="arrows"/>
 			</GridLayout>
-		<StackLayout orientation="horizontal">
+		<StackLayout orientation="horizontal" id="key">
 			<Label text="On your period." class="label"/>
 			<Label text="Ovulating." class="label"/>
 		</StackLayout>

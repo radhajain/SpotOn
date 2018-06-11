@@ -14,7 +14,7 @@ exports.pageLoaded = function(args) {
   
 	page = args.object;
 	page.bindingContext = pageData;
-	pageData.set("showWarning", true);
+	pageData.set("showWarning", false);
 	pageData.set("secondWarning", false);
 	initGreeting();
 	var cycleDay = StorageUtil.getCycleDay();
@@ -49,7 +49,7 @@ exports.showWarning = function() {
 
 exports.dismiss = function() {
 	//record pill taken
-	// dismissedWarning = true;
+	// dismissedWarning = true; -> new one every 24 hours, stored in storageUtil
 	pageData.set("showWarning", false);
 }
 
