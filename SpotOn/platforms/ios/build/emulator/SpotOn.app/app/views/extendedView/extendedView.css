@@ -8,33 +8,76 @@ Label {
 
 .infoBox {
 	width: 80%;
-	height: 40%;
 	background-color: white;
-	margin: 10%;
-	margin-bottom: 0;
 	border-radius: 10%;
+}
+
+#calendar {
+	width: 80%;
+	background-color: lightblue;
 }
 
 
 .subtitle {
-	color: #EA9D97;
+	color: #EA9D97; /*pink*/
 	font-weight: bold;
 	font-family: serif;
 }
 
 .inBox {
 	margin: 10%;
+	margin-bottom: 5%;
 }
 
 .outBox {
 	margin: 5%;
+	margin-bottom: 2%;
 }
+
+
+.message {
+	width: 70%;
+	font-size: 10%;
+	text-align: left;
+
+}
+
+.message-two {
+	font-size: 12%;
+	width: 60%;
+	color: lightblue;
+	line-height: 2;
+}
+
+.countdown {
+	font-size: 40%;
+	width: 80%;
+	font-family: serif;
+	color: white;
+	padding: 15%;
+}
+
+.quote {
+	font-weight: bold;
+	font-style: italic;
+	padding: 8%;
+	width: 80%;
+}
+
+.author {
+	font-family: serif;
+	color: #EA9D97;
+	text-transform: uppercase;
+}
+
 
 .settingsBtn {
 	border-width: 3px;
 	color: white;
 	border-color: white;
-	width: 40%;
+	font-size: 11%;
+	width: 30%;
 	padding: 10%;
 	border-radius: 30%;
+	margin-bottom: 3%;
 }

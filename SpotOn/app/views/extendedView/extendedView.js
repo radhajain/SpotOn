@@ -4,19 +4,28 @@ var pageData = new observable.Observable();
 var StorageUtil = require("~/util/StorageUtil");
 var InfoUtil = require("~/util/InfoUtil");
 var frameModule = require("ui/frame");
-var platform = require("platform")
+var platform = require("platform");
+var Label = require("ui/label").Label;
+var layout = require("ui/layouts/grid-layout");
+var [GridLayout, GridUnitType, ItemSpec] = [layout.GridLayout, layout.GridUnitType, layout.ItemSpec];
 
 var pageData;
 var page;
-var pageHeight = platform.screen.mainScreen.heightDIPs;
+var pageHeight;
+var calendar;
+var DAYS = ["M", "Tu", "W", "Th", "F", "S", "S"];
+var MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+var currDate;
+var cycleDay;
 
 exports.pageLoaded = function(args) {
   
 	page = args.object;
 	page.bindingContext = pageData;
+	pageHeight = platform.screen.mainScreen.heightDIPs;
 
-	var cycleDay = StorageUtil.getCycleDay();
-
+	cycleDay = StorageUtil.getCycleDay();
+	calendar = page.getViewById("calendar");
 
 	initExpectations(cycleDay);
 	initRecommendations(cycleDay);
@@ -36,24 +45,185 @@ function initFormatting() {
 
 	var stackPage = page.getViewById("stackPage");
 	stackPage.height = 1.5 * pageHeight;
+
+	
+	
 }
 
 
-function initExpectations(cycleDay) {
+function initExpectations() {
 	var expectations = InfoUtil.getExpectations(cycleDay);
 	pageData.set("expectations", expectations);
 }
 
-function initRecommendations(cycleDay) {
+function initRecommendations() {
 	var recommendations = InfoUtil.getRecommendations(cycleDay);
 	pageData.set("recommendations", recommendations);
 }
 
 
-function initCalendar(cycleDay) {
-	var periodLength = StorageUtil.getPeriodLength();
+function initCalendar() {
+
+	calendar = page.getViewById("calendar");
+	calendar.height = 0.4 * pageHeight;
+	var today = new Date();
+	initDayLabels();
+	renderCalendar(today);
+}
+
+
+function renderCalendar(date) {
+	currDate = date;
+	var monthIndex = date.getMonth();
+	var year = date.getFullYear();
+
+	initMonthTitle(monthIndex, year);
+	initDates(monthIndex, year);
+	
+}
+
+function initMonthTitle(monthIndex, year) {
+	var monthTitle = new Label();
+	monthTitle.text = MONTHS[monthIndex] + ", " + year.toString().substr(-2);
+	monthTitle.class = "monthTitle";
+	calendar.addChild(monthTitle);
+	GridLayout.setRow(monthTitle, 0);
+	GridLayout.setColumn(monthTitle, 1);
+	GridLayout.setColumnSpan(monthTitle, 5);
+}
+
+function initDayLabels() {
+	//Column headers (e.g. Monday, Tuesday....)
+	for (var i = 0; i < 7; i++) {
+		var dayCell = new Label();
+		dayCell.text = DAYS[i];
+		dayCell.class="dayHeaders";
+		calendar.addChild(dayCell);
+		GridLayout.setRow(dayCell, 1);
+		GridLayout.setColumn(dayCell, i);
+	}
+}
+
+
+function addDays(date, days) {
+  var result = new Date(date);
+  result.setDate(result.getDate() + days);
+  return result;
+}
+
+function initDates(monthIndex, year) {
+	var periodLength = parseInt(StorageUtil.getPeriodLength(), 10);
+	var periodStartDate = new Date();
+	periodStartDate.setDate(periodStartDate.getDate() - (cycleDay - 1));
+	var periodEndDate = addDays(periodStartDate, periodLength);
+	// Need to log period dates for every month (28-day cycle)
+
+	//Add dates
+	var monthDay = new Date(year, monthIndex, 1); //The first of the month
+	var dateOfFirst = monthDay.getDay(); //e.g. 3 = Wednesday 
+	var offset = 1-(dateOfFirst-1); //Number of days to show prior to the 1st
+	var numWeeks;
+
+	if (dateOfFirst === 0) { //if the first falls on a sunday, then include the previous week
+		numWeeks = Math.ceil((dateOfFirst + 7 - 1 + daysInMonth(monthIndex + 1, year)) / 7) ;
+		monthDay.setDate(offset - 7);
+	} else { 
+		numWeeks = Math.ceil((dateOfFirst - 1 + daysInMonth(monthIndex + 1, year)) / 7);
+		monthDay.setDate(offset);	
+	}
+
+	var today = new Date();
+
+	for (var week = 2; week < 2 + numWeeks; week++) {
+	 	var row = week;
+	 	for (var i = 0; i < 7; i++) {
+			var dayCell = new Label();
+			dayCell.text = monthDay.getDate();
+			calendar.addChild(dayCell);
+			GridLayout.setRow(dayCell, row);
+			GridLayout.setColumn(dayCell, i);
+			if (monthDay.getMonth() !== monthIndex) {
+	 			dayCell.class = "cell inactive"; //if in the previous/next month, set to inactive.
+	 		} else {
+	 			dayCell.class = "cell active";
+	 			if (dateBetween(periodStartDate, periodEndDate, monthDay)) {
+	 				dayCell.class = "cell active period"; //period
+	 			}
+	 			if (dateEquals(monthDay, today)) {
+	 				if (dateBetween(periodStartDate, periodEndDate, monthDay)) {
+	 					dayCell.class = "cell active circle period"; //today and period
+	 				} else {
+	 					dayCell.class = "cell active circle"; //today
+	 				}
+	 				
+	 			}
+	 			
+	 		}
+	 		monthDay.setDate(monthDay.getDate() + 1);
+	 	}
+	 }
 
 }
+
+function dateEquals(firstDate, secondDate) {
+	if (firstDate.getFullYear() == secondDate.getFullYear() && firstDate.getMonth() == secondDate.getMonth() && firstDate.getDate() == secondDate.getDate()) {
+		return true;
+	} else {
+		return false;
+	}
+}
+ 
+function dateBetween(first, second, between) {
+	if (first <= between && between <= second) {
+		return true;
+	}
+	return false;
+}
+
+
+function daysInMonth(month, year) {
+	return new Date(year, month, 0).getDate();
+}
+
+
+exports.renderPrevMonth = function() {
+	var monthIndex = currDate.getMonth()
+	currDate.setMonth(monthIndex-1);
+	clearCalendar();
+	renderCalendar(currDate);
+}
+
+exports.renderNextMonth = function() {
+	var monthIndex = currDate.getMonth()
+	currDate.setMonth(monthIndex+1);
+	clearCalendar();
+	renderCalendar(currDate);
+}
+
+
+function clearCalendar() {
+	console.log("Cleeaing calendar");
+	var clearMonth = new Label();
+	clearMonth.text = "";
+	clearMonth.class = "erase";
+	calendar.addChild(clearMonth);
+	GridLayout.setRow(clearMonth, 0);
+	GridLayout.setColumn(clearMonth, 1);
+	GridLayout.setColumnSpan(clearMonth, 5);
+
+	for (var row = 2; row < 8; row++) {
+		for (var col = 0; col < 7; col++) {
+			var clearCell = new Label();
+			clearCell.text = "";
+			clearCell.class = "erase";
+			calendar.addChild(clearCell);
+			GridLayout.setRow(clearCell, row);
+			GridLayout.setColumn(clearCell, col);
+		}
+	}
+}
+
+
 
 function initBirthControl() {
 	// var type = StorageUtil.getBirthControlType();

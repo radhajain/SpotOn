@@ -2,18 +2,14 @@ var appSettings = require("application-settings");
 
 
 var DAY_IN_MS = 86400000;
+var MIN_IN_MS = 60000;
 
 
+/* **********************************
+/* * 		USEFUL FUNCTIONS		*
+/* **********************************
 
-
-exports.clearData = function() {
-	StorageUtil.setName("");
-	StorageUtil.setPeriodLength("");
-	StorageUtil.setFirstCycleDay("");
-}
-
-
-/* export: getCycleDay
+/* export: getGreeting
  * ----------------
  * Returns a greeting for the user based on the current time
  */
@@ -22,6 +18,7 @@ exports.getGreeting = function() {
 	var today = new Date();
 	var curHr = today.getHours();
 	if (curHr < 12) {
+		//Can randomize with others too
 	  return ('Good morning, ')
 	} else if (curHr < 18) {
 	  return('Good afternoon, ')
@@ -43,6 +40,36 @@ exports.getCycleDay = function() {
 }
 
 
+/* export: isOnPeriod
+ * ----------------
+ * Returns whether or not the user is on their period
+ */
+exports.isOnPeriod = function() {
+	if (exports.getCycleDay() > exports.getPeriodLength()) {
+		return false;
+	} else {
+		return true;
+	}
+}
+
+/* export: minsTillBirthControl
+ * ----------------
+ * Returns the number of minutes until the user has to take their birth control
+ */
+exports.minsTillBirthControl = function() {
+	// ------TEMP-----
+	return 194;
+	// ------TEMP-----
+}
+
+
+
+
+/* **********************************
+/* * GETTERS AND SETTERS USER INFO	*
+/* **********************************
+/* Contains: First cycle day, Period length, name, birth control time
+
 /* export: getCycleDay
  * ----------------
  * Sets the user's first day in their cycle
@@ -53,9 +80,9 @@ exports.setFirstCycleDay = function(date) {
 
 /* export: getCycleDay
  * ----------------
- * Returns the user's first day in their cycle
+ * Returns the user's first day (ever) in their cycle
  */
-exports.getFirstCycleDay = function(date) {
+exports.getFirstCycleDay = function() {
 	return new Date(JSON.parse(appSettings.getString('firstDay')));
 };
 
@@ -75,20 +102,37 @@ exports.getPeriodLength = function(numDays) {
 	return JSON.parse(appSettings.getString('periodLength'));
 };
 
-
-/* export: isOnPeriod
+/* export: setBirthControlTime
  * ----------------
- * Returns whether or not the user is on their period
+ * Sets the user's chosen birthcontrol time
  */
-exports.isOnPeriod = function() {
-	if (exports.getCycleDay() > exports.getPeriodLength()) {
-		return false;
-	} else {
-		return true;
-	}
-}
+exports.setBirthControlTime = function(time) {
+	appSettings.setString('bctime', JSON.stringify(time));
+};
 
+/* export: getBirthControlTime
+ * ----------------
+ * Gets the user's chosen birth control time
+ */
+exports.getBirthControlTime = function() {
+	return new Date(JSON.parse(appSettings.getString('bctime')));
+};
 
+/* export: setBirthControlType
+ * ----------------
+ * Sets the user's chosen form of contraceptive
+ */
+exports.setBirthControlType = function(type) {
+	appSettings.setString('bctype', type);
+};
+
+/* export: getBirthControlTime
+ * ----------------
+ * Gets the user's chosen form of contraceptive
+ */
+exports.getBirthControlType = function() {
+	return (appSettings.getString('bctype'));
+};
 
 /* export: setName
  * ---------------
@@ -107,6 +151,15 @@ exports.getName = function() {
 };
 
 
+
+
+
+/* **********************************
+/* * 	BEHIND THE SCENES STUFF		*
+/* **********************************
+
+
+
 /* export: isOnboardingComplete
  * ---------------
  * Checks if the user has finished in-app onboarding yet
@@ -121,9 +174,18 @@ exports.isOnboardingComplete = function() {
  * onboarding anymore.
  */
 exports.setOnboardingComplete = function() {
-	if (exports.getName() && exports.getPeriodLength() && exports.getFirstCycleDay()) {
+	if (exports.getName() && exports.getPeriodLength() && exports.getFirstCycleDay() && exports.getBirthControlType()) {
 		appSettings.setBoolean('onboardingComplete', true);
 	}
 };
 
+/* export: clearData
+ * ----------------
+ * Clears data in user base
+ */
+exports.clearData = function() {
+	StorageUtil.setName("");
+	StorageUtil.setPeriodLength("");
+	StorageUtil.setFirstCycleDay("");
+}
 

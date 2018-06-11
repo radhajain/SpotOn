@@ -1,28 +1,34 @@
 <Page loaded="pageLoaded" xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="pageNavigating" id="extended" class="page" actionBarHidden="true" >
-	<StackLayout>
+	<ScrollView orientation="vertical" id="scrollview">
 		<!-- <Image src="res://logo_login" class="title"/>  -->
-		<StackLayout class="infoBox">
+		<StackLayout id = "stackPage">
+			
+			<StackLayout class="infoBox" id="infoBox">
 
-			<Label text="Things to expect" class="subtitle inBox"/>
-			<Label text="{{ expectations }}" class="message" wordWrap="true"/>
+				<Label text="Things to expect" class="subtitle inBox"/>
+				<Label text="{{ expectations }}" class="message" textWrap="true"/>
 
-			<Label text="Time to..." class="subtitle inBox"/>
-			<Label text="{{ recommendations }}" class="message" wordWrap="true"/>
+				<Label text="Time to..." class="subtitle inBox"/>
+				<Label text="{{ recommendations }}" class="message" textWrap="true"/>
 
-		</StackLayout>
+			</StackLayout>
 
 		<Label text="Your Rhythm" class="subtitle outBox"/>
-		<!-- <calendar:RadCalendar id="rhythm" eventSource="{{ events }}"/> -->
+		<!-- Create calendar widget -->
+			<GridLayout columns="*,*,*,*,*,*" row="*,*,*,*,*,*,*" id="calendar">
+				
+			</GridLayout>
 
 		<Label text="Your Birth Control" class="subtitle outBox"/>
-		<Label text="{{ bcText }}" class="message-two" wordWrap="true"/>
-		<Label text="{{ bcTime }}" class="countdown" wordWrap="true"/>
+		<Label text="{{ bcText }}" class="message-two" textWrap="true"/>
+		<Label text="{{ bcTime }}" class="countdown" id="countdown" textWrap="true"/>
 		<Button text="Update Settings" tap="goToSettings" class="settingsBtn"/>
 
-		<Label text="{{ quote }}" class="quote" id="quote" wordWrap="true"/>
-		<Label text="{{ quoteAuthor }}" class="author" id="author" wordWrap="true"/>
+		<Label text="{{ quote }}" class="message-two quote" id="quote" textWrap="true"/>
+		<Label text="{{ author }}" class="author" id="author" textWrap="true"/>
+		</StackLayout>
 
 
-	</StackLayout>
+	</ScrollView>
 	 
 </Page>

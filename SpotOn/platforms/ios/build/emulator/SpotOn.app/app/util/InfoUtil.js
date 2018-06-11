@@ -11,7 +11,7 @@ exports.getMessage = function(day) {
 exports.getExpectations = function(day) {
 	//----TEMP-----
 	// Replace with array (object?) of messages
-	var message = "Low estrogen means you may be feeling fatigued. You may also feel some cramping";
+	var message = "Low estrogen means you may be feeling fatigued. You may also feel some cramping.";
 	return message;
 	//-----TEMP----
 }
@@ -19,8 +19,12 @@ exports.getExpectations = function(day) {
 exports.getRecommendations = function(day) {
 	//----TEMP-----
 	// Replace with array (object?) of messages
-	var recommendations = ["Excercise gently. Women have reported that doing some light yoga helps the body to relax on Day 1.",
-					"Foods with Omega-3, such as salmon, keep your mood stable and ease cramps"];
+	var recommendations = "Excercise gently. Women have reported that doing some light yoga helps the body to relax on Day 1. \n\n Foods with Omega-3, such as salmon, keep your mood stable and ease cramps.";
 	return recommendations;
 	//-----TEMP----
+}
+
+
+exports.getQuote = function() {
+	return {quote: "Girls should never be afraid to be smart", author: "Emma Watson"};
 }

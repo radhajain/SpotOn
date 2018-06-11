@@ -1,7 +1,7 @@
 <Page loaded="pageLoaded" xmlns="http://schemas.nativescript.org/tns.xsd"  navigatingTo="pageNavigating" id="settings" class="page" actionBarHidden="true">
 	<StackLayout>
 
-		<Label text="Your Cycle" class="subtitle outBox"/>
+		<Label text="Your Cycle"/>
 		
 
 

@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00A0E65DAE554F6B893E6E64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D59E6AC033064E889EC34FAA /* LaunchScreen.storyboard */; };
 		2A5A2EA4B0AC491C94500BC4 /* TNSWidgets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E673E52FA6124E96ADA41678 /* TNSWidgets.framework */; };
@@ -150,7 +149,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = TNS;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 920;
 				ORGANIZATIONNAME = Telerik;
 			};
 			buildConfigurationList = 858B832918CA111C00AB12DE /* Build configuration list for PBXProject "SpotOn" */;

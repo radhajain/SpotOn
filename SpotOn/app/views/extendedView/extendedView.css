@@ -12,6 +12,69 @@ Label {
 	border-radius: 10%;
 }
 
+#calendar {
+	width: 80%;
+}
+
+.arrows {
+	color: #EA9D97; /*pink*/
+	font-size: 15%;
+}
+
+.erase {
+	background-color: #081A40;
+}
+
+.cell {
+	
+	font-size: 10%;
+	padding-top: 25%;
+	padding-bottom: 25%;
+	border-bottom-width: 1px;
+	border-bottom-color: lightblue;
+}
+
+.inactive {
+	color: gray;
+}
+
+.active {
+	color: white;
+}
+
+.circle { 
+	border-width: 2px;
+	border-color: white;
+	/*border-radius: 50%;*/
+
+}
+
+.period {
+	background-color: #EA9D97;
+}
+
+.label {
+	color: gray;
+	font-size: 10%; 
+	margin-left: 20%;
+}
+
+.dayHeaders {
+	color: #EA9D97; /*pink*/
+	font-weight: bold;
+	font-family: serif;
+	font-size: 15%;
+	border-bottom-width: 1px;
+	border-bottom-color: lightblue;
+}
+
+.monthTitle {
+	color: white;
+	font-family: serif;
+	font-size: 20%;
+	padding: 15%;
+}
+
 
 .subtitle {
 	color: #EA9D97; /*pink*/
@@ -25,7 +88,7 @@ Label {
 }
 
 .outBox {
-	margin: 5%;
+	margin: 3%;
 	margin-bottom: 2%;
 }
 
@@ -34,7 +97,7 @@ Label {
 	width: 70%;
 	font-size: 10%;
 	text-align: left;
-	line-height: 2;
+
 }
 
 .message-two {
