@@ -1,3 +1,5 @@
+/*Screen Styles*/
+
 .page {
 	background-color: #081A40;
 }
@@ -6,14 +8,57 @@ Label {
 	text-align: center;
 }
 
+.subtitle {
+	color: #EA9D97; /*pink*/
+	font-weight: bold;
+	font-family: serif;
+}
+
+/***********************/
+/*Info Box Formatting*/
+/**********************/
+
+
 .infoBox {
 	width: 80%;
 	background-color: white;
 	border-radius: 10%;
 }
 
+.inBox {
+	margin: 10%;
+	margin-bottom: 5%;
+}
+
+
+.message {
+	width: 70%;
+	font-size: 10%;
+	text-align: left;
+}
+
+/***********************/
+/*Calendar Formatting*/
+/***********************/
+
 #calendar {
 	width: 80%;
+}
+
+.monthTitle {
+	color: white;
+	font-family: serif;
+	font-size: 20%;
+	padding: 15%;
+}
+
+.dayHeaders {
+	color: #EA9D97; /*pink*/
+	font-weight: bold;
+	font-family: serif;
+	font-size: 15%;
+	border-bottom-width: 1px;
+	border-bottom-color: lightblue;
 }
 
 .arrows {
@@ -46,7 +91,6 @@ Label {
 	border-width: 2px;
 	border-color: white;
 	/*border-radius: 50%;*/
-
 }
 
 .period {
@@ -59,45 +103,16 @@ Label {
 	margin-left: 20%;
 }
 
-.dayHeaders {
-	color: #EA9D97; /*pink*/
-	font-weight: bold;
-	font-family: serif;
-	font-size: 15%;
-	border-bottom-width: 1px;
-	border-bottom-color: lightblue;
-}
-
-.monthTitle {
-	color: white;
-	font-family: serif;
-	font-size: 20%;
-	padding: 15%;
-}
 
 
-.subtitle {
-	color: #EA9D97; /*pink*/
-	font-weight: bold;
-	font-family: serif;
-}
 
-.inBox {
-	margin: 10%;
-	margin-bottom: 5%;
-}
+/***********************/
+/*Countdown Timer*/
+/***********************/
 
 .outBox {
 	margin: 3%;
 	margin-bottom: 2%;
-}
-
-
-.message {
-	width: 70%;
-	font-size: 10%;
-	text-align: left;
-
 }
 
 .message-two {
@@ -115,6 +130,23 @@ Label {
 	padding: 15%;
 }
 
+.settingsBtn {
+	border-width: 3px;
+	color: white;
+	border-color: white;
+	font-size: 11%;
+	width: 30%;
+	padding: 10%;
+	border-radius: 30%;
+	margin-bottom: 3%;
+}
+
+
+/***********************/
+/*Quote*/
+/***********************/
+
+
 .quote {
 	font-weight: bold;
 	font-style: italic;
@@ -129,13 +161,3 @@ Label {
 }
 
 
-.settingsBtn {
-	border-width: 3px;
-	color: white;
-	border-color: white;
-	font-size: 11%;
-	width: 30%;
-	padding: 10%;
-	border-radius: 30%;
-	margin-bottom: 3%;
-}
