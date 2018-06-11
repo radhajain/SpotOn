@@ -15,6 +15,7 @@ exports.pageLoaded = function(args) {
 	page = args.object;
 	page.bindingContext = pageData;
 	pageData.set("showWarning", true);
+	pageData.set("secondWarning", false);
 	initGreeting();
 	var cycleDay = StorageUtil.getCycleDay();
 	initMessage(cycleDay);
@@ -42,18 +43,19 @@ exports.showWarning = function() {
 		pageData.set("showWarning", true);
 		var time = "3PM"; //TEMP
 		var msg = "Your pill is scheduled for " + time + ". \n Did you take your pill?";
-
 		pageData.set("pillReminder", msg);
 	}
 }
 
 exports.dismiss = function() {
 	//record pill taken
+	// dismissedWarning = true; -> new one every 24 hours, stored in storageUtil
 	pageData.set("showWarning", false);
 }
 
 exports.continueAlert = function() {
 	pageData.set("pillReminder", "You should take your pill as soon as possible");
+	pageData.set("secondWarning", true);
 
 }
 

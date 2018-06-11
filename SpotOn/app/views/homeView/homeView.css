@@ -59,6 +59,10 @@ Label {
 	margin-left: 0.25%;
 }
 
+.wide {
+	width: 100%;
+}
+
 .info {
 	color: lightblue;
 	size: 10%;

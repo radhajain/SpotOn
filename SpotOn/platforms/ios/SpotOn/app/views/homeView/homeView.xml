@@ -6,8 +6,9 @@
 		<StackLayout id="warning" class="warningBox" visibility="{{ showWarning ? 'visible' : 'collapsed'}}">
 			<Label text="{{ pillReminder }}" class="pillReminderText" textWrap="true"/>
 			<StackLayout orientation="horizontal" class="buttons">
-				<Button text="Took my Pill" tap="dismiss" class="responseBtn left"/>
-				<Button text="Not Yet" tap="continueAlert" class="responseBtn right"/>
+				<Button text="Took my Pill" visibility="{{ secondWarning ? 'collapsed' : 'visible'}}" tap="dismiss" class="responseBtn left"/>
+				<Button text="Not Yet" visibility="{{ secondWarning ? 'collapsed' : 'visible'}}" tap="continueAlert" class="responseBtn right"/>
+				<Button text="Okay, I took it" visibility="{{ secondWarning ? 'visible' : 'collapsed'}}" tap="dismiss" class="responseBtn wide"/>
 			</StackLayout>
 
 		</StackLayout>	
