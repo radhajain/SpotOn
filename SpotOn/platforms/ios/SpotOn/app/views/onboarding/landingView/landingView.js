@@ -23,6 +23,18 @@ exports.pageNavigating = function(args) {
 	// Date picker:
 	initDatePicker();
 
+	var pushPlugin = require("nativescript-push-notifications");
+var pushSettings = {
+        senderID: "276623592206", // Required: setting with the sender/project number
+        notificationCallbackAndroid: function (stringifiedData, fcmNotification) {
+            var notificationBody = fcmNotification && fcmNotification.getBody();
+            _this.updateMessage("Message received!\n" + notificationBody + "\n" + stringifiedData);
+        }
+    };
+pushPlugin.register(pushSettings, function (token) {
+    alert("Device registered. Access token: " + token);
+}, function() { });
+
 }
 
 
@@ -76,7 +88,7 @@ exports.goToContraceptionView = function() {
 	if (!StorageUtil.getName()) {
 		exports.addName();
 	}
-	
+
 	//Ensure that the user has filled out all fields
 	if (!StorageUtil.getName() || !StorageUtil.getFirstCycleDay() || !StorageUtil.getPeriodLength()) {
 		dialogs.alert({
@@ -90,7 +102,7 @@ exports.goToContraceptionView = function() {
 		StorageUtil.setOnboardingComplete();
 		frameModule.topmost().navigate('views/onboarding/contraceptionView/contraceptionView');
 	}
-	
+
 }
 
 //---- INITIALIZATION ------

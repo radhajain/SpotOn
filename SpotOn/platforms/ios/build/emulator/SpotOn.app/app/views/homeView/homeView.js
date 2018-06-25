@@ -11,20 +11,83 @@ var pageData;
 var page;
 
 exports.pageLoaded = function(args) {
-  
+
 	page = args.object;
 	page.bindingContext = pageData;
+	pageData.set("showWarning", false);
+	pageData.set("secondWarning", false);
 	initGreeting();
 	var cycleDay = StorageUtil.getCycleDay();
 	initMessage(cycleDay);
+	exports.showWarning();
 	var observer = page.observe(gestures.GestureTypes.swipe, function (args) {
-        //If swipe up on the screen, go to extended page
+        //If swipe down on the screen, go to extended page
         if (args.direction == 4) {
-        	frameModule.topmost().navigate('views/extendedView/extendedView');
+        	frameModule.topmost().navigate({
+        		moduleName: 'views/extendedView/extendedView',
+        		animated: true,
+        		transition: {
+        			name: "slideTop",
+        			duration: 450,
+        			curve: "easeIn"
+        		}
+        	});
         }
     });
 
+//var firebase = require("firebase");
+    /*var config = {
+      apiKey: "AIzaSyDZXh5vZSYWyzwObp8Yi5YbEgiDdaCsLKQ",
+    };
+    firebase.initializeApp(config);*/
+
+    //var myFirebase = firebase.database().ref();
+    //var recommendations = myFirebase.child("recommendations");
+
+    /*recommendations.push({
+      "title": "The danger of a single story"
+    });*/
+
 };
+
+exports.showWarning = function() {
+	var minsTillPill = StorageUtil.minsTillBirthControl();
+  var timeToTakePillAsString = StorageUtil.getBirthControlTime();
+  var timeToTakePill = new Date(timeToTakePillAsString);
+  var timePillTakenLastAsString = StorageUtil.getlastTimePillTaken();
+  var timePillTakenLast = new Date(timePillTakenLastAsString);
+  var todayAsString = new Date().toDateString();
+  var lastDayPillTookAsString = timePillTakenLast.toDateString();
+  var tookPillToday = todayAsString === lastDayPillTookAsString;
+  //var alreadyTookPillTodayBeforeScheduledTime =  timePillTakenLast < timeToTakePill;
+	if (minsTillPill < 60 && !tookPillToday) {
+		pageData.set("showWarning", true);
+    var hours = timeToTakePill.getHours();
+    var minutes = timeToTakePill.getMinutes();
+    var ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? '0'+minutes : minutes;
+    var strTime = hours + ':' + minutes + ' ' + ampm;
+		var msg = "Your pill is scheduled for " + strTime + ". \n Did you take your pill?";
+		pageData.set("pillReminder", msg);
+	}
+}
+
+exports.dismiss = function() {
+	//record pill taken
+  var rightNow = new Date();
+  StorageUtil.setlastTimePillTaken(rightNow.toISOString());
+	// dismissedWarning = true; -> new one every 24 hours, stored in storageUtil
+	pageData.set("showWarning", false);
+}
+
+exports.continueAlert = function() {
+	pageData.set("pillReminder", "You should take your pill as soon as possible");
+	pageData.set("secondWarning", true);
+
+}
+
 
 // E.g. Good Morning, Genivieve, where intro = "Good Morning, "
 function initGreeting() {
@@ -42,5 +105,13 @@ function initMessage(cycleDay) {
 
 //If tap on the arrow, go to extended page
 exports.goToExtendedView = function() {
-	frameModule.topmost().navigate('views/extendedView/extendedView');
+	frameModule.topmost().navigate({
+		moduleName: 'views/extendedView/extendedView',
+		animated: true,
+		transition: {
+			name: "slideTop",
+			duration: 450,
+			curve: "easeIn"
+		}
+	});
 }

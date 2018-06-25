@@ -1,3 +1,5 @@
+/*Screen Styles*/
+
 .page {
 	background-color: #081A40;
 }
@@ -6,22 +8,21 @@ Label {
 	text-align: center;
 }
 
-.infoBox {
-	width: 80%;
-	background-color: white;
-	border-radius: 10%;
-}
-
-#calendar {
-	width: 80%;
-	background-color: lightblue;
-}
-
-
 .subtitle {
 	color: #EA9D97; /*pink*/
 	font-weight: bold;
 	font-family: serif;
+}
+
+/***********************/
+/*Info Box Formatting*/
+/**********************/
+
+
+.infoBox {
+	width: 80%;
+	background-color: white;
+	border-radius: 10%;
 }
 
 .inBox {
@@ -29,17 +30,99 @@ Label {
 	margin-bottom: 5%;
 }
 
-.outBox {
-	margin: 5%;
-	margin-bottom: 2%;
-}
-
 
 .message {
 	width: 70%;
 	font-size: 10%;
 	text-align: left;
+	line-height: 2;
+}
 
+/***********************/
+/*Calendar Formatting*/
+/***********************/
+
+#calendar {
+	width: 80%;
+}
+
+.monthTitle {
+	color: white;
+	font-family: serif;
+	font-size: 20%;
+	padding: 15%;
+	text-transform: uppercase;
+}
+
+.dayHeaders {
+	color: #EA9D97; /*pink*/
+	font-weight: bold;
+	font-family: serif;
+	font-size: 15%;
+	border-bottom-width: 1px;
+	border-bottom-color: lightblue;
+}
+
+.arrows {
+	color: #EA9D97; /*pink*/
+	font-size: 15%;
+}
+
+.erase {
+	background-color: #081A40;
+}
+
+.cell {
+	
+	font-size: 10%;
+	padding-top: 25%;
+	padding-bottom: 25%;
+	border-bottom-width: 1px;
+	border-bottom-color: lightblue;
+}
+
+.inactive {
+	color: gray;
+}
+
+.active {
+	color: white;
+}
+
+.circle { 
+	border-width: 2px;
+	border-color: white;
+	/*border-radius: 50%;*/
+}
+
+.period {
+	background-color: #EA9D97;
+}
+
+
+.label {
+	color: gray;
+	font-size: 10%; 
+	margin-left: 20%;
+}
+
+.ovulation {
+	background-color: lightblue;
+}
+
+#key {
+	margin-top: 2%;
+}
+
+
+
+/***********************/
+/*Countdown Timer*/
+/***********************/
+
+.outBox {
+	margin: 3%;
+	margin-bottom: 2%;
 }
 
 .message-two {
@@ -54,8 +137,25 @@ Label {
 	width: 80%;
 	font-family: serif;
 	color: white;
-	padding: 15%;
+	padding: 25%;
 }
+
+.settingsBtn {
+	border-width: 3px;
+	color: white;
+	border-color: white;
+	font-size: 11%;
+	width: 30%;
+	padding: 10%;
+	border-radius: 30%;
+	margin-bottom: 3%;
+}
+
+
+/***********************/
+/*Quote*/
+/***********************/
+
 
 .quote {
 	font-weight: bold;
@@ -71,13 +171,3 @@ Label {
 }
 
 
-.settingsBtn {
-	border-width: 3px;
-	color: white;
-	border-color: white;
-	font-size: 11%;
-	width: 30%;
-	padding: 10%;
-	border-radius: 30%;
-	margin-bottom: 3%;
-}

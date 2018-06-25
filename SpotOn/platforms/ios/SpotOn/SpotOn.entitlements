@@ -2,7 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>aps-environment</key>
-	<string>development</string>
+  <!--
+  <key>keychain-access-groups</key>
+  <array>
+    <string>org.nativescript.SpotOn</string>
+  </array>
+  -->
+  <key>com.apple.keystore.access-keychain-keys</key>
+    <true/>
+    <key>com.apple.keystore.device</key>
+    <true/>
 </dict>
 </plist>

@@ -1,32 +1,28 @@
 {
-  "_args": [
-    [
-      "nativescript-theme-core@1.0.4",
-      "/Users/radhajain/SpotOn/SpotOn"
-    ]
-  ],
-  "_from": "nativescript-theme-core@1.0.4",
+  "_from": "nativescript-theme-core@~1.0.2",
   "_id": "nativescript-theme-core@1.0.4",
   "_inBundle": false,
   "_integrity": "sha1-zyiAx/vy/l9D4iNdMJdQeQgD7+E=",
   "_location": "/nativescript-theme-core",
   "_phantomChildren": {},
   "_requested": {
-    "type": "version",
+    "type": "range",
     "registry": true,
-    "raw": "nativescript-theme-core@1.0.4",
+    "raw": "nativescript-theme-core@~1.0.2",
     "name": "nativescript-theme-core",
     "escapedName": "nativescript-theme-core",
-    "rawSpec": "1.0.4",
+    "rawSpec": "~1.0.2",
     "saveSpec": null,
-    "fetchSpec": "1.0.4"
+    "fetchSpec": "~1.0.2"
   },
   "_requiredBy": [
+    "#USER",
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/nativescript-theme-core/-/nativescript-theme-core-1.0.4.tgz",
-  "_spec": "1.0.4",
-  "_where": "/Users/radhajain/SpotOn/SpotOn",
+  "_shasum": "cf2880c7fbf2fe5f43e2235d309750790803efe1",
+  "_spec": "nativescript-theme-core@~1.0.2",
+  "_where": "/Users/genevievepayzer/Documents/SpotOn/SpotOn",
   "author": {
     "name": "Telerik",
     "email": "support@telerik.com"
@@ -34,6 +30,8 @@
   "bugs": {
     "url": "https://github.com/NativeScript/theme/issues"
   },
+  "bundleDependencies": false,
+  "deprecated": false,
   "description": "Telerik NativeScript Core Theme",
   "homepage": "https://www.nativescript.org",
   "license": "Apache-2.0",

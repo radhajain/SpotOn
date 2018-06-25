@@ -2,6 +2,15 @@
 	<StackLayout>
 
 		<Label text="Your Cycle"/>
+
+		<StackLayout orientation="horizontal">
+			<Label text="What time do you take your pill?"/>
+			<Button text="{{ pillTime }}" style="color:white" id="periodStart" class="textField" tap="selectPillTime"/>
+		</StackLayout>
+
+		<TimePicker visibility="{{ showTimePicker ? 'visible' : 'collapse'}}" date="{{ date }}" loaded="onPickerLoaded" verticalAlignment="center" class="m-15" id="timePicker" style="color:white"></TimePicker>
+
+		<Button visibility="{{ showTimePicker ? 'visible' : 'collapse'}}" text="Save" tap="setTime" class="doneBtn"/>
 		
 
 

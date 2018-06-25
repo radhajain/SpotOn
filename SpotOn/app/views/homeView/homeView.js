@@ -6,12 +6,14 @@ var InfoUtil = require("~/util/InfoUtil");
 var frameModule = require("ui/frame");
 var gestures = require("ui/gestures");
 
+var firebase = require("nativescript-plugin-firebase");
+
 
 var pageData;
 var page;
 
 exports.pageLoaded = function(args) {
-  
+
 	page = args.object;
 	page.bindingContext = pageData;
 	pageData.set("showWarning", false);
@@ -35,20 +37,56 @@ exports.pageLoaded = function(args) {
         }
     });
 
+    //push data to database
+    /*firebase.push(
+      '/users',
+      {
+        'first': 'Eddy',
+        'last': 'Verbruggen',
+        'birthYear': 1977,
+        'isMale': true,
+        'address': {
+          'street': 'foostreet',
+          'number': 123
+        }
+      }
+    ).then(
+      function (result) {
+        console.log("created key: " + result.key);
+      }
+    );*/
+
+
 };
 
 exports.showWarning = function() {
 	var minsTillPill = StorageUtil.minsTillBirthControl();
-	if (minsTillPill < 60) {
+  var timeToTakePillAsString = StorageUtil.getBirthControlTime();
+  var timeToTakePill = new Date(timeToTakePillAsString);
+  var timePillTakenLastAsString = StorageUtil.getlastTimePillTaken();
+  var timePillTakenLast = new Date(timePillTakenLastAsString);
+  var todayAsString = new Date().toDateString();
+  var lastDayPillTookAsString = timePillTakenLast.toDateString();
+  var tookPillToday = todayAsString === lastDayPillTookAsString;
+  //var alreadyTookPillTodayBeforeScheduledTime =  timePillTakenLast < timeToTakePill;
+	if (minsTillPill < 60 && !tookPillToday) {
 		pageData.set("showWarning", true);
-		var time = "3PM"; //TEMP
-		var msg = "Your pill is scheduled for " + time + ". \n Did you take your pill?";
+    var hours = timeToTakePill.getHours();
+    var minutes = timeToTakePill.getMinutes();
+    var ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? '0'+minutes : minutes;
+    var strTime = hours + ':' + minutes + ' ' + ampm;
+		var msg = "Your pill is scheduled for " + strTime + ". \n Did you take your pill?";
 		pageData.set("pillReminder", msg);
 	}
 }
 
 exports.dismiss = function() {
 	//record pill taken
+  var rightNow = new Date();
+  StorageUtil.setlastTimePillTaken(rightNow.toISOString());
 	// dismissedWarning = true; -> new one every 24 hours, stored in storageUtil
 	pageData.set("showWarning", false);
 }

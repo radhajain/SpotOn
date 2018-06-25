@@ -1,19 +1,19 @@
 {
-  "_from": "tns-core-modules",
+  "_from": "tns-core-modules@^4.1.0",
   "_id": "tns-core-modules@4.1.0",
   "_inBundle": false,
   "_integrity": "sha512-ZTpH7/zHfARrJ+1bPwbBYyqFVQO+2unnygfLW8Bu3clzpTkdwwW++1DS+Qbzw7r84+dzdVPZ7zwEVkjpfAFogw==",
   "_location": "/tns-core-modules",
   "_phantomChildren": {},
   "_requested": {
-    "type": "tag",
+    "type": "range",
     "registry": true,
-    "raw": "tns-core-modules",
+    "raw": "tns-core-modules@^4.1.0",
     "name": "tns-core-modules",
     "escapedName": "tns-core-modules",
-    "rawSpec": "",
+    "rawSpec": "^4.1.0",
     "saveSpec": null,
-    "fetchSpec": "latest"
+    "fetchSpec": "^4.1.0"
   },
   "_requiredBy": [
     "#USER",
@@ -21,8 +21,8 @@
   ],
   "_resolved": "https://registry.npmjs.org/tns-core-modules/-/tns-core-modules-4.1.0.tgz",
   "_shasum": "f838f0e040b9cdef8d361ba7392dfece51762fc2",
-  "_spec": "tns-core-modules",
-  "_where": "/Users/radhajain/SpotOn/SpotOn",
+  "_spec": "tns-core-modules@^4.1.0",
+  "_where": "/Users/genevievepayzer/Documents/SpotOn/SpotOn",
   "bundleDependencies": false,
   "dependencies": {
     "tns-core-modules-widgets": "4.1.0"
