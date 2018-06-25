@@ -9,9 +9,24 @@ var MIN_IN_MS = 60000;
 /* * 		USEFUL FUNCTIONS		*
 /* **********************************
 
+/* export: setlastTimePillTaken
+ * ----------------
+ * Sets when pill was last taken.
+ */
+exports.setlastTimePillTaken = function(currentDate){
+	appSettings.setString('lastTimePillTaken', currentDate);
+}
+
+/* export: getlastTimePillTaken
+ * ----------------
+ * Sets when pill was last taken.
+ */
+exports.getlastTimePillTaken = function(){
+	return appSettings.getString('lastTimePillTaken');
+}
+
 /* export: getGreeting
  * ----------------
- * Returns a greeting for the user based on the current time
  */
 
 exports.getGreeting = function() {
@@ -57,9 +72,21 @@ exports.isOnPeriod = function() {
  * Returns the number of minutes until the user has to take their birth control
  */
 exports.minsTillBirthControl = function() {
-	// ------TEMP-----
-	return 194;
-	// ------TEMP-----
+	var birthControlTime = exports.getBirthControlTime();
+	var bcTimeHours = birthControlTime.getHours();
+	var bcTimeMins = birthControlTime.getMinutes();
+	var bcTimeInMins = bcTimeHours * 60 + bcTimeMins;
+	console.log("from mins till bc func : bcTIme in mins " + bcTimeInMins);
+	var today = new Date();
+	var hrs = today.getHours();
+	var mins = today.getMinutes();
+	var currentTimeInMins = hrs * 60 + mins;
+	console.log("current time in mins " + currentTimeInMins);
+	//If the user misses pill by more than that day, will not work correctly.
+	//var minutesTillBirthControl = birthControlTime - currentTimeInMins;
+	var minutesTillBirthControl = bcTimeInMins - currentTimeInMins;
+	console.log("minutes till birth fcontrol " + minutesTillBirthControl);
+	return minutesTillBirthControl;
 }
 
 
@@ -115,7 +142,20 @@ exports.setBirthControlTime = function(time) {
  * Gets the user's chosen birth control time
  */
 exports.getBirthControlTime = function() {
-	return new Date(JSON.parse(appSettings.getString('bctime')));
+	//what is returned if bctime is not set?
+	var BCtime = appSettings.getString('bctime');
+	if (BCtime) {
+		console.log("BC time " + BCtime);
+		var timeToTakeBC = new Date(JSON.parse(BCtime));
+		console.log("time to take bc in storage utilfunc " + timeToTakeBC);
+		return new Date(JSON.parse(BCtime));
+	} else {
+		var defaultTime = new Date();
+		defaultTime.setHours(9);
+		defaultTime.setMinutes(30);
+		exports.setBirthControlTime(defaultTime);
+		return defaultTime;
+	}
 };
 
 /* export: setBirthControlType
@@ -188,4 +228,3 @@ exports.clearData = function() {
 	StorageUtil.setPeriodLength("");
 	StorageUtil.setFirstCycleDay("");
 }
-

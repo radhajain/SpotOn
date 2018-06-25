@@ -57,7 +57,7 @@ function initFormatting() {
 
 	var stackPage = page.getViewById("stackPage");
 	stackPage.height = 1.5 * pageHeight;
-	
+
 }
 
 
@@ -125,16 +125,16 @@ function initDates(monthIndex, year) {
 	// ---*****Need to log period dates for every month (28-day cycle)***-----
 
 	var monthDay = new Date(year, monthIndex, 1); //The first of the month
-	var dateOfFirst = monthDay.getDay(); //e.g. 3 = Wednesday 
+	var dateOfFirst = monthDay.getDay(); //e.g. 3 = Wednesday
 	var offset = 1-(dateOfFirst-1); //Number of days to show prior to the 1st
 	var numWeeks;
 
 	if (dateOfFirst === 0) { //if the first falls on a sunday, then include the previous week
 		numWeeks = Math.ceil((dateOfFirst + 7 - 1 + daysInMonth(monthIndex + 1, year)) / 7) ;
 		monthDay.setDate(offset - 7);
-	} else { 
+	} else {
 		numWeeks = Math.ceil((dateOfFirst - 1 + daysInMonth(monthIndex + 1, year)) / 7);
-		monthDay.setDate(offset);	
+		monthDay.setDate(offset);
 	}
 	var today = new Date();
 
@@ -157,7 +157,7 @@ function initDates(monthIndex, year) {
 	 			}
 	 			if (dateEquals(monthDay, today)) {
 	 				dayCell.class += " circle";
-	 			}	 			
+	 			}
 	 		}
 	 		monthDay.setDate(monthDay.getDate() + 1);
 	 	}
@@ -205,7 +205,7 @@ function dateEquals(firstDate, secondDate) {
 		return false;
 	}
 }
- 
+
 function dateBetween(first, second, between) {
 	if (first <= between && between <= second) {
 		return true;
@@ -247,13 +247,36 @@ function initBirthControl() {
 	if (type == "Pill") {
 		msg += "\n Scheduled to be taken in: ";
 		var countdownMins = StorageUtil.minsTillBirthControl();
+
+		var timeToTakePillAsString = StorageUtil.getBirthControlTime();
+	  var timeToTakePill = new Date(timeToTakePillAsString);
+	  var timePillTakenLastAsString = StorageUtil.getlastTimePillTaken();
+	  var timePillTakenLast = new Date(timePillTakenLastAsString);
+	  var todayAsString = new Date().toDateString();
+	  var lastDayPillTookAsString = timePillTakenLast.toDateString();
+		//will this work? since today as string is today in hours too
+	  var tookPillToday = todayAsString === lastDayPillTookAsString;
+
+
 		var bcTime;
-		if (countdownMins <= 60) {
+		if (countdownMins <= 60 && countdownMins >= 0) {
 			bcTime = countdownMins + " mins"
+		} else if (tookPillToday){
+			var minutesTillNextDay = (24*60) - (timePillTakenLast.getHours() * 60 + timePillTakenLast.getMinutes());
+			var minutesTillNextDayBCTime = timeToTakePill.getHours() * 60 + timeToTakePill.getMinutes();
+			var totalMinutesCountdown = minutesTillNextDay + minutesTillNextDayBCTime;
+			var hoursCountdown = Math.floor(totalMinutesCountdown/60);
+			var minutesCountdown = totalMinutesCountdown % 60;
+			if (minutesCountdown != 0){
+				bcTime = hoursCountdown + " hrs " + minutesCountdown + " mins";
+			} else {
+				bcTime = hoursCountdown + " hrs";
+			}
+			pageData.set("bcTime", bcTime);
 		} else {
 			var numHours = Math.floor(countdownMins/60);
 			var numMins = countdownMins % 60;
-			bcTime = numHours + " hrs " + numMins + " mins"
+			bcTime = numHours + " hrs " + numMins + " mins";
 		}
 		pageData.set("bcTime", bcTime);
 

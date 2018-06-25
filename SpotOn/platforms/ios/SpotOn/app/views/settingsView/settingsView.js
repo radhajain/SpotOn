@@ -25,12 +25,11 @@ exports.selectPillTime = function(args) {
 exports.onPickerLoaded = function(args) {
 	var timePicker = args.object;
 	var previousTime = StorageUtil.getBirthControlTime();
-	console.log(previousTime);
 	var prevHour = previousTime.getHours();
 	var prevMins = previousTime.getMinutes();
 	pageData.set("pillTime", prevHour + ":" + prevMins.toString());
 	timePicker.hour = prevHour;
-    timePicker.minute = prevMins;
+  timePicker.minute = prevMins;
 
     // handling 'time change' via code behind
     timePicker.on("timeChange", (result) => {
@@ -43,10 +42,10 @@ exports.onPickerLoaded = function(args) {
 
 exports.setTime = function(args) {
 	var timePicker = page.getViewById("timePicker");
-	pageData.set("pillTime", timePicker.hour + ":" + timePicker.minute);
+	pageData.set("pillTime", timePicker.hour + ":" + timePicker.minute.toString());
 	var newTime = new Date();
 	newTime.setHours(timePicker.hour);
-	newTime.setMinutes(timePicker.minutes);
+	newTime.setMinutes(timePicker.minute);
 	StorageUtil.setBirthControlTime(newTime);
 	pageData.set("showTimePicker", false);
 }

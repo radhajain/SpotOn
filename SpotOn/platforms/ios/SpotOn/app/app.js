@@ -8,6 +8,40 @@ require("./bundle-config");
 var application = require("application");
 var StorageUtil = require('~/util/StorageUtil');
 
+var firebase = require("nativescript-plugin-firebase");
+//require('firebase/database');
+
+
+firebase.init({
+  // Optionally pass in properties for database, authentication and cloud messaging,
+  // see their respective docs.
+}).then(
+    function (instance) {
+      console.log("firebase.init done");
+    },
+    function (error) {
+      console.log("firebase.init error: " + error);
+    }
+);
+
+
+		/*firebase.push(
+      '/users',
+      {
+        'first': 'Eddy',
+        'last': 'Verbruggen',
+        'birthYear': 1977,
+        'isMale': true,
+        'address': {
+          'street': 'foostreet',
+          'number': 123
+        }
+      }
+  ).then(
+      function (result) {
+        console.log("created key: " + result.key);
+      }
+  );*/
 
 // application.start({ moduleName: "views/homeView/homeView" });
 
