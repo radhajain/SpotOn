@@ -7,20 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00A0E65DAE554F6B893E6E64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D59E6AC033064E889EC34FAA /* LaunchScreen.storyboard */; };
-		2A5A2EA4B0AC491C94500BC4 /* TNSWidgets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E673E52FA6124E96ADA41678 /* TNSWidgets.framework */; };
-		2F78589C05974B98A13EF4F0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF3E2339455849DAB2AAC446 /* GoogleService-Info.plist */; };
-		3234C44B0156B0F66182272A /* Pods_SpotOn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E57156C68E3FD5EC88262477 /* Pods_SpotOn.framework */; };
-		40B0AC62B9AE42A48B515819 /* app.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 298EF45AD5444F8A8EAB04A8 /* app.entitlements */; };
-		5080814729BD4EA296BDDDCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54B5004DD4CF4E0AB6E0336E /* Assets.xcassets */; };
-		7A69AE6600DE4407B0678445 /* TNSMLKitCamera.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE16463030434D6091FA4215 /* TNSMLKitCamera.framework */; };
+		12141D529E894DEBA19F8163 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 89A9758D07C24A8B8FE10714 /* GoogleService-Info.plist */; };
+		346EB129B2CA806D6718F364 /* Pods_SpotOn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED4E5E67091A773F29DD60C1 /* Pods_SpotOn.framework */; };
+		35588394776740959ADC2F3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8698A104517F409198DE8F1D /* LaunchScreen.storyboard */; };
+		3A5E9495E5C04178B8C8811B /* build.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 6889783C67F64D11BAE1CE54 /* build.xcconfig */; };
+		6A6A3F6C5105458EBCB0F6DB /* TNSWidgets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5644B3BB26634ED5B23BB21A /* TNSWidgets.framework */; };
+		6B3A50E567BF4F219616C463 /* PushPlugin.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B67EF91910D549BD91BE753F /* PushPlugin.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6FCB0756B12F478887155C1C /* TNSMLKitCamera.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8657D283C244979A0894FE /* TNSMLKitCamera.framework */; };
+		76CEF3F51A064A67930034B0 /* TNSWidgets.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5644B3BB26634ED5B23BB21A /* TNSWidgets.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7D7B3F7BE7764E0293B09ADC /* SpotOn.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 55F5BB5FD7634587B5ECF97D /* SpotOn.entitlements */; };
 		858B842D18CA22B800AB12DE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 858B833A18CA111C00AB12DE /* InfoPlist.strings */; };
-		8B9361AF2B33455A8EF72B5F /* PushPlugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67EEB9F4C6134EEEB9AE1AB8 /* PushPlugin.framework */; };
+		950A562E8C22410592220E0A /* PushPlugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B67EF91910D549BD91BE753F /* PushPlugin.framework */; };
 		CD45EE7C18DC2D5800FB50C0 /* app in Resources */ = {isa = PBXBuildFile; fileRef = CD45EE7A18DC2D5800FB50C0 /* app */; };
 		CD62955D1BB2678900AE3A93 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CD62955C1BB2678900AE3A93 /* main.m */; };
-		E893B5C5BF794B48888AA2B8 /* TNSMLKitCamera.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EE16463030434D6091FA4215 /* TNSMLKitCamera.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F3C29CE4BDBF44F685750BE2 /* TNSWidgets.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E673E52FA6124E96ADA41678 /* TNSWidgets.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		FA9D75EC16E7498EAF91F0AE /* PushPlugin.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 67EEB9F4C6134EEEB9AE1AB8 /* PushPlugin.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E09BF480492B4848BAA093EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 466E48358F5D4E31A5F9FCBE /* Assets.xcassets */; };
+		F7DA6C44E464425AB72B57FB /* TNSMLKitCamera.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8657D283C244979A0894FE /* TNSMLKitCamera.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,9 +31,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				F3C29CE4BDBF44F685750BE2 /* TNSWidgets.framework in Embed Frameworks */,
-				FA9D75EC16E7498EAF91F0AE /* PushPlugin.framework in Embed Frameworks */,
-				E893B5C5BF794B48888AA2B8 /* TNSMLKitCamera.framework in Embed Frameworks */,
+				F7DA6C44E464425AB72B57FB /* TNSMLKitCamera.framework in Embed Frameworks */,
+				6B3A50E567BF4F219616C463 /* PushPlugin.framework in Embed Frameworks */,
+				76CEF3F51A064A67930034B0 /* TNSWidgets.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -40,26 +41,25 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		298EF45AD5444F8A8EAB04A8 /* app.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = unknown; name = app.entitlements; path = SpotOn/Resources/app.entitlements; sourceTree = "<group>"; };
-		2B8171D3E4FC47EBA456B989 /* build.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = unknown; name = build.xcconfig; path = SpotOn/Resources/build.xcconfig; sourceTree = "<group>"; };
-		54B5004DD4CF4E0AB6E0336E /* Assets.xcassets */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = unknown; name = Assets.xcassets; path = SpotOn/Resources/Assets.xcassets; sourceTree = "<group>"; };
-		67EEB9F4C6134EEEB9AE1AB8 /* PushPlugin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PushPlugin.framework; path = "$(SRCROOT)/../../node_modules/nativescript-push-notifications/platforms/ios/PushPlugin.framework"; sourceTree = "<group>"; };
-		6C4409B120DC8D1F0005D765 /* SpotOn.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SpotOn.entitlements; sourceTree = "<group>"; };
+		466E48358F5D4E31A5F9FCBE /* Assets.xcassets */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = unknown; name = Assets.xcassets; path = SpotOn/Resources/Assets.xcassets; sourceTree = "<group>"; };
+		55F5BB5FD7634587B5ECF97D /* SpotOn.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = unknown; name = SpotOn.entitlements; path = SpotOn/Resources/SpotOn.entitlements; sourceTree = "<group>"; };
+		5644B3BB26634ED5B23BB21A /* TNSWidgets.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TNSWidgets.framework; path = "$(SRCROOT)/../../node_modules/tns-core-modules-widgets/platforms/ios/TNSWidgets.framework"; sourceTree = "<group>"; };
+		6889783C67F64D11BAE1CE54 /* build.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = unknown; name = build.xcconfig; path = SpotOn/Resources/build.xcconfig; sourceTree = "<group>"; };
+		6C8657D283C244979A0894FE /* TNSMLKitCamera.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TNSMLKitCamera.framework; path = "$(SRCROOT)/../../node_modules/nativescript-plugin-firebase/platforms/ios/TNSMLKitCamera.framework"; sourceTree = "<group>"; };
 		858B832E18CA111C00AB12DE /* SpotOn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpotOn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		858B833918CA111C00AB12DE /* SpotOn-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SpotOn-Info.plist"; sourceTree = "<group>"; };
 		858B833B18CA111C00AB12DE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		858B833F18CA111C00AB12DE /* SpotOn-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SpotOn-Prefix.pch"; sourceTree = "<group>"; };
 		858B843318CA22B800AB12DE /* SpotOn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpotOn.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8698A104517F409198DE8F1D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = unknown; name = LaunchScreen.storyboard; path = SpotOn/Resources/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		89A9758D07C24A8B8FE10714 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = unknown; name = "GoogleService-Info.plist"; path = "SpotOn/Resources/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B67EF91910D549BD91BE753F /* PushPlugin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PushPlugin.framework; path = "$(SRCROOT)/../../node_modules/nativescript-push-notifications/platforms/ios/PushPlugin.framework"; sourceTree = "<group>"; };
 		CD45EE7A18DC2D5800FB50C0 /* app */ = {isa = PBXFileReference; lastKnownFileType = folder; path = app; sourceTree = "<group>"; };
 		CD62955C1BB2678900AE3A93 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = internal/main.m; sourceTree = SOURCE_ROOT; };
 		CDD59A261BB43B5D00EC2671 /* build-debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "build-debug.xcconfig"; sourceTree = "<group>"; };
 		CDD59A271BB43B5D00EC2671 /* build-release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "build-release.xcconfig"; sourceTree = "<group>"; };
 		CDF4743E1BA4855C0087EA85 /* build.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = build.xcconfig; sourceTree = "<group>"; };
-		D59E6AC033064E889EC34FAA /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = unknown; name = LaunchScreen.storyboard; path = SpotOn/Resources/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		E57156C68E3FD5EC88262477 /* Pods_SpotOn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpotOn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E673E52FA6124E96ADA41678 /* TNSWidgets.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TNSWidgets.framework; path = "$(SRCROOT)/../../node_modules/tns-core-modules-widgets/platforms/ios/TNSWidgets.framework"; sourceTree = "<group>"; };
-		EE16463030434D6091FA4215 /* TNSMLKitCamera.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TNSMLKitCamera.framework; path = "$(SRCROOT)/../../node_modules/nativescript-plugin-firebase/platforms/ios/TNSMLKitCamera.framework"; sourceTree = "<group>"; };
-		EF3E2339455849DAB2AAC446 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = unknown; name = "GoogleService-Info.plist"; path = "SpotOn/Resources/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		ED4E5E67091A773F29DD60C1 /* Pods_SpotOn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpotOn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,16 +67,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A5A2EA4B0AC491C94500BC4 /* TNSWidgets.framework in Frameworks */,
-				8B9361AF2B33455A8EF72B5F /* PushPlugin.framework in Frameworks */,
-				7A69AE6600DE4407B0678445 /* TNSMLKitCamera.framework in Frameworks */,
-				3234C44B0156B0F66182272A /* Pods_SpotOn.framework in Frameworks */,
+				6FCB0756B12F478887155C1C /* TNSMLKitCamera.framework in Frameworks */,
+				950A562E8C22410592220E0A /* PushPlugin.framework in Frameworks */,
+				6A6A3F6C5105458EBCB0F6DB /* TNSWidgets.framework in Frameworks */,
+				346EB129B2CA806D6718F364 /* Pods_SpotOn.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A58BAD5C250B6E8CC49C628 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		858B832518CA111C00AB12DE = {
 			isa = PBXGroup;
 			children = (
@@ -84,7 +91,7 @@
 				858B833718CA111C00AB12DE /* SpotOn */,
 				858B833018CA111C00AB12DE /* Frameworks */,
 				858B832F18CA111C00AB12DE /* Products */,
-				B08BC626789058D7C41605B2 /* Pods */,
+				1A58BAD5C250B6E8CC49C628 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,10 +107,10 @@
 		858B833018CA111C00AB12DE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E673E52FA6124E96ADA41678 /* TNSWidgets.framework */,
-				67EEB9F4C6134EEEB9AE1AB8 /* PushPlugin.framework */,
-				EE16463030434D6091FA4215 /* TNSMLKitCamera.framework */,
-				E57156C68E3FD5EC88262477 /* Pods_SpotOn.framework */,
+				6C8657D283C244979A0894FE /* TNSMLKitCamera.framework */,
+				B67EF91910D549BD91BE753F /* PushPlugin.framework */,
+				5644B3BB26634ED5B23BB21A /* TNSWidgets.framework */,
+				ED4E5E67091A773F29DD60C1 /* Pods_SpotOn.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -111,7 +118,6 @@
 		858B833718CA111C00AB12DE /* SpotOn */ = {
 			isa = PBXGroup;
 			children = (
-				6C4409B120DC8D1F0005D765 /* SpotOn.entitlements */,
 				CD45EE7A18DC2D5800FB50C0 /* app */,
 				858B833818CA111C00AB12DE /* Supporting Files */,
 			);
@@ -132,21 +138,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		B08BC626789058D7C41605B2 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		E070579D1B39A9D000214BF1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				54B5004DD4CF4E0AB6E0336E /* Assets.xcassets */,
-				D59E6AC033064E889EC34FAA /* LaunchScreen.storyboard */,
-				2B8171D3E4FC47EBA456B989 /* build.xcconfig */,
-				EF3E2339455849DAB2AAC446 /* GoogleService-Info.plist */,
-				298EF45AD5444F8A8EAB04A8 /* app.entitlements */,
+				466E48358F5D4E31A5F9FCBE /* Assets.xcassets */,
+				89A9758D07C24A8B8FE10714 /* GoogleService-Info.plist */,
+				8698A104517F409198DE8F1D /* LaunchScreen.storyboard */,
+				55F5BB5FD7634587B5ECF97D /* SpotOn.entitlements */,
+				6889783C67F64D11BAE1CE54 /* build.xcconfig */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -158,7 +157,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 858B843018CA22B800AB12DE /* Build configuration list for PBXNativeTarget "SpotOn" */;
 			buildPhases = (
-				951C89B416226AB9F3E0FCD2 /* [CP] Check Pods Manifest.lock */,
+				F0F6E2FE79C95694DEF2BD0E /* [CP] Check Pods Manifest.lock */,
 				C97FD7AC1ADE5369004DB2A4 /* NativeScript PreBuild */,
 				858B83F218CA22B800AB12DE /* Sources */,
 				CD62955B1BB2651D00AE3A93 /* NativeScript PreLink */,
@@ -166,7 +165,7 @@
 				858B842C18CA22B800AB12DE /* Resources */,
 				85F5BDFC1A9363BE006B9701 /* Embed Frameworks */,
 				CD3EAD351B05FF060042DBFC /* NativeScript PostBuild */,
-				DBC8F691D1763963E230F880 /* [CP] Embed Pods Frameworks */,
+				967176C7FB861EFFD455776B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -184,18 +183,8 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = TNS;
-				LastUpgradeCheck = 920;
+				LastUpgradeCheck = 500;
 				ORGANIZATIONNAME = Telerik;
-				TargetAttributes = {
-					858B83EF18CA22B800AB12DE = {
-						DevelopmentTeam = 5LW6B35PK2;
-						SystemCapabilities = {
-							com.apple.Push = {
-								enabled = 1;
-							};
-						};
-					};
-				};
 			};
 			buildConfigurationList = 858B832918CA111C00AB12DE /* Build configuration list for PBXProject "SpotOn" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -221,32 +210,39 @@
 			files = (
 				CD45EE7C18DC2D5800FB50C0 /* app in Resources */,
 				858B842D18CA22B800AB12DE /* InfoPlist.strings in Resources */,
-				5080814729BD4EA296BDDDCA /* Assets.xcassets in Resources */,
-				00A0E65DAE554F6B893E6E64 /* LaunchScreen.storyboard in Resources */,
-				2F78589C05974B98A13EF4F0 /* GoogleService-Info.plist in Resources */,
-				40B0AC62B9AE42A48B515819 /* app.entitlements in Resources */,
+				E09BF480492B4848BAA093EC /* Assets.xcassets in Resources */,
+				12141D529E894DEBA19F8163 /* GoogleService-Info.plist in Resources */,
+				35588394776740959ADC2F3F /* LaunchScreen.storyboard in Resources */,
+				7D7B3F7BE7764E0293B09ADC /* SpotOn.entitlements in Resources */,
+				3A5E9495E5C04178B8C8811B /* build.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		951C89B416226AB9F3E0FCD2 /* [CP] Check Pods Manifest.lock */ = {
+		967176C7FB861EFFD455776B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
+				"${SRCROOT}/Pods/Target Support Files/Pods-SpotOn/Pods-SpotOn-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SpotOn-checkManifestLockResult.txt",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SpotOn/Pods-SpotOn-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C97FD7AC1ADE5369004DB2A4 /* NativeScript PreBuild */ = {
@@ -294,28 +290,22 @@
 			shellScript = "\"$SRCROOT/internal/nativescript-pre-link\"";
 			showEnvVarsInLog = 0;
 		};
-		DBC8F691D1763963E230F880 /* [CP] Embed Pods Frameworks */ = {
+		F0F6E2FE79C95694DEF2BD0E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SpotOn/Pods-SpotOn-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+				"$(DERIVED_FILE_DIR)/Pods-SpotOn-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SpotOn/Pods-SpotOn-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -347,34 +337,23 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -395,33 +374,23 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -440,16 +409,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CDD59A261BB43B5D00EC2671 /* build-debug.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ENABLE_MODULES = NO;
 				CLANG_MODULES_AUTOLINK = NO;
-				CODE_SIGN_ENTITLEMENTS = SpotOn/SpotOn.entitlements;
-				DEVELOPMENT_TEAM = 5LW6B35PK2;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../node_modules/tns-core-modules-widgets/platforms/ios\"",
-					"\"$(SRCROOT)/../../node_modules/nativescript-push-notifications/platforms/ios\"",
 					"\"$(SRCROOT)/../../node_modules/nativescript-plugin-firebase/platforms/ios\"",
+					"\"$(SRCROOT)/../../node_modules/nativescript-push-notifications/platforms/ios\"",
+					"\"$(SRCROOT)/../../node_modules/tns-core-modules-widgets/platforms/ios\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SpotOn/SpotOn-Prefix.pch";
@@ -459,7 +427,6 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/SpotOn/SpotOn-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.nativescript.SpotOn;
 				PRODUCT_NAME = SpotOn;
 				VALID_ARCHS = "armv7 arm64";
 				WRAPPER_EXTENSION = app;
@@ -470,22 +437,20 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CDD59A271BB43B5D00EC2671 /* build-release.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ENABLE_MODULES = NO;
 				CLANG_MODULES_AUTOLINK = NO;
-				CODE_SIGN_ENTITLEMENTS = SpotOn/SpotOn.entitlements;
-				DEVELOPMENT_TEAM = 5LW6B35PK2;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../node_modules/tns-core-modules-widgets/platforms/ios\"",
-					"\"$(SRCROOT)/../../node_modules/nativescript-push-notifications/platforms/ios\"",
 					"\"$(SRCROOT)/../../node_modules/nativescript-plugin-firebase/platforms/ios\"",
+					"\"$(SRCROOT)/../../node_modules/nativescript-push-notifications/platforms/ios\"",
+					"\"$(SRCROOT)/../../node_modules/tns-core-modules-widgets/platforms/ios\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SpotOn/SpotOn-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/SpotOn/SpotOn-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.nativescript.SpotOn;
 				PRODUCT_NAME = SpotOn;
 				VALID_ARCHS = "armv7 arm64";
 				WRAPPER_EXTENSION = app;

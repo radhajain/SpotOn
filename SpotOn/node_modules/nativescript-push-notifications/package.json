@@ -1,0 +1,78 @@
+{
+  "_args": [
+    [
+      "nativescript-push-notifications@1.1.4",
+      "/Users/radhajain/SpotOn/SpotOn"
+    ]
+  ],
+  "_from": "nativescript-push-notifications@1.1.4",
+  "_id": "nativescript-push-notifications@1.1.4",
+  "_inBundle": false,
+  "_integrity": "sha512-tyz8lh5MiOdEhOtXOpmfgfO1E7rJl9xrQ4YmfNajb6FzwiavIfcByPWceXoHZV0iIFXb2woDz5ZjdjOKL+TffQ==",
+  "_location": "/nativescript-push-notifications",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "nativescript-push-notifications@1.1.4",
+    "name": "nativescript-push-notifications",
+    "escapedName": "nativescript-push-notifications",
+    "rawSpec": "1.1.4",
+    "saveSpec": null,
+    "fetchSpec": "1.1.4"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/nativescript-push-notifications/-/nativescript-push-notifications-1.1.4.tgz",
+  "_spec": "1.1.4",
+  "_where": "/Users/radhajain/SpotOn/SpotOn",
+  "author": {
+    "name": "NativeScript Team"
+  },
+  "bugs": {
+    "url": "https://github.com/NativeScript/push-plugin/issues"
+  },
+  "dependencies": {
+    "nativescript-hook": "^0.2.0"
+  },
+  "description": "Receive push notifications in your NativeScript app on Android and iOS.",
+  "devDependencies": {
+    "rimraf": "^2.6.2",
+    "tns-core-modules": "^3.3.0",
+    "tns-platform-declarations": "^3.3.0",
+    "tslint": "^5.8.0",
+    "typescript": "^2.6.1"
+  },
+  "homepage": "https://github.com/NativeScript/push-plugin",
+  "license": "Apache-2.0",
+  "main": "push-plugin",
+  "name": "nativescript-push-notifications",
+  "nativescript": {
+    "platforms": {
+      "ios": "3.0.0",
+      "android": "3.0.0"
+    },
+    "hooks": [
+      {
+        "type": "before-prepare",
+        "script": "hooks/before-prepare.js",
+        "inject": true
+      }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NativeScript/push-plugin.git"
+  },
+  "scripts": {
+    "build": "npm i && tsc",
+    "ci.tslint": "npm i && tslint '**/*.ts' --config ../tslint.json --exclude '**/node_modules/**'",
+    "clean": "cd ../demo && rimraf hooks node_modules platforms && cd ../src && rimraf node_modules",
+    "postinstall": "node scripts/postinstall.js",
+    "preuninstall": "node scripts/preuninstall.js",
+    "tslint": "cd .. && tslint \"**/*.ts\" --config tslint.json --exclude \"**/node_modules/**\""
+  },
+  "typings": "index.d.ts",
+  "version": "1.1.4"
+}

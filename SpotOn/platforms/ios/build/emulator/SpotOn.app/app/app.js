@@ -25,12 +25,23 @@ firebase.init({
 );
 
 
-/*var myFirebase = firebase.database().ref();
-var recommendations = myFirebase.child("recommendations");
-
-    recommendations.push({
-      "title": "The danger of a single story"
-    });*/
+		/*firebase.push(
+      '/users',
+      {
+        'first': 'Eddy',
+        'last': 'Verbruggen',
+        'birthYear': 1977,
+        'isMale': true,
+        'address': {
+          'street': 'foostreet',
+          'number': 123
+        }
+      }
+  ).then(
+      function (result) {
+        console.log("created key: " + result.key);
+      }
+  );*/
 
 // application.start({ moduleName: "views/homeView/homeView" });
 
