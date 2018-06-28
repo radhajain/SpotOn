@@ -7,6 +7,8 @@ var StorageUtil = require("~/util/StorageUtil");
 var gestures = require("ui/gestures");
 var dialogs = require("ui/dialogs");
 
+var firebase = require("nativescript-plugin-firebase");
+
 var page;
 var pageData;
 
@@ -102,6 +104,25 @@ exports.goToContraceptionView = function() {
 		StorageUtil.setOnboardingComplete();
 		frameModule.topmost().navigate('views/onboarding/contraceptionView/contraceptionView');
 	}
+
+	var name = StorageUtil.getName();
+	var lastPeriodDate = StorageUtil.getFirstCycleDay();
+	var lastPeriodDateJson = JSON.stringify(lastPeriodDate);
+	//stores it as a string
+	var periodLength = StorageUtil.getPeriodLength();
+
+	firebase.push(
+		'/users',
+		{
+			'name': name,
+			'lastPeriodDate': lastPeriodDateJson,
+			'periodLength': periodLength,
+		}
+	).then(
+		function (result) {
+			console.log("created key: " + result.key);
+		}
+	);
 
 }
 

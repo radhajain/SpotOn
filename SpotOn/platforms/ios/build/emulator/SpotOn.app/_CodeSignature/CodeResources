@@ -62,7 +62,7 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		HstP+bxyXCEgpP7k5Q6Pp2/r1mQ=
+		qFtmC1By4+Znefn/146uPfuTz4o=
 		</data>
 		<key>Frameworks/GTMSessionFetcher.framework/GTMSessionFetcher</key>
 		<data>
@@ -234,7 +234,7 @@
 		</data>
 		<key>LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
-		3ET1GTbLUZeyjk319Rq6dWa8Tcw=
+		JljWMlY0jAsl7+whYteJEnubkf0=
 		</data>
 		<key>LaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -242,7 +242,7 @@
 		</data>
 		<key>LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<data>
-		g7fw6KY9/D5EQoLwFxz9KbpHlok=
+		1kCM5+KmuP8yOmlBSmjqIMF9g5Y=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -258,7 +258,7 @@
 		</data>
 		<key>app/app.js</key>
 		<data>
-		ukfkXS2uHK5A7OJkI3iqm6iUkB8=
+		EX8T0BtG9LXy55KZZuEkw32h+ag=
 		</data>
 		<key>app/bundle-config.js</key>
 		<data>
@@ -299,10 +299,6 @@
 		<key>app/main-view-model.js</key>
 		<data>
 		+XelK0+zH+mEQVYj91l+kUwkdQ0=
-		</data>
-		<key>app/models/user.model.ts</key>
-		<data>
-		jX6GHsaaervbB4ckFTLTyJZpyqc=
 		</data>
 		<key>app/package.json</key>
 		<data>
@@ -3762,7 +3758,7 @@
 		</data>
 		<key>app/views/homeView/homeView.js</key>
 		<data>
-		hYtfKfuW/480eJ3rBwbimJ+2Pqc=
+		5CqhjujAr2o3XlLnM2TnKJaFJyY=
 		</data>
 		<key>app/views/homeView/homeView.xml</key>
 		<data>
@@ -3786,7 +3782,7 @@
 		</data>
 		<key>app/views/onboarding/landingView/landingView.js</key>
 		<data>
-		oVhIf8j2LxUE2Ob3l4d0lFp7tbk=
+		0fhSh/VyWFwlw5kYkupB+ggsoEk=
 		</data>
 		<key>app/views/onboarding/landingView/landingView.xml</key>
 		<data>
@@ -3974,11 +3970,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			HstP+bxyXCEgpP7k5Q6Pp2/r1mQ=
+			qFtmC1By4+Znefn/146uPfuTz4o=
 			</data>
 			<key>hash2</key>
 			<data>
-			EeV1vuxWYxfMxo3Cvh4Wia6hsxxKr8iONMkD1gXdUbs=
+			42L/SE+d+d4NbipC9m+Av77Mx/1QGDlUIaQCGDNSejM=
 			</data>
 		</dict>
 		<key>Frameworks/GTMSessionFetcher.framework/GTMSessionFetcher</key>
@@ -4436,11 +4432,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			3ET1GTbLUZeyjk319Rq6dWa8Tcw=
+			JljWMlY0jAsl7+whYteJEnubkf0=
 			</data>
 			<key>hash2</key>
 			<data>
-			HAL93q29f3tMFUH9K3ldnAaBx+Wds8i5dEsx40pNUA0=
+			SURBLyroiLUow0F35HahZWfF+NK/YJYpG8y0pJMfaOE=
 			</data>
 		</dict>
 		<key>LaunchScreen.storyboardc/Info.plist</key>
@@ -4458,11 +4454,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			g7fw6KY9/D5EQoLwFxz9KbpHlok=
+			1kCM5+KmuP8yOmlBSmjqIMF9g5Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			UdU+V4Uph6gVPkhS130wD3o8OjWh4xKEsCflWzKZNUc=
+			KVmtJhdXu8Tw6HPA30OfExP9XFG2uh7XxPNByS7wZaM=
 			</data>
 		</dict>
 		<key>app.entitlements</key>
@@ -4491,11 +4487,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ukfkXS2uHK5A7OJkI3iqm6iUkB8=
+			EX8T0BtG9LXy55KZZuEkw32h+ag=
 			</data>
 			<key>hash2</key>
 			<data>
-			Wt5A9n2v3R0TgfDpDIgdfsh48FVP0nzFKsy801H5WlE=
+			paxKoatCppXhpfFhkfkVx4VbXe21ZomiepoepWY+3iU=
 			</data>
 		</dict>
 		<key>app/bundle-config.js</key>
@@ -4606,17 +4602,6 @@
 			<key>hash2</key>
 			<data>
 			Un3i7m7zNw2vJ7zmk5YAadaAuQkDDmRo86+khGOQlVM=
-			</data>
-		</dict>
-		<key>app/models/user.model.ts</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			jX6GHsaaervbB4ckFTLTyJZpyqc=
-			</data>
-			<key>hash2</key>
-			<data>
-			xBT+Y9jPqybohnLObdb3iBzH8w0cOaS1u0CpHO2vRjU=
 			</data>
 		</dict>
 		<key>app/package.json</key>
@@ -14127,11 +14112,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			hYtfKfuW/480eJ3rBwbimJ+2Pqc=
+			5CqhjujAr2o3XlLnM2TnKJaFJyY=
 			</data>
 			<key>hash2</key>
 			<data>
-			tU6u5vAVG9pJ8dsosOl8i1ZHGuSfRK2HzUedxjyJ6s4=
+			gd7HN+PzPdvASJlEhHd/pgZ2vYeaHHxHSYIruEzzx/o=
 			</data>
 		</dict>
 		<key>app/views/homeView/homeView.xml</key>
@@ -14193,11 +14178,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			oVhIf8j2LxUE2Ob3l4d0lFp7tbk=
+			0fhSh/VyWFwlw5kYkupB+ggsoEk=
 			</data>
 			<key>hash2</key>
 			<data>
-			ZCbss1uCml1xbi6pnJr4rySZLnQm2O7vUufUGsYuAUA=
+			kwJgrB+f2U8tNyrh2JbEiMQ6BnOoY2dTSM7QG/lfzTU=
 			</data>
 		</dict>
 		<key>app/views/onboarding/landingView/landingView.xml</key>

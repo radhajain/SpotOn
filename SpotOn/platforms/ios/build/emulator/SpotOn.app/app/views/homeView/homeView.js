@@ -6,6 +6,8 @@ var InfoUtil = require("~/util/InfoUtil");
 var frameModule = require("ui/frame");
 var gestures = require("ui/gestures");
 
+var firebase = require("nativescript-plugin-firebase");
+
 
 var pageData;
 var page;
@@ -35,18 +37,25 @@ exports.pageLoaded = function(args) {
         }
     });
 
-//var firebase = require("firebase");
-    /*var config = {
-      apiKey: "AIzaSyDZXh5vZSYWyzwObp8Yi5YbEgiDdaCsLKQ",
-    };
-    firebase.initializeApp(config);*/
+    //push data to database
+    /*firebase.push(
+      '/users',
+      {
+        'first': 'Eddy',
+        'last': 'Verbruggen',
+        'birthYear': 1977,
+        'isMale': true,
+        'address': {
+          'street': 'foostreet',
+          'number': 123
+        }
+      }
+    ).then(
+      function (result) {
+        console.log("created key: " + result.key);
+      }
+    );*/
 
-    //var myFirebase = firebase.database().ref();
-    //var recommendations = myFirebase.child("recommendations");
-
-    /*recommendations.push({
-      "title": "The danger of a single story"
-    });*/
 
 };
 
