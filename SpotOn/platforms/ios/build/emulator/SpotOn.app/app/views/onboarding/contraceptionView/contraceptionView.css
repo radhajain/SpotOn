@@ -7,8 +7,17 @@ Label {
 }
 
 .labelStack {
-	margin-top: 35%;
+	margin-top: 5%;
 }
+
+.oval {
+	margin-top: 12%;
+	height:24%;
+	margin-bottom: 12%;
+	margin-left:20%;
+	margin-right: 20%;
+}
+
 
 .title {
 	font-size: 35%;
@@ -18,14 +27,17 @@ Label {
 }
 
 .prompt {
-	margin: 7%;
-	color: lightblue;
+	margin: 2%;
+	color: #CDD8FF;
 	font-size: 15%;
+	text-transform: uppercase;
 }
 
 
-.nextButton {
-	margin: 5%;
-	color: #EA9D97;
+.arrow {
+	width: 8%;
+	margin-left:46%;
+	margin-right: 46%;
+	margin-top: 15%;
 }
 	

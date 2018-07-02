@@ -3,6 +3,7 @@ var observable = require("data/observable");
 var pageData = new observable.Observable();
 var StorageUtil = require("~/util/StorageUtil");
 var InfoUtil = require("~/util/InfoUtil");
+var imageModule = require("ui/image");
 var frameModule = require("ui/frame");
 var gestures = require("ui/gestures");
 
@@ -22,6 +23,7 @@ exports.pageLoaded = function(args) {
 	var cycleDay = StorageUtil.getCycleDay();
 	initMessage(cycleDay);
 	exports.showWarning();
+	addNumber(cycleDay);
 	var observer = page.observe(gestures.GestureTypes.swipe, function (args) {
         //If swipe down on the screen, go to extended page
         if (args.direction == 4) {
@@ -58,6 +60,12 @@ exports.pageLoaded = function(args) {
 
 
 };
+
+
+function addNumber(cycleDay) {
+	str = "res://" + cycleDay;
+	pageData.set("number", str);
+}
 
 exports.showWarning = function() {
 	var minsTillPill = StorageUtil.minsTillBirthControl();

@@ -46,17 +46,23 @@ exports.pageLoaded = function(args) {
 	initBirthControl();
 	initQuote();
 	initFormatting();
+	initNumber();
 };
+
+function initNumber() {
+	str = "res://" + cycleDay + " Small";
+	console.log(str);
+	pageData.set("number", str);
+}
 
 
 //Since page is a scroll view, cannot dynamically set height in CSS
 function initFormatting() {
 	var infoBox = page.getViewById("infoBox");
 	infoBox.height = 0.4 * pageHeight;
-	infoBox.marginTop = 0.1 * pageHeight;
 
 	var stackPage = page.getViewById("stackPage");
-	stackPage.height = 1.5 * pageHeight;
+	stackPage.height = 1.65 * pageHeight;
 
 }
 
@@ -249,13 +255,13 @@ function initBirthControl() {
 		var countdownMins = StorageUtil.minsTillBirthControl();
 
 		var timeToTakePillAsString = StorageUtil.getBirthControlTime();
-	  var timeToTakePill = new Date(timeToTakePillAsString);
-	  var timePillTakenLastAsString = StorageUtil.getlastTimePillTaken();
-	  var timePillTakenLast = new Date(timePillTakenLastAsString);
-	  var todayAsString = new Date().toDateString();
-	  var lastDayPillTookAsString = timePillTakenLast.toDateString();
+		var timeToTakePill = new Date(timeToTakePillAsString);
+		var timePillTakenLastAsString = StorageUtil.getlastTimePillTaken();
+		var timePillTakenLast = new Date(timePillTakenLastAsString);
+		var todayAsString = new Date().toDateString();
+		var lastDayPillTookAsString = timePillTakenLast.toDateString();
 		//will this work? since today as string is today in hours too
-	  var tookPillToday = todayAsString === lastDayPillTookAsString;
+		var tookPillToday = todayAsString === lastDayPillTookAsString;
 
 
 		var bcTime;

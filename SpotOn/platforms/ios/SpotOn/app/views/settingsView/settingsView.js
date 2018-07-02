@@ -49,3 +49,17 @@ exports.setTime = function(args) {
 	StorageUtil.setBirthControlTime(newTime);
 	pageData.set("showTimePicker", false);
 }
+
+function setPeriodLength() {
+	var periodLengthField = page.getViewById("periodLength");
+	var numDays = periodLengthField.text;
+	StorageUtil.setPeriodLength(numDays);
+}
+
+exports.onFocus = function(args) {
+	var textField = args.object;
+	if (args.object === page.getViewById("periodStart")) {
+		pageData.set('showDatePicker', true);
+		textField.dismissSoftInput();
+	}
+}

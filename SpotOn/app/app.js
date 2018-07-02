@@ -48,7 +48,7 @@ firebase.init({
 if (StorageUtil.isOnboardingComplete()) {
 	application.start({ moduleName: "views/homeView/homeView" });
 } else {
-	application.start({ moduleName: "views/onboarding/landingView/landingView" });
+	application.start({ moduleName: "views/onboarding/nameView/nameView" });
 }
 
 /*

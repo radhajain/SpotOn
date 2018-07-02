@@ -1,0 +1,27 @@
+<Page loaded="pageLoaded" xmlns="http://schemas.nativescript.org/tns.xsd"  navigatingTo="pageNavigating" id="landing" class="page" actionBarHidden="true">
+	<StackLayout class="labelStack">
+		<Image src="res://gettingStarted" stretch="aspectFit" class="oval"></Image>
+		
+
+		<Label text="My last period started on" class="prompt"/>
+
+		<TextField text="{{ periodStartDay }}" keyboardType="dateTime" id="periodStart"  focus="onFocus"/>
+
+		<Label text="My Period Usually Lasts" class="prompt"/>
+
+		<TextField text="{{ periodLength }}" keyboardType="phone" focus="onFocus" id="periodLength"/>
+		<Label text="days" class="numDays"/>
+
+		<!-- Date Picker -->
+
+		<DatePicker visibility="{{ showDatePicker ? 'visible' : 'collapse'}}" date="{{ date }}" style="color:white" maxDate="{{ maxDate }}" id="datePicker" ></DatePicker>
+
+		<Button visibility="{{ showDatePicker ? 'visible' : 'collapse'}}" text="Done" tap="setDate" class="doneBtn"/>
+
+		<!-- End Date Picker -->
+
+		<Image src="res://RightArrow" stretch="aspectFit" tap="goToHomeView" class="arrow"/>
+
+	</StackLayout>
+	 
+</Page>

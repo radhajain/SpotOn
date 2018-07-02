@@ -12,6 +12,16 @@
 
 		<Button visibility="{{ showTimePicker ? 'visible' : 'collapse'}}" text="Save" tap="setTime" class="doneBtn"/>
 		
+		<Label text="When did you last get your period?"/>
+
+		<TextField text="{{ periodStartDay }}" keyboardType="dateTime" style="color:white" id="periodStart" class="textField" focus="onFocus"/>
+
+		<!-- Date Picker -->
+
+		<DatePicker visibility="{{ showDatePicker ? 'visible' : 'collapse'}}" date="{{ date }}" style="color:white" maxDate="{{ maxDate }}" id="datePicker" ></DatePicker>
+
+		<Button visibility="{{ showDatePicker ? 'visible' : 'collapse'}}" text="Done" tap="setDate" class="doneBtn"/>
+
 
 
 	</StackLayout>

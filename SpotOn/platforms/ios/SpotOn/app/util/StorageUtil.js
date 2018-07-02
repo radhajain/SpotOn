@@ -96,8 +96,26 @@ exports.minsTillBirthControl = function() {
 /* * GETTERS AND SETTERS USER INFO	*
 /* **********************************
 /* Contains: First cycle day, Period length, name, birth control time
+*/
 
-/* export: getCycleDay
+/* export: setDoesGetPeriod
+ * ----------------
+ * Sets whether the user gets the period or not -- boolean
+ */
+exports.setDoesGetPeriod = function(getsPeriod) {
+	appSettings.setBoolean('getsPeriod', getsPeriod);
+}
+
+/* export: getDoesGetPeriod
+ * ----------------
+ * Sets whether the user gets the period or not -- boolean
+ */
+exports.getDoesGetPeriod = function() {
+	return appSettings.getBoolean('getsPeriod');
+}
+
+
+/* export: setFirstCycleDay
  * ----------------
  * Sets the user's first day in their cycle
  */
