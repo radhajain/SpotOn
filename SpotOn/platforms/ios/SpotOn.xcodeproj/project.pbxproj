@@ -207,6 +207,9 @@
 		C76EC79CF7144B5A9A0F30AB /* 1 Small@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74ACBA4EE3734A08889E9D2E /* 1 Small@1x.png */; };
 		FF90547CF1E845A7867F5895 /* 1 Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A20B240D54C24D2AB012F860 /* 1 Small@2x.png */; };
 		BAEF27F2162642369F21F098 /* 1 Small@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D604951878C84B6090C80A18 /* 1 Small@3x.png */; };
+		3BA5F21D486E4C2AA23779AE /* Ribbon@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC8304A71A4D41AEA18325 /* Ribbon@1x.png */; };
+		44F137904CEC481C81F3CA32 /* Ribbon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 16F36DDAB2724E4591105DF6 /* Ribbon@2x.png */; };
+		C3C70AD7B09B4B47A3A5E031 /* Ribbon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F42F488D76AE4EBD8C4E2F08 /* Ribbon@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -431,6 +434,9 @@
 		74ACBA4EE3734A08889E9D2E /* 1 Small@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "1 Small@1x.png"; path = "SpotOn/Resources/1 Small@1x.png"; sourceTree = "<group>"; };
 		A20B240D54C24D2AB012F860 /* 1 Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "1 Small@2x.png"; path = "SpotOn/Resources/1 Small@2x.png"; sourceTree = "<group>"; };
 		D604951878C84B6090C80A18 /* 1 Small@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "1 Small@3x.png"; path = "SpotOn/Resources/1 Small@3x.png"; sourceTree = "<group>"; };
+		ABDC8304A71A4D41AEA18325 /* Ribbon@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Ribbon@1x.png"; path = "SpotOn/Resources/Ribbon@1x.png"; sourceTree = "<group>"; };
+		16F36DDAB2724E4591105DF6 /* Ribbon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Ribbon@2x.png"; path = "SpotOn/Resources/Ribbon@2x.png"; sourceTree = "<group>"; };
+		F42F488D76AE4EBD8C4E2F08 /* Ribbon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Ribbon@3x.png"; path = "SpotOn/Resources/Ribbon@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -703,6 +709,9 @@
 				74ACBA4EE3734A08889E9D2E /* 1 Small@1x.png */,
 				A20B240D54C24D2AB012F860 /* 1 Small@2x.png */,
 				D604951878C84B6090C80A18 /* 1 Small@3x.png */,
+				ABDC8304A71A4D41AEA18325 /* Ribbon@1x.png */,
+				16F36DDAB2724E4591105DF6 /* Ribbon@2x.png */,
+				F42F488D76AE4EBD8C4E2F08 /* Ribbon@3x.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -958,6 +967,9 @@
 				C76EC79CF7144B5A9A0F30AB /* 1 Small@1x.png in Resources */,
 				FF90547CF1E845A7867F5895 /* 1 Small@2x.png in Resources */,
 				BAEF27F2162642369F21F098 /* 1 Small@3x.png in Resources */,
+				3BA5F21D486E4C2AA23779AE /* Ribbon@1x.png in Resources */,
+				44F137904CEC481C81F3CA32 /* Ribbon@2x.png in Resources */,
+				C3C70AD7B09B4B47A3A5E031 /* Ribbon@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -826,7 +826,7 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		RcrnyZl3sAojDdU35TW20TuAol8=
+		RnmFQ8+P0oBupPjJipBTZKIt9vo=
 		</data>
 		<key>Exclamation Point@1x.png</key>
 		<data>
@@ -1010,7 +1010,7 @@
 		</data>
 		<key>LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
-		kZfQxX0WEjuUjZyqU5cX7LZHmnI=
+		yiTFef89Aq32cpZOnziG6ykvjFI=
 		</data>
 		<key>LaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -1018,7 +1018,7 @@
 		</data>
 		<key>LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<data>
-		eCqv3fa27CfCRcTsbgzLCdwFk58=
+		EBtSuq+BdIQIU5I1fWA8vyvTK7k=
 		</data>
 		<key>LeftArrow@1x.png</key>
 		<data>
@@ -1035,6 +1035,18 @@
 		<key>PkgInfo</key>
 		<data>
 		n57qDP4tZfLD1rCS43W0B4LQjzE=
+		</data>
+		<key>Ribbon@1x.png</key>
+		<data>
+		CKruec9c+R71ImGSx6iqyy5oQSU=
+		</data>
+		<key>Ribbon@2x.png</key>
+		<data>
+		1Julnc0oqnaTJscsqumXQ//8bUY=
+		</data>
+		<key>Ribbon@3x.png</key>
+		<data>
+		B5vX2lEqvOkgPUk6FPvWC7XhYSo=
 		</data>
 		<key>RightArrow@1x.png</key>
 		<data>
@@ -6931,11 +6943,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			RcrnyZl3sAojDdU35TW20TuAol8=
+			RnmFQ8+P0oBupPjJipBTZKIt9vo=
 			</data>
 			<key>hash2</key>
 			<data>
-			Kh0Tc5DXGKnKzx+YqVy5eQVe/3jmFHn4pjYA5DsoSa8=
+			Lp+3qO7m0pkIvxY0IyloqmnhHQK11pIK7+u5F0FWgqw=
 			</data>
 		</dict>
 		<key>Exclamation Point@1x.png</key>
@@ -7426,11 +7438,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			kZfQxX0WEjuUjZyqU5cX7LZHmnI=
+			yiTFef89Aq32cpZOnziG6ykvjFI=
 			</data>
 			<key>hash2</key>
 			<data>
-			iIlsZFm71tT7YA/ne1Js+yzqYYtrGZZuVHiC+sOHqso=
+			29TNxvtx/rSEMXolL8Rxled0J/F01LcpwHIlXXMaRVE=
 			</data>
 		</dict>
 		<key>LaunchScreen.storyboardc/Info.plist</key>
@@ -7448,11 +7460,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			eCqv3fa27CfCRcTsbgzLCdwFk58=
+			EBtSuq+BdIQIU5I1fWA8vyvTK7k=
 			</data>
 			<key>hash2</key>
 			<data>
-			DEZkGMy7Liu6bD/vEALHdaWdicEeGFGJ7bMOr6mTCiQ=
+			oVY6fE33n9bNnEzpNu410gk2kOv/ZhkAHGhYI/r8Aek=
 			</data>
 		</dict>
 		<key>LeftArrow@1x.png</key>
@@ -7486,6 +7498,39 @@
 			<key>hash2</key>
 			<data>
 			ECrkglu98EYqhcL4BGsK3GDDnHq3psnyUO3iOlI0vqQ=
+			</data>
+		</dict>
+		<key>Ribbon@1x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			CKruec9c+R71ImGSx6iqyy5oQSU=
+			</data>
+			<key>hash2</key>
+			<data>
+			U6pq3N4Ac3lV2q8CWfDs8fZSKON4mYu1uJU/fc3y+Zs=
+			</data>
+		</dict>
+		<key>Ribbon@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			1Julnc0oqnaTJscsqumXQ//8bUY=
+			</data>
+			<key>hash2</key>
+			<data>
+			XyRJtw6kkVtOUo9jRB/y24Oosu4W2eTrVSK2YgBGgPg=
+			</data>
+		</dict>
+		<key>Ribbon@3x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			B5vX2lEqvOkgPUk6FPvWC7XhYSo=
+			</data>
+			<key>hash2</key>
+			<data>
+			7os98nleWorWkM8zdyAT3XVlGtrjfjgRwWBoQUudiFw=
 			</data>
 		</dict>
 		<key>RightArrow@1x.png</key>
