@@ -33,6 +33,7 @@ Label {
 	font-size: 15%;
 	text-transform: uppercase;
 	font-family: Avenir;
+	font-weight: bold;
 }
 
 .textField {
