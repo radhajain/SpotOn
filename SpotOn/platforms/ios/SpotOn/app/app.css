@@ -20,4 +20,19 @@ components that have the btn class name.
     font-size: 18;
 }
 
+.butlerExtraBold {
+	font-family: "Butler_ExtraBold";
+}
+
+.butlerLight {
+	font-family: "Butler_Light";
+}
+
+.butlerMedium {
+	font-family: "Butler_Medium";
+}
+
+.butlerRegular {
+	font-family: "Butler_Regular";
+}
 

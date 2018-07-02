@@ -22,7 +22,8 @@ Label {
 	font-size: 35%;
 	color: white;
 	padding-bottom: 10%;
-	font-family: serif;
+	font-family: Butler;
+	font-weight: bold;
 }
 
 .prompt {
@@ -31,6 +32,7 @@ Label {
 	color: #CDD8FF;
 	font-size: 15%;
 	text-transform: uppercase;
+	font-family: Avenir;
 }
 
 .textField {
@@ -38,6 +40,7 @@ Label {
 	text-align: center;
 	border-bottom-width: 1;
 	border-color: lightblue;
+	font-family: Avenir;
 }
 
 .arrow {
