@@ -86,13 +86,14 @@ Label {
 
 .infoBox {
 	margin-top: 2%;
-	height: 17%;
+	height: 18%;
 	margin-bottom: 7%;
 }
 
 .info {
 	color: lightblue;
 	width: 65%;
+	font-family: Avenir;
 	
 }
 
