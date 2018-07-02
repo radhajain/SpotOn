@@ -14,3 +14,9 @@ exports.pageNavigating = function(args) {
 exports.goToHomeView = function() {
 	frameModule.topmost().navigate('views/homeView/homeView');
 }
+
+exports.setDate = function() {
+  // temp
+  var today = new Date();
+	StorageUtil.setFirstCycleDay(today);
+}
