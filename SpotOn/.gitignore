@@ -4,6 +4,7 @@ npm-debug.log
 *.js.map
 *.metadata.json
 app/**/*.js
+app/onboarding/**/*.js
 npm-debug.log
 
 hooks/
