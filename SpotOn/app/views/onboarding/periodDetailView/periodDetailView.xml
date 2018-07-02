@@ -1,7 +1,7 @@
 <Page loaded="pageLoaded" xmlns="http://schemas.nativescript.org/tns.xsd"  navigatingTo="pageNavigating" id="landing" class="page" actionBarHidden="true">
 	<StackLayout class="labelStack">
 		<Image src="res://gettingStarted" stretch="aspectFit" class="oval"></Image>
-		
+
 
 		<Label text="My last period started on" class="prompt"/>
 
@@ -14,7 +14,8 @@
 
 		<!-- Date Picker -->
 
-		<DatePicker visibility="{{ showDatePicker ? 'visible' : 'collapse'}}" date="{{ date }}" style="color:white" maxDate="{{ maxDate }}" id="datePicker" ></DatePicker>
+	  <DatePicker visibility="{{ showDatePicker ? 'visible' : 'collapse'}}" date="{{ date }}" style="color:white" maxDate="{{ maxDate }}" id="datePicker" ></DatePicker>
+
 
 		<Button visibility="{{ showDatePicker ? 'visible' : 'collapse'}}" text="Done" tap="setDate" class="doneBtn"/>
 
@@ -23,5 +24,5 @@
 		<Image src="res://RightArrow" stretch="aspectFit" tap="goToHomeView" class="arrow"/>
 
 	</StackLayout>
-	 
+
 </Page>

@@ -11,8 +11,8 @@
 		</GridLayout>
 
 
-		<Image src="res://RightArrow" stretch="aspectFit" tap="goToNextView" class="arrow"/>
+		<Image src="res://RightArrow" stretch="aspectFit" tap="goToPeriodDetailView" class="arrow"/>
 
 	</StackLayout>
-	 
+
 </Page>
