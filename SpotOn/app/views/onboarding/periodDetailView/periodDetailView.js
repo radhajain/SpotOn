@@ -30,6 +30,12 @@ exports.pageNavigating = function(args) {
 	    alert("Device registered. Access token: " + token);
 	}, function() { });
 
+  //assume pill already taken on first day user logs into app
+  //this should be in the setDate function but it isn't being called
+  var today = new Date();
+  StorageUtil.setlastTimePillTaken(today.toISOString());
+  console.log("last time pill taken in onboarding " + StorageUtil.getlastTimePillTaken());
+
 }
 
 
