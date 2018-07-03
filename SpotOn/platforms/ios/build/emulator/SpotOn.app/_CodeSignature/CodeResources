@@ -1066,7 +1066,7 @@
 		</data>
 		<key>app/app.css</key>
 		<data>
-		6oXrYM3+BXudM/oYMaGhnhMTp5w=
+		K445NFFaOwHbm8byOFzTYw2r71E=
 		</data>
 		<key>app/app.js</key>
 		<data>
@@ -1075,6 +1075,22 @@
 		<key>app/bundle-config.js</key>
 		<data>
 		BZjEVi94RbJp1dunOY8mf6igpTg=
+		</data>
+		<key>app/fonts/Butler_ExtraBold.otf</key>
+		<data>
+		D4+lAWsXvYKsIn+5p82SGY7ec9I=
+		</data>
+		<key>app/fonts/Butler_Light.otf</key>
+		<data>
+		HqEVpDhDOAIZcNoKd2btNyePpIs=
+		</data>
+		<key>app/fonts/Butler_Medium.otf</key>
+		<data>
+		xgLULQZhflEI6tYiYeFA3hk/dLk=
+		</data>
+		<key>app/fonts/Butler_Regular.otf</key>
+		<data>
+		1cOFhwjMe2iAUwiBxp7q8B+HisU=
 		</data>
 		<key>app/main-page.js</key>
 		<data>
@@ -4562,15 +4578,15 @@
 		</data>
 		<key>app/views/onboarding/nameView/nameView.css</key>
 		<data>
-		JF5re7X390m/CrRI+C4n6+0D8Ks=
+		MgUmd9gZBnJ4G11JVu/hP3CgUns=
 		</data>
 		<key>app/views/onboarding/nameView/nameView.js</key>
 		<data>
-		tQrU3u6yrYisvxjGFG/l0NnoHeU=
+		TWKLIlHYALaD9bEj8U1aQEEai7Y=
 		</data>
 		<key>app/views/onboarding/nameView/nameView.xml</key>
 		<data>
-		YgRuMIg4oCp8Eai5GzKt4HF612U=
+		kyYHbyBEtdfMmAXjy/exPwRMjb4=
 		</data>
 		<key>app/views/onboarding/periodDetailView/periodDetailView.css</key>
 		<data>
@@ -4578,7 +4594,7 @@
 		</data>
 		<key>app/views/onboarding/periodDetailView/periodDetailView.js</key>
 		<data>
-		EX5yk16HVkblyylIniaC2P46zUk=
+		WGvfjC0vtWilvEvc4lf7PxYoLVQ=
 		</data>
 		<key>app/views/onboarding/periodDetailView/periodDetailView.xml</key>
 		<data>
@@ -4590,11 +4606,11 @@
 		</data>
 		<key>app/views/onboarding/periodView/periodView.js</key>
 		<data>
-		v7hVf8dlReJtwmX18V1p7y+HMIA=
+		V3ZQXzF208aVE3fw/TILlgU0QUU=
 		</data>
 		<key>app/views/onboarding/periodView/periodView.xml</key>
 		<data>
-		D7R1easibRkyFArc1RbPk18/LyU=
+		j5GxUNSRJTxnGXLHbNaE0a/d3Q8=
 		</data>
 		<key>app/views/settingsView/settingsView.css</key>
 		<data>
@@ -7581,11 +7597,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			6oXrYM3+BXudM/oYMaGhnhMTp5w=
+			K445NFFaOwHbm8byOFzTYw2r71E=
 			</data>
 			<key>hash2</key>
 			<data>
-			J+qkmM8jNiZdRRC2/6+0vy9T85r0uFNuzTMRlpY14NI=
+			JNKgCHMY6u7f37VJlkl/7gAjsN657YuuoTtEV+NUxO4=
 			</data>
 		</dict>
 		<key>app/app.js</key>
@@ -7608,6 +7624,50 @@
 			<key>hash2</key>
 			<data>
 			Ups69q4CmXvEnKebWBpfZ3lf37CIYK3OLFhUaf0zZKY=
+			</data>
+		</dict>
+		<key>app/fonts/Butler_ExtraBold.otf</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			D4+lAWsXvYKsIn+5p82SGY7ec9I=
+			</data>
+			<key>hash2</key>
+			<data>
+			pLsgZ+7NusUhpCP7F6SOJ+D6AsnrfeZc7AFFXrpoW3U=
+			</data>
+		</dict>
+		<key>app/fonts/Butler_Light.otf</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			HqEVpDhDOAIZcNoKd2btNyePpIs=
+			</data>
+			<key>hash2</key>
+			<data>
+			PtDFLKedZMEJ2xPW2JeEmGcsPRSdgU5NAvRQ1oMRfBg=
+			</data>
+		</dict>
+		<key>app/fonts/Butler_Medium.otf</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			xgLULQZhflEI6tYiYeFA3hk/dLk=
+			</data>
+			<key>hash2</key>
+			<data>
+			9aYar1TdR4cGN8IzOVfn2pnLzfk4DAmr2Xfxsno0BIk=
+			</data>
+		</dict>
+		<key>app/fonts/Butler_Regular.otf</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			1cOFhwjMe2iAUwiBxp7q8B+HisU=
+			</data>
+			<key>hash2</key>
+			<data>
+			daxndlxcnQfrlFXTeeMsPEVdTvdgAOSvu0TGvZmyHkU=
 			</data>
 		</dict>
 		<key>app/main-page.js</key>
@@ -17195,33 +17255,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			JF5re7X390m/CrRI+C4n6+0D8Ks=
+			MgUmd9gZBnJ4G11JVu/hP3CgUns=
 			</data>
 			<key>hash2</key>
 			<data>
-			h3Id4cTWrm3nyPyIVBTuW7RP5e0VWb/dQo055wqXL8Q=
+			c3IUtaDHcWQ1XGj32ikF95HLitnB3MBodMeIYqGk7U0=
 			</data>
 		</dict>
 		<key>app/views/onboarding/nameView/nameView.js</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			tQrU3u6yrYisvxjGFG/l0NnoHeU=
+			TWKLIlHYALaD9bEj8U1aQEEai7Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			vMFjnr/NDGscqtSHJUaCjg0vWA741XII75rQqbQATec=
+			RC2YMPzvr5yS8O9P6+4Tub9Loc91zK4qT2TEkTkYApM=
 			</data>
 		</dict>
 		<key>app/views/onboarding/nameView/nameView.xml</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			YgRuMIg4oCp8Eai5GzKt4HF612U=
+			kyYHbyBEtdfMmAXjy/exPwRMjb4=
 			</data>
 			<key>hash2</key>
 			<data>
-			h1J+aKUqXQjdqiMvB/Kbj+HS0W3/NW4qXUWGMpk1R0w=
+			QA5Dx8jzRVUV/r/XjKbA6oIClTz+WmuF9VtTmQaNGWA=
 			</data>
 		</dict>
 		<key>app/views/onboarding/periodDetailView/periodDetailView.css</key>
@@ -17239,11 +17299,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			EX5yk16HVkblyylIniaC2P46zUk=
+			WGvfjC0vtWilvEvc4lf7PxYoLVQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			qjQur8JDcNKH2dQ9C/u/WKTrx3WMj7ErPoNWnQY0Jx0=
+			O2Y5DtJY2BTS7looOjEjnmJAfcSm3opdaX0rcxvme3A=
 			</data>
 		</dict>
 		<key>app/views/onboarding/periodDetailView/periodDetailView.xml</key>
@@ -17272,22 +17332,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			v7hVf8dlReJtwmX18V1p7y+HMIA=
+			V3ZQXzF208aVE3fw/TILlgU0QUU=
 			</data>
 			<key>hash2</key>
 			<data>
-			vJV6UwDnQzdgkkGypktoZrtA0UdH941zxW2Ah6PQI7k=
+			v32XTB4QhuEQQ0wI6tQd8vq7JCTgzSLrUG7oDeZeIpE=
 			</data>
 		</dict>
 		<key>app/views/onboarding/periodView/periodView.xml</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			D7R1easibRkyFArc1RbPk18/LyU=
+			j5GxUNSRJTxnGXLHbNaE0a/d3Q8=
 			</data>
 			<key>hash2</key>
 			<data>
-			9jbW9QwlvCxwpBgD3cLszx8Dgt3ml30GpzKMyTuLqr8=
+			pxeMlZYWQC8i7oL+vqv2/tOhK1XaN7Ql5et9Ypc6Vjk=
 			</data>
 		</dict>
 		<key>app/views/settingsView/settingsView.css</key>
