@@ -76,16 +76,16 @@ exports.minsTillBirthControl = function() {
 	var bcTimeHours = birthControlTime.getHours();
 	var bcTimeMins = birthControlTime.getMinutes();
 	var bcTimeInMins = bcTimeHours * 60 + bcTimeMins;
-	console.log("from mins till bc func : bcTIme in mins " + bcTimeInMins);
+	//console.log("from mins till bc func : bcTIme in mins " + bcTimeInMins);
 	var today = new Date();
 	var hrs = today.getHours();
 	var mins = today.getMinutes();
 	var currentTimeInMins = hrs * 60 + mins;
-	console.log("current time in mins " + currentTimeInMins);
+	//console.log("current time in mins " + currentTimeInMins);
 	//If the user misses pill by more than that day, will not work correctly.
 	//var minutesTillBirthControl = birthControlTime - currentTimeInMins;
 	var minutesTillBirthControl = bcTimeInMins - currentTimeInMins;
-	console.log("minutes till birth fcontrol " + minutesTillBirthControl);
+	//console.log("minutes till birth fcontrol " + minutesTillBirthControl);
 	return minutesTillBirthControl;
 }
 
@@ -114,6 +114,21 @@ exports.getDoesGetPeriod = function() {
 	return appSettings.getBoolean('getsPeriod');
 }
 
+/* export: setCurrentCalendarPeriodStartDate
+ * ----------------
+ * Sets the user's first day in their cycle for given calendar month in view
+ */
+exports.setCurrentCalendarPeriodStartDate = function(date) {
+	appSettings.setString('firstDayOnCalendar', JSON.stringify(date));
+};
+
+/* export: getCurrentCalendarPeriodStartDate
+ * ----------------
+ * Returns the user's first day in their cycle for given calendar month in view
+ */
+exports.getCurrentCalendarPeriodStartDate = function() {
+	return new Date(JSON.parse(appSettings.getString('firstDayOnCalendar')));
+};
 
 /* export: setFirstCycleDay
  * ----------------

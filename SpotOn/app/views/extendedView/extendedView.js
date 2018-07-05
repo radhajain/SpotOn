@@ -1,3 +1,4 @@
+"use strict";
 var application = require("application");
 var observable = require("data/observable");
 var pageData = new observable.Observable();
@@ -123,9 +124,18 @@ function initMonthTitle(monthIndex, year) {
 //Adds dates to the calendar, tracking today's date and the date of the last period
 function initDates(monthIndex, year) {
 	var periodLength = parseInt(StorageUtil.getPeriodLength(), 10);
-	var periodStartDate = new Date();
-	periodStartDate.setDate(periodStartDate.getDate() - (cycleDay - 1));
-	var periodEndDate = addDays(periodStartDate, periodLength);
+	var periodStartDate = StorageUtil.getCurrentCalendarPeriodStartDate();
+	console.log("start date " + periodStartDate);
+
+	var periodEndDate = addDays(periodStartDate, periodLength - 1);
+	console.log(" blah " + addDays(periodStartDate, 4));
+	var periodStartDate2 = addDays(periodStartDate, 28);
+	console.log("period start 2 " + periodStartDate2);
+	var periodEndDate2 = addDays(periodStartDate2, periodLength - 1);
+	console.log("period end 2 " + periodEndDate2);
+	var periodStartDate3 = subtractDays(periodStartDate, 28);
+	var periodEndDate3 = addDays(periodStartDate3, periodLength - 1);
+
 	var ovulationDate = addDays(periodStartDate, ovulationOffset);
 
 	// ---*****Need to log period dates for every month (28-day cycle)***-----
@@ -156,7 +166,12 @@ function initDates(monthIndex, year) {
 	 			dayCell.class = "cell inactive"; //if in the previous/next month, set to inactive.
 	 		} else {
 	 			dayCell.class = "cell active";
-	 			if (dateBetween(periodStartDate, periodEndDate, monthDay)) {
+				//need to set monthDay to the first day actually being displayed not first day of month
+				//and need to loop until monthDay is the last date displayed not last date of month
+				//doesn't color if current day is period day
+	 			if (dateBetween(periodStartDate, periodEndDate, monthDay) ||
+					dateBetween(periodStartDate2, periodEndDate2, monthDay) ||
+					dateBetween(periodStartDate3, periodEndDate3, monthDay)) {
 	 				dayCell.class += " period"; //period
 	 			} else if (dateEquals(monthDay, ovulationDate)) {
 	 				dayCell.class += " ovulation";
@@ -174,14 +189,21 @@ function initDates(monthIndex, year) {
 exports.renderPrevMonth = function() {
 	var monthIndex = currDate.getMonth()
 	currDate.setMonth(monthIndex-1);
+	var lastMonthPeriodStartDate = StorageUtil.getCurrentCalendarPeriodStartDate();
+	var lastPeriodStart = subtractDays(lastMonthPeriodStartDate, 28);
+	StorageUtil.setCurrentCalendarPeriodStartDate(lastPeriodStart);
 	clearCalendar();
 	renderCalendar(currDate);
 }
 
 //Right arrow
 exports.renderNextMonth = function() {
-	var monthIndex = currDate.getMonth()
+	var monthIndex = currDate.getMonth();
 	currDate.setMonth(monthIndex+1);
+	var lastMonthPeriodStartDate = StorageUtil.getCurrentCalendarPeriodStartDate();
+	var nextPeriodStart = addDays(lastMonthPeriodStartDate, 28);
+	StorageUtil.setCurrentCalendarPeriodStartDate(nextPeriodStart);
+	console.log("in render next month " + nextPeriodStart);
 	clearCalendar();
 	renderCalendar(currDate);
 }
@@ -195,7 +217,17 @@ exports.renderNextMonth = function() {
 
 function addDays(date, days) {
   var result = new Date(date);
+	//period start date in add days says Fri Jun 29 2018 00:00:00 GMT-0400 (EDT)
+	console.log("period start date in add days " + result);
   result.setDate(result.getDate() + days);
+  return result;
+}
+
+function subtractDays(date, days) {
+  var result = new Date(date);
+	//period start date in add days says Fri Jun 29 2018 00:00:00 GMT-0400 (EDT)
+	console.log("period start date in subtract days " + result);
+  result.setDate(result.getDate() - days);
   return result;
 }
 

@@ -59,11 +59,13 @@ exports.onFocus = function(args) {
 
 
 exports.setDate = function() {
+  console.log("in set date");
 	var datePicker = page.getViewById("datePicker");
 	pageData.set('showDatePicker', false);
 	var textField = page.getViewById("periodStart");
 	textField.text = datePicker.date.toDateString();
 	StorageUtil.setFirstCycleDay(datePicker.date);
+  StorageUtil.setCurrentCalendarPeriodStartDate(datePicker.date);
 	textField.dismissSoftInput();
 }
 
@@ -104,8 +106,8 @@ function initDatePicker() {
 	pageData.set("maxDate", TODAY);
 }
 
-exports.setDate = function() {
+/*exports.setDate = function() {
   // temp
   var today = new Date();
 	StorageUtil.setFirstCycleDay(today);
-}
+}*/
