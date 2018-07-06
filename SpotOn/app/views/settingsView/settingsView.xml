@@ -14,6 +14,14 @@
 
 		<!-- <Button visibility="{{ showDatePicker ? 'visible' : 'collapse'}}" text="Save Changes" tap="setDate" class="settingsBtn"/>
 -->
+	<StackLayout orientation="horizontal">
+		<Label text="Contraception" class="prompt"/>
+		<GridLayout rows="*,*,*,*" columns="*" class="center">
+			<Button row="0" col="1" text="Pill" tap="setPill" class="buttonOption" id="pillBtn"/>
+			<Button row="1" col="1" text="None" tap="setNone" class="buttonOption" id="noneBtn"/>
+		</GridLayout>
+	</StackLayout>
+
 		<Button text="Save Changes" tap="setTime" class="settingsBtn"/>
 
 

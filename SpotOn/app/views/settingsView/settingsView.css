@@ -43,3 +43,18 @@ Label {
 	border-radius: 30%;
 	margin-bottom: 3%;
 }
+
+.buttonOption {
+	color: #76a6f2;
+	font-size: 15%;
+	text-transform: uppercase;
+	font-family: Avenir;
+}
+
+.buttonSelected: {
+	color: white;
+	font-weight: bold;
+	font-size: 15%;
+	text-transform: uppercase;
+	font-family: Avenir;
+}
