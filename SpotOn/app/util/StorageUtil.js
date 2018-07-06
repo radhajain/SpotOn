@@ -98,6 +98,22 @@ exports.minsTillBirthControl = function() {
 /* Contains: First cycle day, Period length, name, birth control time
 */
 
+/* export: setDoesUsePill
+ * ----------------
+ * Sets whether the user uses pill or not -- boolean
+ */
+exports.setDoesUsePill = function(usesPill) {
+	appSettings.setBoolean('usesPill', usesPill);
+}
+
+/* export: getDoesUsePill
+ * ----------------
+ * Sets whether the user uses pill or not -- boolean
+ */
+exports.getDoesUsePill = function() {
+	return appSettings.getBoolean('usesPill');
+}
+
 /* export: setDoesGetPeriod
  * ----------------
  * Sets whether the user gets the period or not -- boolean

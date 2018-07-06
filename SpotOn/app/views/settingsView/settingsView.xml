@@ -1,29 +1,23 @@
 <Page loaded="pageLoaded" xmlns="http://schemas.nativescript.org/tns.xsd"  navigatingTo="pageNavigating" id="settings" class="page" actionBarHidden="true">
-	<StackLayout>
+	<StackLayout class="labelStack">
 
-		<Label text="Your Cycle"/>
+		<Label text="Settings" class="title"/>
 
 		<StackLayout orientation="horizontal">
-			<Label text="What time do you take your pill?"/>
+			<Label text="Pill Time" class="prompt"/>
 			<Button text="{{ pillTime }}" style="color:white" id="periodStart" class="textField" tap="selectPillTime"/>
 		</StackLayout>
 
 		<TimePicker visibility="{{ showTimePicker ? 'visible' : 'collapse'}}" date="{{ date }}" loaded="onPickerLoaded" verticalAlignment="center" class="m-15" id="timePicker" style="color:white"></TimePicker>
 
 		<Button visibility="{{ showTimePicker ? 'visible' : 'collapse'}}" text="Save" tap="setTime" class="doneBtn"/>
-		
-		<Label text="When did you last get your period?"/>
 
-		<TextField text="{{ periodStartDay }}" keyboardType="dateTime" style="color:white" id="periodStart" class="textField" focus="onFocus"/>
-
-		<!-- Date Picker -->
-
-		<DatePicker visibility="{{ showDatePicker ? 'visible' : 'collapse'}}" date="{{ date }}" style="color:white" maxDate="{{ maxDate }}" id="datePicker" ></DatePicker>
-
-		<Button visibility="{{ showDatePicker ? 'visible' : 'collapse'}}" text="Done" tap="setDate" class="doneBtn"/>
+		<!-- <Button visibility="{{ showDatePicker ? 'visible' : 'collapse'}}" text="Save Changes" tap="setDate" class="settingsBtn"/>
+-->
+		<Button text="Save Changes" tap="setTime" class="settingsBtn"/>
 
 
 
 	</StackLayout>
-	 
+
 </Page>

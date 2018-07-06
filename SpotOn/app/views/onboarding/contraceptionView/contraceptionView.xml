@@ -4,8 +4,13 @@
 
 		<Label text="Form of contraception" class="prompt"/>
 
+		<GridLayout rows="auto" columns="*,*,*,*" class="center">
+			<Button row="0" col="1" text="Pill" tap="setPill" class="buttonOption" id="pillBtn"/>
+			<Button row="0" col="2" text="None" tap="setNone" class="buttonOption" id="noneBtn"/>
+		</GridLayout>
+
 		<Image src="res://RightArrow" stretch="aspectFit" tap="goToPeriodView" class="arrow"/>
 
 	</StackLayout>
-	 
+
 </Page>

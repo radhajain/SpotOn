@@ -48,6 +48,7 @@ exports.setTime = function(args) {
 	newTime.setMinutes(timePicker.minute);
 	StorageUtil.setBirthControlTime(newTime);
 	pageData.set("showTimePicker", false);
+	frameModule.topmost().navigate('views/extendedView/extendedView');
 }
 
 function setPeriodLength() {
@@ -62,4 +63,8 @@ exports.onFocus = function(args) {
 		pageData.set('showDatePicker', true);
 		textField.dismissSoftInput();
 	}
+}
+
+exports.goToExtendedView = function() {
+		frameModule.topmost().navigate('views/extendedView/extendedView');
 }
