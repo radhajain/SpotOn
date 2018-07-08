@@ -7,21 +7,27 @@
 
 		<TextField text="{{ periodStartDay }}" keyboardType="dateTime" id="periodStart"  focus="onFocus"/>
 
-		<Label text="My Period Usually Lasts" class="prompt"/>
-
-		<TextField text="{{ periodLength }}" keyboardType="phone" focus="onFocus" id="periodLength"/>
-		<Label text="days" class="numDays"/>
-
 		<!-- Date Picker -->
 
-	  <DatePicker visibility="{{ showDatePicker ? 'visible' : 'collapse'}}" date="{{ date }}" style="color:white" maxDate="{{ maxDate }}" id="datePicker" ></DatePicker>
+	  	<DatePicker visibility="{{ showDatePicker ? 'visible' : 'collapse'}}" date="{{ date }}" style="color:white" maxDate="{{ maxDate }}" id="datePicker" ></DatePicker>
 
 
 		<Button visibility="{{ showDatePicker ? 'visible' : 'collapse'}}" text="Done" tap="setDate" class="doneBtn"/>
 
 		<!-- End Date Picker -->
 
-		<Image src="res://RightArrow" stretch="aspectFit" tap="goToHomeView" class="arrow"/>
+		<StackLayout visibility="{{ showDatePicker ? 'collapse' : 'visible'}}">
+
+		<Label text="My Period Usually Lasts" class="prompt"/>
+
+		<TextField text="{{ periodLength }}" keyboardType="phone" focus="onFocus" id="periodLength"/>
+		<Label text="days" class="numDays"/>
+
+		</StackLayout>
+
+		
+
+		<Image visibility="{{ showDatePicker ? 'collapse' : 'visible'}}" src="res://RightArrow" stretch="aspectFit" tap="goToHomeView" class="arrow"/>
 
 	</StackLayout>
 

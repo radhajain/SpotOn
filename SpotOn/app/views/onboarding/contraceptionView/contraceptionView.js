@@ -10,24 +10,26 @@ exports.pageNavigating = function(args) {
 }
 
 exports.setPill= function(args) {
+	clearBtnClasses();
 	var pillBtn = args.object;
 	pillBtn.className = "buttonSelected";
-	if (currChoice !== "Pill") {
-		var noneBtn = page.getViewById("noneBtn");
-		noneBtn.className = "buttonOption";
-		currChoice = "Pill";
-	}
+	currChoice = "Pill";
 }
 
 exports.setNone = function(args) {
+	clearBtnClasses();
 	var noneBtn = args.object;
 	noneBtn.className = "buttonSelected";
-	if (currChoice !== "None") {
-		var pillBtn = page.getViewById("pillBtn");
-		pillBtn.className = "buttonOption";
-		currChoice = "None";
-	}
+	currChoice = "None";
 }
+
+exports.setOther = function(args) {
+	clearBtnClasses();
+	var otherBtn = args.object;
+	otherBtn.className = "buttonSelected";
+	currChoice = "Other";
+}
+
 
 exports.goToPeriodView = function() {
 	if (currChoice == "Pill") {
@@ -36,6 +38,9 @@ exports.goToPeriodView = function() {
 	} else if (currChoice == "None") {
 		StorageUtil.setDoesUsePill(false);
 		StorageUtil.setBirthControlType("None");
+	} else if (currChoice == "Other") {
+		StorageUtil.setDoesUsePill(false);
+		StorageUtil.setBirthControlType("Other");
 	} else {
 		//Ensure that the user has filled out all fields
 		dialogs.alert({
@@ -47,4 +52,13 @@ exports.goToPeriodView = function() {
 		});
 	}
 	frameModule.topmost().navigate('views/onboarding/periodView/periodView');
+}
+
+function clearBtnClasses() {
+	var pillBtn = page.getViewById("pillBtn");
+	pillBtn.className = "buttonOption";
+	var noneBtn = page.getViewById("noneBtn");
+	noneBtn.className = "buttonOption";
+	var otherBtn = page.getViewById("otherBtn");
+	otherBtn.className = "buttonOption";
 }

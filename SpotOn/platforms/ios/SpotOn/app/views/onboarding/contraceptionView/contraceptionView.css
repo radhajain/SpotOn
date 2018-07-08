@@ -34,12 +34,17 @@ Label {
 	font-family: Avenir;
 }
 
+.grid {
+	height: 30%;
+}
+
 
 .arrow {
 	width: 8%;
 	margin-left:46%;
 	margin-right: 46%;
-	margin-top: 15%;
+	margin-top: 2%;
+	vertical-align: bottom;
 }
 
 .buttonOption {

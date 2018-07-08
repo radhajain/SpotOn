@@ -19,7 +19,9 @@ var DAYS = ["M", "Tu", "W", "Th", "F", "S", "S"];
 var MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 var currDate;
 var cycleDay;
-var ovulationOffset = 12;
+var OVULATION_OFFSET = 12;
+var MONTH_ENUM = 0;
+
 
 exports.pageLoaded = function(args) {
 	page = args.object;
@@ -52,7 +54,6 @@ exports.pageLoaded = function(args) {
 
 function initNumber() {
 	str = "res://" + cycleDay + " Small";
-	console.log(str);
 	pageData.set("number", str);
 }
 
@@ -124,19 +125,17 @@ function initMonthTitle(monthIndex, year) {
 //Adds dates to the calendar, tracking today's date and the date of the last period
 function initDates(monthIndex, year) {
 	var periodLength = parseInt(StorageUtil.getPeriodLength(), 10);
-	var periodStartDate = StorageUtil.getCurrentCalendarPeriodStartDate();
+	var periodStartDate = addDays(StorageUtil.getFirstCycleDay(), MONTH_ENUM*28);
 	console.log("start date " + periodStartDate);
-
 	var periodEndDate = addDays(periodStartDate, periodLength - 1);
-	console.log(" blah " + addDays(periodStartDate, 4));
 	var periodStartDate2 = addDays(periodStartDate, 28);
-	console.log("period start 2 " + periodStartDate2);
 	var periodEndDate2 = addDays(periodStartDate2, periodLength - 1);
-	console.log("period end 2 " + periodEndDate2);
 	var periodStartDate3 = subtractDays(periodStartDate, 28);
 	var periodEndDate3 = addDays(periodStartDate3, periodLength - 1);
 
-	var ovulationDate = addDays(periodStartDate, ovulationOffset);
+	var ovulationDate = addDays(periodStartDate, OVULATION_OFFSET);
+	var ovulationDate2 = addDays(periodStartDate2, OVULATION_OFFSET);
+	var ovulationDate3 = addDays(periodStartDate3, OVULATION_OFFSET);
 
 	// ---*****Need to log period dates for every month (28-day cycle)***-----
 
@@ -166,20 +165,20 @@ function initDates(monthIndex, year) {
 	 			dayCell.class = "cell inactive"; //if in the previous/next month, set to inactive.
 	 		} else {
 	 			dayCell.class = "cell active";
-				//need to set monthDay to the first day actually being displayed not first day of month
-				//and need to loop until monthDay is the last date displayed not last date of month
-				//doesn't color if current day is period day
-	 			if (dateBetween(periodStartDate, periodEndDate, monthDay) ||
-					dateBetween(periodStartDate2, periodEndDate2, monthDay) ||
-					dateBetween(periodStartDate3, periodEndDate3, monthDay)) {
-	 				dayCell.class += " period"; //period
-	 			} else if (dateEquals(monthDay, ovulationDate)) {
-	 				dayCell.class += " ovulation";
-	 			}
-	 			if (dateEquals(monthDay, today)) {
-	 				dayCell.class += " circle";
-	 			}
 	 		}
+ 			if (dateBetween(periodStartDate, periodEndDate, monthDay) || 
+ 				dateBetween(periodStartDate2, periodEndDate2, monthDay) ||
+ 				dateBetween(periodStartDate3, periodEndDate3, monthDay)) {
+ 				dayCell.class += " period"; 
+ 			} else if (dateEquals(monthDay, ovulationDate) || 
+ 						dateEquals(monthDay, ovulationDate2) || 
+ 						dateEquals(monthDay, ovulationDate3)) {
+ 				dayCell.class += " ovulation";
+ 			}
+ 			if (dateEquals(monthDay, today)) {
+ 				dayCell.class += " circle";
+ 			}
+	 		
 	 		monthDay.setDate(monthDay.getDate() + 1);
 	 	}
 	 }
@@ -189,9 +188,7 @@ function initDates(monthIndex, year) {
 exports.renderPrevMonth = function() {
 	var monthIndex = currDate.getMonth()
 	currDate.setMonth(monthIndex-1);
-	var lastMonthPeriodStartDate = StorageUtil.getCurrentCalendarPeriodStartDate();
-	var lastPeriodStart = subtractDays(lastMonthPeriodStartDate, 28);
-	StorageUtil.setCurrentCalendarPeriodStartDate(lastPeriodStart);
+	MONTH_ENUM -= 1;
 	clearCalendar();
 	renderCalendar(currDate);
 }
@@ -200,10 +197,7 @@ exports.renderPrevMonth = function() {
 exports.renderNextMonth = function() {
 	var monthIndex = currDate.getMonth();
 	currDate.setMonth(monthIndex+1);
-	var lastMonthPeriodStartDate = StorageUtil.getCurrentCalendarPeriodStartDate();
-	var nextPeriodStart = addDays(lastMonthPeriodStartDate, 28);
-	StorageUtil.setCurrentCalendarPeriodStartDate(nextPeriodStart);
-	console.log("in render next month " + nextPeriodStart);
+	MONTH_ENUM += 1;
 	clearCalendar();
 	renderCalendar(currDate);
 }
@@ -217,16 +211,12 @@ exports.renderNextMonth = function() {
 
 function addDays(date, days) {
   var result = new Date(date);
-	//period start date in add days says Fri Jun 29 2018 00:00:00 GMT-0400 (EDT)
-	console.log("period start date in add days " + result);
   result.setDate(result.getDate() + days);
   return result;
 }
 
 function subtractDays(date, days) {
   var result = new Date(date);
-	//period start date in add days says Fri Jun 29 2018 00:00:00 GMT-0400 (EDT)
-	console.log("period start date in subtract days " + result);
   result.setDate(result.getDate() - days);
   return result;
 }

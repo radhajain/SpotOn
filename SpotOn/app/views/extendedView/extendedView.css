@@ -127,7 +127,8 @@ Label {
 
 
 .label {
-	color: gray;
+	color: white;
+	font-family: Avenir;
 	font-size: 10%; 
 	margin-left: 20%;
 }
