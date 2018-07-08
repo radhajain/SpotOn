@@ -24,8 +24,15 @@
 				<Button text=">" row="0" col="6" tap="renderNextMonth" class="arrows"/>
 			</GridLayout>
 		<StackLayout orientation="horizontal" id="key">
-			<Label text="On your period." class="label"/>
-			<Label text="Ovulating." class="label"/>
+			<StackLayout orientation="horizontal">
+				<Image src="res://pinkCircle" stretch="aspectFit" class="labelKey"></Image>
+				<Label text="On your period." class="label"/>
+			</StackLayout>
+			
+			<StackLayout orientation="horizontal" class="right">
+				<Image src="res://blueCircle" stretch="aspectFit" class="labelKey"></Image>
+				<Label text="Ovulating." class="label"/>
+			</StackLayout>
 
 			<!-- Period toggle - need to align programmatically too -->
 		</StackLayout>

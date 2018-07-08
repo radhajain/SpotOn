@@ -129,16 +129,25 @@ Label {
 .label {
 	color: white;
 	font-family: Avenir;
-	font-size: 10%; 
-	margin-left: 20%;
+	font-size: 11%; 
+	margin-left: 2%;
+}
+
+.right {
+	margin-left: 10%;
+}
+
+.labelKey {
+	width: 15px;
 }
 
 .ovulation {
-	background-color: lightblue;
+	background-color: #253D5F;
 }
 
 #key {
 	margin-top: 2%;
+	margin-left: 22%;
 }
 
 

@@ -64,7 +64,7 @@ function initFormatting() {
 	infoBox.height = 0.4 * pageHeight;
 
 	var stackPage = page.getViewById("stackPage");
-	stackPage.height = 1.65 * pageHeight;
+	stackPage.height = 1.7 * pageHeight;
 
 }
 
@@ -125,11 +125,13 @@ function initMonthTitle(monthIndex, year) {
 //Adds dates to the calendar, tracking today's date and the date of the last period
 function initDates(monthIndex, year) {
 	var periodLength = parseInt(StorageUtil.getPeriodLength(), 10);
+	//Current month:
 	var periodStartDate = addDays(StorageUtil.getFirstCycleDay(), MONTH_ENUM*28);
-	console.log("start date " + periodStartDate);
 	var periodEndDate = addDays(periodStartDate, periodLength - 1);
+	//Next Month:
 	var periodStartDate2 = addDays(periodStartDate, 28);
 	var periodEndDate2 = addDays(periodStartDate2, periodLength - 1);
+	//Previous month:
 	var periodStartDate3 = subtractDays(periodStartDate, 28);
 	var periodEndDate3 = addDays(periodStartDate3, periodLength - 1);
 

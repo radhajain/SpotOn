@@ -31,6 +31,11 @@ Label {
 	color: #CDD8FF;
 	font-size: 15%;
 	text-transform: uppercase;
+	font-family: Avenir;
+}
+
+.grid {
+	height: 30%;
 }
 
 
@@ -38,6 +43,21 @@ Label {
 	width: 8%;
 	margin-left:46%;
 	margin-right: 46%;
-	margin-top: 15%;
+	margin-top: 2%;
+	vertical-align: bottom;
 }
-	
+
+.buttonOption {
+	color: #76a6f2;
+	font-size: 15%;
+	text-transform: uppercase;
+	font-family: Avenir;
+}
+
+.buttonSelected: {
+	color: white;
+	font-weight: bold;
+	font-size: 15%;
+	text-transform: uppercase;
+	font-family: Avenir;
+}

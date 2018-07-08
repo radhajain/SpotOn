@@ -77,6 +77,7 @@ exports.showWarning = function() {
   var lastDayPillTookAsString = timePillTakenLast.toDateString();
   var tookPillToday = todayAsString === lastDayPillTookAsString;
   //var alreadyTookPillTodayBeforeScheduledTime =  timePillTakenLast < timeToTakePill;
+	console.log("in alert " + tookPillToday);
 	if (minsTillPill < 60 && !tookPillToday) {
 		pageData.set("showWarning", true);
     var hours = timeToTakePill.getHours();

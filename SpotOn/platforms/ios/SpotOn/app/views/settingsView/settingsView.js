@@ -15,30 +15,58 @@ exports.pageNavigating = function(args) {
 	page = args.object;
 	page.bindingContext = pageData;
 	pageData.set("showTimePicker", false);
-
+	initName();
+	initPeriodLength();
+	initContraception();
+	initPeriodOptions();
 }
 
+/*********************
+INITIATION FUNCTIONS*
+*********************/
+
+function initName() {
+	var name = StorageUtil.getName();
+	pageData.set("name", name);
+}
+
+function initPeriodLength() {
+	var periodLength = StorageUtil.getPeriodLength();
+	pageData.set("periodLength", periodLength);
+}
+
+function initContraception() {
+	var contraceptionChoice = StorageUtil.getBirthControlType();
+	page.getViewById(contraceptionChoice).className = 'buttonSelected';
+}
+
+function initPeriodOptions() {
+	var doesGetPeriod = StorageUtil.getDoesGetPeriod();
+	if (doesGetPeriod) {
+		page.getViewById("Yes").className = 'buttonSelected';
+	} else {
+		page.getViewById("No").className = 'buttonSelected';
+	}
+}
+
+
+/********************
+   USER INTERACTIONS
+*********************/
 
 exports.selectPillTime = function(args) {
 	pageData.set("showTimePicker", true);
 }
 
 exports.onPickerLoaded = function(args) {
+	//Auto load picker to the current stored birth control time
 	var timePicker = args.object;
 	var previousTime = StorageUtil.getBirthControlTime();
 	var prevHour = previousTime.getHours();
 	var prevMins = previousTime.getMinutes();
 	pageData.set("pillTime", prevHour + ":" + prevMins.toString());
 	timePicker.hour = prevHour;
-  timePicker.minute = prevMins;
-
-    // handling 'time change' via code behind
-    timePicker.on("timeChange", (result) => {
-        const vm = page.bindingContext;
-        vm.set("hourResult", `Hour: ${result.object.hour}`);
-        vm.set("minuteResult", `Minute: ${result.object.minute}`);
-        vm.set("timeResult", `TIme: ${result.object.time}`);
-    });
+  	timePicker.minute = prevMins;
 }
 
 exports.setTime = function(args) {
@@ -49,47 +77,104 @@ exports.setTime = function(args) {
 	newTime.setMinutes(timePicker.minute);
 	StorageUtil.setBirthControlTime(newTime);
 	pageData.set("showTimePicker", false);
-	frameModule.topmost().navigate('views/extendedView/extendedView');
 }
 
-function setPeriodLength() {
-	var periodLengthField = page.getViewById("periodLength");
-	var numDays = periodLengthField.text;
-	StorageUtil.setPeriodLength(numDays);
-}
 
-exports.onFocus = function(args) {
-	var textField = args.object;
-	if (args.object === page.getViewById("periodStart")) {
-		pageData.set('showDatePicker', true);
-		textField.dismissSoftInput();
+/*********************
+SET WHETHER GETS PERIOD*
+*********************/
+
+
+exports.setPeriod = function() {
+	var settingsGetsPeriod = StorageUtil.getDoesGetPeriod();
+	if (!settingsGetsPeriod) {
+		StorageUtil.setDoesGetPeriod(true);
 	}
+	clearSelected();
+	page.getViewById("Yes").className="buttonSelected";
 }
 
-xports.setPill= function(args) {
+
+exports.setNoPeriod = function() {
+	var settingsGetsPeriod = StorageUtil.getDoesGetPeriod();
+	if (settingsGetsPeriod) {
+		StorageUtil.setDoesGetPeriod(false);
+	}
+	clearSelected();
+	page.getViewById("No").className="buttonSelected";
+}
+
+
+function clearSelected() {
+	page.getViewById("Yes").className="buttonOption";
+	page.getViewById("No").className="buttonOption";
+
+}
+
+
+/*********************
+CONTRACEPTION CHOICES*
+*********************/
+
+
+exports.setPill= function(args) {
+	clearBtnClasses();
 	var pillBtn = args.object;
 	pillBtn.className = "buttonSelected";
-	if (currChoice !== "Pill") {
-		var noneBtn = page.getViewById("noneBtn");
-		noneBtn.className = "buttonOption";
-		currChoice = "Pill";
-	}
-	StorageUtil.setDoesUsePill(true);
-	StorageUtil.setBirthControlType("Pill");
+	currChoice = "Pill";
 }
 
 exports.setNone = function(args) {
+	clearBtnClasses();
 	var noneBtn = args.object;
 	noneBtn.className = "buttonSelected";
-	if (currChoice !== "None") {
-		var pillBtn = page.getViewById("pillBtn");
-		pillBtn.className = "buttonOption";
-		currChoice = "None";
-	}
-	StorageUtil.setDoesUsePill(false);
-	StorageUtil.setBirthControlType("None");
+	currChoice = "None";
 }
 
+exports.setOther = function(args) {
+	clearBtnClasses();
+	var otherBtn = args.object;
+	otherBtn.className = "buttonSelected";
+	currChoice = "Other";
+}
+
+
+function clearBtnClasses() {
+	var pillBtn = page.getViewById("Pill");
+	pillBtn.className = "buttonOption";
+	var noneBtn = page.getViewById("None");
+	noneBtn.className = "buttonOption";
+	var otherBtn = page.getViewById("Other");
+	otherBtn.className = "buttonOption";
+}
+
+
+/*********************
+UPDATE & SAVE CHANGES*
+*********************/
+
+exports.updateName = function() {
+	var settingsName = StorageUtil.getName();
+	var enteredName = page.getViewById("name").text;
+	if (settingsName != enteredName) {
+		StorageUtil.setName(enteredName);
+	}
+}
+
+exports.updatePeriodLength = function() {
+	var settingsPdLength = StorageUtil.getPeriodLength();
+	var enteredPdLength = page.getViewById("periodLength").text;
+	if (settingsPdLength != enteredPdLength) {
+		StorageUtil.setPeriodLength(enteredPdLength);
+	}
+}
+
+
+
 exports.goToExtendedView = function() {
-		frameModule.topmost().navigate('views/extendedView/extendedView');
+	exports.updateName();
+	exports.updatePeriodLength();
+
+
+	frameModule.topmost().navigate('views/extendedView/extendedView');
 }

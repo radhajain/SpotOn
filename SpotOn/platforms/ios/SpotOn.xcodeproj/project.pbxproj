@@ -210,6 +210,12 @@
 		3BA5F21D486E4C2AA23779AE /* Ribbon@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC8304A71A4D41AEA18325 /* Ribbon@1x.png */; };
 		44F137904CEC481C81F3CA32 /* Ribbon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 16F36DDAB2724E4591105DF6 /* Ribbon@2x.png */; };
 		C3C70AD7B09B4B47A3A5E031 /* Ribbon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F42F488D76AE4EBD8C4E2F08 /* Ribbon@3x.png */; };
+		81CB6528E7AC476F80C58B73 /* pinkCircle@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 550E83E0B932418791ECA43E /* pinkCircle@1x.png */; };
+		FBCEFB8700F644ADA7AF0670 /* pinkCircle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B7F5BC0328534AE6BEE93AF1 /* pinkCircle@2x.png */; };
+		4FB824386B7A46C5BFC38A72 /* pinkCircle@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 358A146DC81244A7A142A818 /* pinkCircle@3x.png */; };
+		5F3CDA7EB9584567811F0A67 /* blueCircle@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37EE36746AE3409E86D48DE6 /* blueCircle@1x.png */; };
+		15ABDCFF65314A119F539B33 /* blueCircle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 209A3AEAA091408899904BA2 /* blueCircle@2x.png */; };
+		2C9643186CBA412FBE7D08A9 /* blueCircle@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 85FB35D240324E58B2C15559 /* blueCircle@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -437,6 +443,12 @@
 		ABDC8304A71A4D41AEA18325 /* Ribbon@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Ribbon@1x.png"; path = "SpotOn/Resources/Ribbon@1x.png"; sourceTree = "<group>"; };
 		16F36DDAB2724E4591105DF6 /* Ribbon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Ribbon@2x.png"; path = "SpotOn/Resources/Ribbon@2x.png"; sourceTree = "<group>"; };
 		F42F488D76AE4EBD8C4E2F08 /* Ribbon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Ribbon@3x.png"; path = "SpotOn/Resources/Ribbon@3x.png"; sourceTree = "<group>"; };
+		550E83E0B932418791ECA43E /* pinkCircle@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pinkCircle@1x.png"; path = "SpotOn/Resources/pinkCircle@1x.png"; sourceTree = "<group>"; };
+		B7F5BC0328534AE6BEE93AF1 /* pinkCircle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pinkCircle@2x.png"; path = "SpotOn/Resources/pinkCircle@2x.png"; sourceTree = "<group>"; };
+		358A146DC81244A7A142A818 /* pinkCircle@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pinkCircle@3x.png"; path = "SpotOn/Resources/pinkCircle@3x.png"; sourceTree = "<group>"; };
+		37EE36746AE3409E86D48DE6 /* blueCircle@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "blueCircle@1x.png"; path = "SpotOn/Resources/blueCircle@1x.png"; sourceTree = "<group>"; };
+		209A3AEAA091408899904BA2 /* blueCircle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "blueCircle@2x.png"; path = "SpotOn/Resources/blueCircle@2x.png"; sourceTree = "<group>"; };
+		85FB35D240324E58B2C15559 /* blueCircle@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "blueCircle@3x.png"; path = "SpotOn/Resources/blueCircle@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -712,6 +724,12 @@
 				ABDC8304A71A4D41AEA18325 /* Ribbon@1x.png */,
 				16F36DDAB2724E4591105DF6 /* Ribbon@2x.png */,
 				F42F488D76AE4EBD8C4E2F08 /* Ribbon@3x.png */,
+				550E83E0B932418791ECA43E /* pinkCircle@1x.png */,
+				B7F5BC0328534AE6BEE93AF1 /* pinkCircle@2x.png */,
+				358A146DC81244A7A142A818 /* pinkCircle@3x.png */,
+				37EE36746AE3409E86D48DE6 /* blueCircle@1x.png */,
+				209A3AEAA091408899904BA2 /* blueCircle@2x.png */,
+				85FB35D240324E58B2C15559 /* blueCircle@3x.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -970,6 +988,12 @@
 				3BA5F21D486E4C2AA23779AE /* Ribbon@1x.png in Resources */,
 				44F137904CEC481C81F3CA32 /* Ribbon@2x.png in Resources */,
 				C3C70AD7B09B4B47A3A5E031 /* Ribbon@3x.png in Resources */,
+				81CB6528E7AC476F80C58B73 /* pinkCircle@1x.png in Resources */,
+				FBCEFB8700F644ADA7AF0670 /* pinkCircle@2x.png in Resources */,
+				4FB824386B7A46C5BFC38A72 /* pinkCircle@3x.png in Resources */,
+				5F3CDA7EB9584567811F0A67 /* blueCircle@1x.png in Resources */,
+				15ABDCFF65314A119F539B33 /* blueCircle@2x.png in Resources */,
+				2C9643186CBA412FBE7D08A9 /* blueCircle@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

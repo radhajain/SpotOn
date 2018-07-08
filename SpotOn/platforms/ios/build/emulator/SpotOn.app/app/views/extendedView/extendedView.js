@@ -1,3 +1,4 @@
+"use strict";
 var application = require("application");
 var observable = require("data/observable");
 var pageData = new observable.Observable();
@@ -18,7 +19,9 @@ var DAYS = ["M", "Tu", "W", "Th", "F", "S", "S"];
 var MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 var currDate;
 var cycleDay;
-var ovulationOffset = 12;
+var OVULATION_OFFSET = 12;
+var MONTH_ENUM = 0;
+
 
 exports.pageLoaded = function(args) {
 	page = args.object;
@@ -51,7 +54,6 @@ exports.pageLoaded = function(args) {
 
 function initNumber() {
 	str = "res://" + cycleDay + " Small";
-	console.log(str);
 	pageData.set("number", str);
 }
 
@@ -123,10 +125,19 @@ function initMonthTitle(monthIndex, year) {
 //Adds dates to the calendar, tracking today's date and the date of the last period
 function initDates(monthIndex, year) {
 	var periodLength = parseInt(StorageUtil.getPeriodLength(), 10);
-	var periodStartDate = new Date();
-	periodStartDate.setDate(periodStartDate.getDate() - (cycleDay - 1));
-	var periodEndDate = addDays(periodStartDate, periodLength);
-	var ovulationDate = addDays(periodStartDate, ovulationOffset);
+	//Current month:
+	var periodStartDate = addDays(StorageUtil.getFirstCycleDay(), MONTH_ENUM*28);
+	var periodEndDate = addDays(periodStartDate, periodLength - 1);
+	//Next Month:
+	var periodStartDate2 = addDays(periodStartDate, 28);
+	var periodEndDate2 = addDays(periodStartDate2, periodLength - 1);
+	//Previous month:
+	var periodStartDate3 = subtractDays(periodStartDate, 28);
+	var periodEndDate3 = addDays(periodStartDate3, periodLength - 1);
+
+	var ovulationDate = addDays(periodStartDate, OVULATION_OFFSET);
+	var ovulationDate2 = addDays(periodStartDate2, OVULATION_OFFSET);
+	var ovulationDate3 = addDays(periodStartDate3, OVULATION_OFFSET);
 
 	// ---*****Need to log period dates for every month (28-day cycle)***-----
 
@@ -156,15 +167,20 @@ function initDates(monthIndex, year) {
 	 			dayCell.class = "cell inactive"; //if in the previous/next month, set to inactive.
 	 		} else {
 	 			dayCell.class = "cell active";
-	 			if (dateBetween(periodStartDate, periodEndDate, monthDay)) {
-	 				dayCell.class += " period"; //period
-	 			} else if (dateEquals(monthDay, ovulationDate)) {
-	 				dayCell.class += " ovulation";
-	 			}
-	 			if (dateEquals(monthDay, today)) {
-	 				dayCell.class += " circle";
-	 			}
 	 		}
+ 			if (dateBetween(periodStartDate, periodEndDate, monthDay) || 
+ 				dateBetween(periodStartDate2, periodEndDate2, monthDay) ||
+ 				dateBetween(periodStartDate3, periodEndDate3, monthDay)) {
+ 				dayCell.class += " period"; 
+ 			} else if (dateEquals(monthDay, ovulationDate) || 
+ 						dateEquals(monthDay, ovulationDate2) || 
+ 						dateEquals(monthDay, ovulationDate3)) {
+ 				dayCell.class += " ovulation";
+ 			}
+ 			if (dateEquals(monthDay, today)) {
+ 				dayCell.class += " circle";
+ 			}
+	 		
 	 		monthDay.setDate(monthDay.getDate() + 1);
 	 	}
 	 }
@@ -174,14 +190,16 @@ function initDates(monthIndex, year) {
 exports.renderPrevMonth = function() {
 	var monthIndex = currDate.getMonth()
 	currDate.setMonth(monthIndex-1);
+	MONTH_ENUM -= 1;
 	clearCalendar();
 	renderCalendar(currDate);
 }
 
 //Right arrow
 exports.renderNextMonth = function() {
-	var monthIndex = currDate.getMonth()
+	var monthIndex = currDate.getMonth();
 	currDate.setMonth(monthIndex+1);
+	MONTH_ENUM += 1;
 	clearCalendar();
 	renderCalendar(currDate);
 }
@@ -196,6 +214,12 @@ exports.renderNextMonth = function() {
 function addDays(date, days) {
   var result = new Date(date);
   result.setDate(result.getDate() + days);
+  return result;
+}
+
+function subtractDays(date, days) {
+  var result = new Date(date);
+  result.setDate(result.getDate() - days);
   return result;
 }
 

@@ -2,9 +2,21 @@
 	background-color: #081A40;
 }
 
-Label {
+.title {
 	text-align: center;
+}
+
+Label {
 	color: white;
+}
+
+#grid {
+	width: 80%;
+	margin-top: 5%;
+	margin-bottom: -5%;
+	margin-left: 10%;
+	margin-right: 10%;
+	height: 80%;
 }
 
 .title {
@@ -15,9 +27,13 @@ Label {
 	font-weight: bold;
 }
 
-#datePicker {
-	height: 15%;
+#timePicker {
+	height: 300px;
 	z-index: 1;
+}
+
+.doneBtn {
+	color: #EA9D97;
 }
 
 .labelStack {
@@ -25,12 +41,23 @@ Label {
 }
 
 .prompt {
-	margin-top: 4%;
-	margin-bottom: 3%;
 	color: #CDD8FF;
 	font-size: 15%;
 	text-transform: uppercase;
 	font-family: Avenir;
+	vertical-align: top;
+}
+
+.textField {
+	font-family: Avenir;
+	font-size: 15%;
+	text-align: left;
+	vertical-align: top;
+}
+
+.grid {
+	text-align: left;
+	vertical-align: top;
 }
 
 .settingsBtn {
@@ -49,6 +76,8 @@ Label {
 	font-size: 15%;
 	text-transform: uppercase;
 	font-family: Avenir;
+	margin-top: -10%;
+	margin-bottom: 4%
 }
 
 .buttonSelected: {
@@ -57,4 +86,6 @@ Label {
 	font-size: 15%;
 	text-transform: uppercase;
 	font-family: Avenir;
+	margin-top: -10%;
+	margin-bottom: 4%
 }

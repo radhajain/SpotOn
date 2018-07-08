@@ -10,8 +10,8 @@ Label {
 
 .subtitle {
 	color: #EA9D97; /*pink*/
-	font-weight: bold;
-	font-family: serif;
+	font-weight: 800;
+	font-family: Butler;
 }
 
 /***********************/
@@ -60,6 +60,7 @@ Label {
 	font-size: 10%;
 	text-align: left;
 	line-height: 2;
+	font-family: Avenir;
 }
 
 /***********************/
@@ -72,10 +73,11 @@ Label {
 
 .monthTitle {
 	color: white;
-	font-family: serif;
+	font-family: Butler;
+	font-weight: bold;
 	font-size: 20%;
 	padding: 15%;
-	text-transform: uppercase;
+	/*text-transform: uppercase;*/
 }
 
 .dayHeaders {
@@ -125,13 +127,14 @@ Label {
 
 
 .label {
-	color: gray;
+	color: white;
+	font-family: Avenir;
 	font-size: 10%; 
 	margin-left: 20%;
 }
 
 .ovulation {
-	background-color: lightblue;
+	background-color: #253D5F;
 }
 
 #key {
@@ -154,12 +157,14 @@ Label {
 	width: 60%;
 	color: lightblue;
 	line-height: 2;
+	font-family: Avenir;
 }
 
 .countdown {
 	font-size: 35%;
 	width: 80%;
-	font-family: serif;
+	font-family: Butler;
+	font-weight: bold;
 	color: white;
 	padding: 25%;
 }
@@ -186,10 +191,12 @@ Label {
 	font-style: italic;
 	padding: 8%;
 	width: 80%;
+	font-family: Avenir;
 }
 
 .author {
-	font-family: serif;
+	font-family: Butler;
+	font-weight: bolder;
 	color: #EA9D97;
 	text-transform: uppercase;
 }

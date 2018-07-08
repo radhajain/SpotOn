@@ -1,28 +1,44 @@
 <Page loaded="pageLoaded" xmlns="http://schemas.nativescript.org/tns.xsd"  navigatingTo="pageNavigating" id="settings" class="page" actionBarHidden="true">
+	
 	<StackLayout class="labelStack">
 
 		<Label text="Settings" class="title"/>
 
-		<StackLayout orientation="horizontal">
-			<Label text="Pill Time" class="prompt"/>
-			<Button text="{{ pillTime }}" style="color:white" id="periodStart" class="textField" tap="selectPillTime"/>
-		</StackLayout>
 
-		<TimePicker visibility="{{ showTimePicker ? 'visible' : 'collapse'}}" date="{{ date }}" loaded="onPickerLoaded" verticalAlignment="center" class="m-15" id="timePicker" style="color:white"></TimePicker>
+		<GridLayout rows="70,*,*,auto,*,*" columns="2*,*" id="grid">
 
-		<Button visibility="{{ showTimePicker ? 'visible' : 'collapse'}}" text="Save" tap="setTime" class="doneBtn"/>
+			<Label text="Name" class="prompt" row="0" col="0"/>
+			<TextField row="0" col="1" text="{{ name }}" autocorrect="false" autocapitalization="none" style="color:white" id="name" class="textField" returnPress="updateName" focus="onFocus"/>
 
-		<!-- <Button visibility="{{ showDatePicker ? 'visible' : 'collapse'}}" text="Save Changes" tap="setDate" class="settingsBtn"/>
--->
-	<StackLayout orientation="horizontal">
-		<Label text="Contraception" class="prompt"/>
-		<GridLayout rows="*,*,*,*" columns="*" class="center">
-			<Button row="0" col="1" text="Pill" tap="setPill" class="buttonOption" id="pillBtn"/>
-			<Button row="1" col="1" text="None" tap="setNone" class="buttonOption" id="noneBtn"/>
+			<Label text="Contraception" class="prompt" row="1" col="0"/>
+			<GridLayout rows="*,*,*" columns="*" class="grid" row="1" col="1">
+				<Button row="0" col="0" text="Pill" tap="setPill" class="buttonOption" id="Pill"/>
+				<Button row="1" col="0" text="Other" tap="setOther" class="buttonOption" id="Other"/>
+				<Button row="2" col="0" text="None" tap="setNone" class="buttonOption" id="None"/>
+			</GridLayout>
+
+
+			<Label text="Time Pill is Taken" class="prompt" row="2" col="0"/>
+			<Button text="{{ pillTime }}" style="color:white" id="periodStart" class="textField" tap="selectPillTime" row="2" col="1"/>
+
+			<StackLayout visibility="{{ showTimePicker ? 'visible' : 'collapse'}}" row="3" col="0" colSpan="2">
+				<TimePicker  date="{{ date }}" loaded="onPickerLoaded" verticalAlignment="center" class="m-15" id="timePicker" style="color:white"></TimePicker>
+				<Button text="Save" tap="setTime" class="doneBtn"/>
+			</StackLayout>
+
+			<Label text="Period" class="prompt" row="4" col="0"/>
+			<GridLayout rows="*,*" columns="*" class="grid" row="4" col="1">
+				<Button row="0" col="0" text="Yes" tap="setPeriod" class="buttonOption" id="Yes"/>
+				<Button row="1" col="0" text="No" tap="setNoPeriod" class="buttonOption" id="No"/>
+			</GridLayout>
+
+
+			<Label text="Avg. Period Length" class="prompt" row="5" col="0"/>
+			<TextField row="5" col="1" text="{{ periodLength }}" autocorrect="false" autocapitalization="none" style="color:white" id="periodLength" keyboardType="phone" class="textField" returnPress="updatePeriodLength" focus="onFocus"/>
+
 		</GridLayout>
-	</StackLayout>
 
-		<Button text="Save Changes" tap="setTime" class="settingsBtn"/>
+		<Button text="Save Changes" tap="goToExtendedView" class="settingsBtn"/>
 
 
 
