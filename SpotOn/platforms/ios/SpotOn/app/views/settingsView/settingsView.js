@@ -9,6 +9,7 @@ var dialogs = require("ui/dialogs");
 
 var page;
 var pageData;
+var currChoice;
 
 exports.pageNavigating = function(args) {
 	page = args.object;
@@ -48,6 +49,7 @@ exports.setTime = function(args) {
 	newTime.setMinutes(timePicker.minute);
 	StorageUtil.setBirthControlTime(newTime);
 	pageData.set("showTimePicker", false);
+	frameModule.topmost().navigate('views/extendedView/extendedView');
 }
 
 function setPeriodLength() {
@@ -62,4 +64,32 @@ exports.onFocus = function(args) {
 		pageData.set('showDatePicker', true);
 		textField.dismissSoftInput();
 	}
+}
+
+xports.setPill= function(args) {
+	var pillBtn = args.object;
+	pillBtn.className = "buttonSelected";
+	if (currChoice !== "Pill") {
+		var noneBtn = page.getViewById("noneBtn");
+		noneBtn.className = "buttonOption";
+		currChoice = "Pill";
+	}
+	StorageUtil.setDoesUsePill(true);
+	StorageUtil.setBirthControlType("Pill");
+}
+
+exports.setNone = function(args) {
+	var noneBtn = args.object;
+	noneBtn.className = "buttonSelected";
+	if (currChoice !== "None") {
+		var pillBtn = page.getViewById("pillBtn");
+		pillBtn.className = "buttonOption";
+		currChoice = "None";
+	}
+	StorageUtil.setDoesUsePill(false);
+	StorageUtil.setBirthControlType("None");
+}
+
+exports.goToExtendedView = function() {
+		frameModule.topmost().navigate('views/extendedView/extendedView');
 }
